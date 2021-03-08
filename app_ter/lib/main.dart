@@ -31,11 +31,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        centerTitle: true,
+        toolbarHeight: 80,
+        backgroundColor: Color(0xFF0b75b0),
         elevation: 0,
-        title: Text(widget.title, style: GoogleFonts.sacramento(fontSize: 40)),
+        shadowColor: Colors.blue,
+        title: Text(
+          widget.title,
+          style: GoogleFonts.sacramento(fontSize: 50),
+        ),
         leading: IconButton(
-          icon: Icon(Icons.map),
+          icon: Icon(Icons.menu),
           onPressed: () {},
         ),
       ),
@@ -44,13 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ClipPath(
             clipper: RoundedBottom(),
             child: Container(
-              height: 250,
+              height: 200,
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.blue,
-                    Colors.deepPurple,
+                    Color(0xFF0b75b0),
+                    Color(0xFF0eaddc),
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
