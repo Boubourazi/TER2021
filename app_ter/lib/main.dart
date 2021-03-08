@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Gestion bus'),
+      home: MyHomePage(title: 'Suivi bus'),
     );
   }
 }
@@ -32,20 +30,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        elevation: 0,
+        title: Text(widget.title, style: GoogleFonts.sacramento(fontSize: 40)),
+        leading: IconButton(
+          icon: Icon(Icons.map),
+          onPressed: () {},
+        ),
+      ),
       body: Column(
         children: <Widget>[
           ClipPath(
             clipper: RoundedBottom(),
             child: Container(
-              height: 350,
+              height: 250,
+              width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
                     Colors.blue,
                     Colors.deepPurple,
                   ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 ),
               ),
             ),
