@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'credentials.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,6 +47,13 @@ class _MyHomePageState extends State<MyHomePage> {
           icon: Icon(Icons.menu),
           onPressed: () {},
         ),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.map,
+              ),
+              onPressed: () {}),
+        ],
       ),
       body: Column(
         children: <Widget>[
@@ -64,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          Text(Credentials.mongo),
         ],
       ),
     );
@@ -83,4 +94,11 @@ class RoundedBottom extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
+}
+
+class CommercesList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
 }
