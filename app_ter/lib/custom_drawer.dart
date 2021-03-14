@@ -10,10 +10,12 @@ class CustomDrawer extends StatelessWidget {
           Container(
             height: 100,
             child: Center(
-                child: Text(
-              "Paramètres",
-              style: GoogleFonts.sacramento(fontSize: 40, color: Colors.white),
-            )),
+              child: Text(
+                "Paramètres",
+                style:
+                    GoogleFonts.sacramento(fontSize: 40, color: Colors.white),
+              ),
+            ),
             decoration: BoxDecoration(color: Color(0xFF0b75b0)),
           )
         ],
