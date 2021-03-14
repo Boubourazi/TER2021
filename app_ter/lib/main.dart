@@ -1,8 +1,11 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'map.dart';
 import 'credentials.dart';
+import 'custom_drawer.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Commerce'),
+      home: MyHomePage(
+        title: "Commerces",
+      ),
     );
   }
 }
@@ -30,9 +35,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void openDrawer() {
+    this._scaffoldKey.currentState.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: this._scaffoldKey,
+      resizeToAvoidBottomInset: false,
+      drawer: CustomDrawer(),
       appBar: AppBar(
         centerTitle: true,
         toolbarHeight: 80,
@@ -45,7 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         leading: IconButton(
           icon: Icon(Icons.menu),
-          onPressed: () {},
+          onPressed: () {
+            this.openDrawer();
+          },
         ),
         actions: <Widget>[
           IconButton(
@@ -60,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ClipPath(
             clipper: RoundedBottom(),
             child: Container(
-              height: 200,
+              height: 100,
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -74,7 +90,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          Text(Credentials.mongo),
+          Container(
+            height: 379,
+            width: 400,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: MapSample(),
+            ),
+          ),
         ],
       ),
     );
