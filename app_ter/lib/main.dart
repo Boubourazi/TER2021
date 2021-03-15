@@ -43,63 +43,68 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: this._scaffoldKey,
-      resizeToAvoidBottomInset: false,
-      drawer: CustomDrawer(),
-      appBar: AppBar(
-        centerTitle: true,
-        toolbarHeight: 80,
-        backgroundColor: Color(0xFF0b75b0),
-        elevation: 0,
-        shadowColor: Colors.blue,
-        title: Text(
-          widget.title,
-          style: GoogleFonts.sacramento(fontSize: 50),
-        ),
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {
-            this.openDrawer();
-          },
-        ),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.map,
-              ),
-              onPressed: () {}),
-        ],
-      ),
-      body: Column(
-        children: <Widget>[
-          ClipPath(
-            clipper: RoundedBottom(),
-            child: Container(
-              height: 100,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF0b75b0),
-                    Color(0xFF0eaddc),
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+    return FutureBuilder(
+      future: null,
+      builder: (context, snapshot) {
+        return Scaffold(
+          key: this._scaffoldKey,
+          resizeToAvoidBottomInset: false,
+          drawer: CustomDrawer(),
+          appBar: AppBar(
+            centerTitle: true,
+            toolbarHeight: 80,
+            backgroundColor: Color(0xFF0b75b0),
+            elevation: 0,
+            shadowColor: Colors.blue,
+            title: Text(
+              widget.title,
+              style: GoogleFonts.sacramento(fontSize: 50),
+            ),
+            leading: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                this.openDrawer();
+              },
+            ),
+            actions: <Widget>[
+              IconButton(
+                  icon: Icon(
+                    Icons.map,
+                  ),
+                  onPressed: () {}),
+            ],
+          ),
+          body: Column(
+            children: <Widget>[
+              ClipPath(
+                clipper: RoundedBottom(),
+                child: Container(
+                  height: 100,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFF0b75b0),
+                        Color(0xFF0eaddc),
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                  ),
                 ),
               ),
-            ),
+              Container(
+                height: 379,
+                width: 400,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: MapSample(),
+                ),
+              ),
+            ],
           ),
-          Container(
-            height: 379,
-            width: 400,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: MapSample(),
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
