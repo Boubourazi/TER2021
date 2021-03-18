@@ -6,9 +6,8 @@ class Connecter {
   Connecter(this.connectionString);
 
   Future<void> initialize() async {
-    this.db = await Db.create(
-        "mongodb+srv://<aure>:<n5arlmx4LWPgval1>@cluster0.kiq9v.mongodb.net/test");
-    await this.db.open();
+    this.db = await Db.create(this.connectionString);
+    //await this.db.open();
   }
 
   Stream<Map<String, dynamic>> findNoFilter() {

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:app_ter/connecter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: MyHomePage(
-        title: "Commerces",
+        title: "Commmerces",
       ),
     );
   }
@@ -36,6 +37,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  Connecter connecter = Connecter(Credentials.connectionString);
 
   void openDrawer() {
     this._scaffoldKey.currentState.openDrawer();
@@ -44,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: null,
+      future: Future<void>.delayed(Duration(seconds: 1)),
       builder: (context, snapshot) {
         return Scaffold(
           key: this._scaffoldKey,
@@ -98,7 +100,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 400,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
-                  child: MapSample(),
+                  child: snapshot.connectionState == ConnectionState.done
+                      ? MapSample()
+                      : SizedBox(
+                          width: 50,
+                          height: 50,
+                          child: Center(
+                            child: CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.blue),
+                              strokeWidth: 10,
+                            ),
+                          ),
+                        ),
                 ),
               ),
             ],
