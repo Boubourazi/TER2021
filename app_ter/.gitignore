@@ -48,3 +48,4 @@ app.*.map.json
 
 #Credentials and API token
 credentials.dart
+

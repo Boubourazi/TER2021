@@ -2,7 +2,9 @@ import 'dart:async';
 import 'package:app_ter/connecter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
 import 'map.dart';
 import 'credentials.dart';
@@ -38,6 +40,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   Connecter connecter = Connecter(Credentials.connectionString);
+
+  List data;
+
+  Future<String> loadJsonData() async {
+    var jsonText = await rootBundle.loadString('assets/stores.json');
+    setState(() => data = json.decode(jsonText));
+    return 'success';
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    this.loadJsonData();
+  }
 
   void openDrawer() {
     this._scaffoldKey.currentState.openDrawer();
@@ -101,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: snapshot.connectionState == ConnectionState.done
-                      ? MapSample()
+                      ? MapSample(this.data)
                       : SizedBox(
                           width: 50,
                           height: 50,
