@@ -24,21 +24,18 @@ class MapSampleState extends State<MapSample> {
 
   MapSampleState();
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
+  static final CameraPosition _pau = CameraPosition(
     target: LatLng(43.3166044, -0.3627473),
     zoom: 14.4746,
   );
-
-  static final CameraPosition _kLake = CameraPosition(
-      bearing: 0,
-      target: LatLng(43.3166044, -0.3627473),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
 
   List<Marker> markerize(List data) {
     return data
         .map(
           (e) => Marker(
+            infoWindow: InfoWindow(title: e["name"]),
+            icon:
+                BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
             markerId: MarkerId("${e["_id"]}"),
             position: LatLng(e["latitude"], e["longitude"]),
           ),
@@ -53,7 +50,7 @@ class MapSampleState extends State<MapSample> {
         markers: Set<Marker>.of(this.markerize(this.widget.storeData)),
         liteModeEnabled: false,
         mapType: MapType.normal,
-        initialCameraPosition: _kGooglePlex,
+        initialCameraPosition: _pau,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
