@@ -93,9 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
         children: <Widget>[
           FutureBuilder(
-            future: this._connecter.initialize().then((value) {
-              this._connecter.findNoFilter().listen(this.data.add);
-            }),
+            future: Future<void>.delayed(Duration(seconds: 1)),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return SizedBox(
