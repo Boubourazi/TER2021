@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: MyHomePage(
-        title: "Commmerces",
+        title: "Commerces",
       ),
     );
   }
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
           drawer: CustomDrawer(),
           appBar: AppBar(
             centerTitle: true,
-            toolbarHeight: 80,
+            toolbarHeight: 50,
             backgroundColor: Color(0xFF0b75b0),
             elevation: 0,
             shadowColor: Colors.blue,
@@ -92,8 +92,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {}),
             ],
           ),
-          body: Column(
+          body: Stack(
             children: <Widget>[
+              SizedBox.expand(
+                child: snapshot.connectionState == ConnectionState.done
+                    ? Map(this.data)
+                    : SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.blue),
+                            strokeWidth: 10,
+                          ),
+                        ),
+                      ),
+              ),
               ClipPath(
                 clipper: RoundedBottom(),
                 child: Container(
@@ -111,26 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              Container(
-                height: 379,
-                width: 400,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: snapshot.connectionState == ConnectionState.done
-                      ? MapSample(this.data)
-                      : SizedBox(
-                          width: 50,
-                          height: 50,
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.blue),
-                              strokeWidth: 10,
-                            ),
-                          ),
-                        ),
-                ),
-              ),
             ],
           ),
         );
@@ -145,18 +140,11 @@ class RoundedBottom extends CustomClipper<Path> {
     return new Path()
       ..lineTo(0, size.height - 80)
       ..quadraticBezierTo(
-          size.width / 2, size.height, size.width, size.height - 80)
+          size.width / 2, size.height - 50, size.width, size.height - 80)
       ..lineTo(size.width, 0)
       ..close();
   }
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
-}
-
-class CommercesList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
 }

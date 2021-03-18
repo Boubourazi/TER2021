@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
+import 'storeDetailPage.dart';
 
-class MapSample extends StatefulWidget {
+class Map extends StatefulWidget {
   final List storeData;
 
-  MapSample(this.storeData);
+  Map(this.storeData);
 
   @override
-  State<MapSample> createState() => MapSampleState();
+  State<Map> createState() => MapState();
 }
 
-class MapSampleState extends State<MapSample> {
+class MapState extends State<Map> {
   final List<Marker> markers = <Marker>[
     Marker(
         markerId: MarkerId("test"),
@@ -22,7 +23,7 @@ class MapSampleState extends State<MapSample> {
   ];
   Completer<GoogleMapController> _controller = Completer();
 
-  MapSampleState();
+  MapState();
 
   static final CameraPosition _pau = CameraPosition(
     target: LatLng(43.3166044, -0.3627473),
@@ -33,7 +34,18 @@ class MapSampleState extends State<MapSample> {
     return data
         .map(
           (e) => Marker(
-            infoWindow: InfoWindow(title: e["name"]),
+            infoWindow: InfoWindow(
+              title: e["name"],
+              onTap: () {
+                Navigator.of(this.context).push(
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) {
+                      return StoreDetailPage(e);
+                    },
+                  ),
+                );
+              },
+            ),
             icon:
                 BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
             markerId: MarkerId("${e["_id"]}"),
