@@ -7,7 +7,7 @@ class Connecter {
 
   Future<void> initialize() async {
     this.db = await Db.create(this.connectionString);
-    //await this.db.open();
+    await this.db.open();
   }
 
   Stream<Map<String, dynamic>> findNoFilter() {
