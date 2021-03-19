@@ -14,4 +14,8 @@ class Connecter {
     DbCollection collection = this._db.collection("commerces");
     return collection.find();
   }
+
+  Db get db {
+    return this._db;
+  }
 }

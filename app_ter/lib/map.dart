@@ -13,24 +13,52 @@ class Map extends StatefulWidget {
 }
 
 class MapState extends State<Map> {
-  final List<Marker> markers = <Marker>[
-    Marker(
-        markerId: MarkerId("test"),
-        position: LatLng(43.3166044, -0.3627473),
-        onTap: () {}),
-    Marker(
-        markerId: MarkerId("test"), position: LatLng(43.3166044, -0.3627473)),
-  ];
+  final List<Marker> markers = <Marker>[];
+
+  BitmapDescriptor checkedIcon;
+  BitmapDescriptor crossedIcon;
+  BitmapDescriptor orangeIcon;
+
   Completer<GoogleMapController> _controller = Completer();
 
   MapState();
+
+  @override
+  void initState() {
+    super.initState();
+    this._loadMarker();
+  }
+
+  int currentPeople(dynamic dataSensor) {
+    int people = 0;
+
+    return people;
+  }
+
+  _loadMarker() async {
+    BitmapDescriptor.fromAssetImage(
+            ImageConfiguration(devicePixelRatio: 2.5), "checkedIcon.png")
+        .then((value) => this.setState(() {
+              this.checkedIcon = value;
+            }))
+        .then((value) => BitmapDescriptor.fromAssetImage(
+            ImageConfiguration(devicePixelRatio: 2.5), "crossedIcon.png"))
+        .then((value) => this.setState(() {
+              this.crossedIcon = value;
+            }))
+        .then((value) => BitmapDescriptor.fromAssetImage(
+            ImageConfiguration(devicePixelRatio: 2.5), "orangeIcon.png"))
+        .then((value) => this.setState(() {
+              this.orangeIcon = value;
+            }));
+  }
 
   static final CameraPosition _pau = CameraPosition(
     target: LatLng(43.3166044, -0.3627473),
     zoom: 14.4746,
   );
 
-  List<Marker> markerize(List data) {
+  List<Marker> _markerize(List data) {
     return data
         .map(
           (e) => Marker(
@@ -46,8 +74,11 @@ class MapState extends State<Map> {
                 );
               },
             ),
-            icon:
-                BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+            icon: e["currentPeopleNumber"] / e["maxPeopleCapacity"] < 0.33
+                ? this.checkedIcon
+                : e["currentPeopleNumber"] / e["maxPeopleCapacity"] > 0.66
+                    ? this.crossedIcon
+                    : this.orangeIcon,
             markerId: MarkerId("${e["_id"]}"),
             position: LatLng(e["latitude"], e["longitude"]),
           ),
@@ -57,16 +88,15 @@ class MapState extends State<Map> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: GoogleMap(
-        markers: Set<Marker>.of(this.markerize(this.widget.storeData)),
-        liteModeEnabled: false,
-        mapType: MapType.normal,
-        initialCameraPosition: _pau,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
-      ),
+    this._loadMarker();
+    return GoogleMap(
+      markers: Set<Marker>.of(this._markerize(this.widget.storeData)),
+      liteModeEnabled: false,
+      mapType: MapType.normal,
+      initialCameraPosition: _pau,
+      onMapCreated: (GoogleMapController controller) {
+        _controller.complete(controller);
+      },
     );
   }
 }
