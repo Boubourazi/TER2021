@@ -3,8 +3,9 @@ import 'roundedBottom.dart';
 
 class StoreDetailPage extends StatelessWidget {
   final dynamic store;
+  final int currentPeople;
 
-  StoreDetailPage(this.store);
+  StoreDetailPage(this.store, this.currentPeople);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class StoreDetailPage extends StatelessWidget {
         ),
         centerTitle: true,
         title: Text(
-          this.store["name"],
+          "${this.store["name"]} : ${this.currentPeople}",
           style: TextStyle(fontSize: 30),
         ),
       ),

@@ -29,8 +29,17 @@ class MapState extends State<Map> {
     this._loadMarker();
   }
 
-  int currentPeople(dynamic dataSensor) {
+  int currentPeople(List<dynamic> dataSensor) {
     int people = 0;
+    DateTime now = DateTime.now();
+
+    dataSensor.forEach((element) {
+      people += element["type"] == "in"
+          ? 1
+          : now.difference(element["date"]).inSeconds > 0
+              ? -1
+              : 0;
+    });
 
     return people;
   }
@@ -68,15 +77,20 @@ class MapState extends State<Map> {
                 Navigator.of(this.context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) {
-                      return StoreDetailPage(e);
+                      return StoreDetailPage(
+                          e, this.currentPeople(e["sensorsDatas"].toList()));
                     },
                   ),
                 );
               },
             ),
-            icon: e["currentPeopleNumber"] / e["maxPeopleCapacity"] < 0.33
+            icon: this.currentPeople(e["sensorsDatas"].toList()) /
+                        e["maxPeopleCapacity"] <
+                    0.33
                 ? this.checkedIcon
-                : e["currentPeopleNumber"] / e["maxPeopleCapacity"] > 0.66
+                : this.currentPeople(e["sensorsDatas"].toList()) /
+                            e["maxPeopleCapacity"] >
+                        0.66
                     ? this.crossedIcon
                     : this.orangeIcon,
             markerId: MarkerId("${e["_id"]}"),
