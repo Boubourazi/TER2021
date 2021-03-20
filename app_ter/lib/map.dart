@@ -31,12 +31,11 @@ class MapState extends State<Map> {
 
   int currentPeople(List<dynamic> dataSensor) {
     int people = 0;
-    DateTime now = DateTime.now();
-
+    DateTime now = DateTime.now().toLocal();
     dataSensor.forEach((element) {
       people += element["type"] == "in"
           ? 1
-          : now.difference(element["date"]).inSeconds > 0
+          : now.difference(element["date"].toLocal()).inSeconds > 0
               ? -1
               : 0;
     });

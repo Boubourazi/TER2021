@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'roundedBottom.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class StoreDetailPage extends StatelessWidget {
   final dynamic store;
@@ -19,11 +20,12 @@ class StoreDetailPage extends StatelessWidget {
         ),
         centerTitle: true,
         title: Text(
-          "${this.store["name"]} : ${this.currentPeople}",
+          "${this.store["name"]}",
           style: TextStyle(fontSize: 30),
         ),
       ),
-      body: Stack(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           ClipPath(
             clipper: RoundedBottom(),
@@ -40,6 +42,42 @@ class StoreDetailPage extends StatelessWidget {
                   end: Alignment.bottomCenter,
                 ),
               ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Container(
+              width: 150,
+              height: 150,
+              child: CircularProgressIndicator(
+                strokeWidth: 15,
+                value: 0.2,
+                backgroundColor: Colors.greenAccent,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15, top: 15),
+            child: Container(
+              child: PieChart(
+                PieChartData(
+                  centerSpaceRadius: double.infinity,
+                  borderData:
+                      FlBorderData(border: Border.all(color: Colors.white)),
+                  sections: <PieChartSectionData>[
+                    PieChartSectionData(
+                        value: this.currentPeople.toDouble(),
+                        color: Colors.green),
+                    PieChartSectionData(
+                        value: this.store["maxPeopleCapacity"] -
+                            this.currentPeople.toDouble(),
+                        color: Colors.greenAccent,
+                        showTitle: false),
+                  ],
+                ),
+              ),
+              width: 150,
+              height: 150,
             ),
           ),
         ],

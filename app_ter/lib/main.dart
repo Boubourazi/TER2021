@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:collection';
 import 'package:app_ter/connecter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -118,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
               if (snapshot.hasError) {
                 return Text("Error while accessing the database");
               }
+              //Will never reach this point
               return Text("Coucou moi c'est Aurélien");
             },
           ),
