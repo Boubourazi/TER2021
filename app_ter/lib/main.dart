@@ -21,6 +21,16 @@ class MyApp extends StatelessWidget {
       title: 'Gestion bus',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        textTheme: TextTheme(
+          headline1: GoogleFonts.sacramento(fontSize: 50, color: Colors.white),
+          headline2: TextStyle(
+            fontSize: 30,
+            color: Colors.white,
+          ),
+          headline3: TextStyle(
+            fontSize: 20,
+          ),
+        ),
       ),
       home: MyHomePage(
         title: "Commerces",
@@ -63,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0b75b0),
+      backgroundColor: Colors.white, //Color(0xFF0b75b0),
       key: this._scaffoldKey,
       resizeToAvoidBottomInset: false,
       drawer: CustomDrawer(),
@@ -75,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
         shadowColor: Colors.blue,
         title: Text(
           widget.title,
-          style: GoogleFonts.sacramento(fontSize: 50),
+          style: Theme.of(context).textTheme.headline1,
         ),
         leading: IconButton(
           icon: Icon(Icons.menu),
@@ -106,13 +116,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                         backgroundColor: Colors.blue[200],
-                        strokeWidth: 2,
+                        strokeWidth: 3,
                       ),
                     ),
                   ),
                 );
               } else if (snapshot.connectionState == ConnectionState.done) {
-                return Map(snapshot.data);
+                return snapshot.hasData ? Map(snapshot.data) : Text("Pending");
               }
               if (snapshot.hasError) {
                 return Text("Error while accessing the database");

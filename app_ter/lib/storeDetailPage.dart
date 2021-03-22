@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
 import 'roundedBottom.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'storePieChart.dart';
+import 'storeBarChart.dart';
 
-class StoreDetailPage extends StatelessWidget {
+class StoreDetailPage extends StatefulWidget {
   final dynamic store;
   final int currentPeople;
 
   StoreDetailPage(this.store, this.currentPeople);
+
+  @override
+  _StoreDetailPageState createState() => _StoreDetailPageState();
+}
+
+class _StoreDetailPageState extends State<StoreDetailPage> {
+  bool favorite;
+
+  @override
+  void initState() {
+    super.initState();
+    this.favorite = false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +33,20 @@ class StoreDetailPage extends StatelessWidget {
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(this.favorite ? Icons.star : Icons.star_border),
+            onPressed: () {
+              this.setState(() {
+                this.favorite = !this.favorite;
+              });
+            },
+          ),
+        ],
         centerTitle: true,
         title: Text(
-          "${this.store["name"]}",
-          style: TextStyle(fontSize: 30),
+          "${this.widget.store["name"]}",
+          style: Theme.of(context).textTheme.headline2,
         ),
       ),
       body: Column(
@@ -44,42 +69,37 @@ class StoreDetailPage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Container(
-              width: 150,
-              height: 150,
-              child: CircularProgressIndicator(
-                strokeWidth: 15,
-                value: 0.2,
-                backgroundColor: Colors.greenAccent,
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: StorePieChart(
+                    store: widget.store, currentPeople: widget.currentPeople),
               ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, top: 15),
-            child: Container(
-              child: PieChart(
-                PieChartData(
-                  centerSpaceRadius: double.infinity,
-                  borderData:
-                      FlBorderData(border: Border.all(color: Colors.white)),
-                  sections: <PieChartSectionData>[
-                    PieChartSectionData(
-                        value: this.currentPeople.toDouble(),
-                        color: Colors.green),
-                    PieChartSectionData(
-                        value: this.store["maxPeopleCapacity"] -
-                            this.currentPeople.toDouble(),
-                        color: Colors.greenAccent,
-                        showTitle: false),
-                  ],
+              Spacer(
+                flex: 1,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Container(
+                  color: Colors.blue,
+                  child: Column(children: []),
+                  width: 200,
+                  height: 200,
                 ),
               ),
-              width: 150,
-              height: 150,
+            ],
+          ),
+          Spacer(
+            flex: 1,
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: StoreBarChart(),
             ),
           ),
+          Spacer(flex: 1),
         ],
       ),
     );
