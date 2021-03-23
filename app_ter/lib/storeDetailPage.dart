@@ -82,10 +82,31 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
               Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: Container(
-                  color: Colors.blue,
-                  child: Column(children: []),
+                  color: null,
+                  child: Column(children: [
+                    Text(
+                      "Adresse",
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                    Spacer(
+                      flex: 1,
+                    ),
+                    Text(
+                        "${this.widget.store["address"]}, ${this.widget.store["city"]}"),
+                    Spacer(
+                      flex: 5,
+                    ),
+                    Text(
+                      "Téléphone",
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                    Spacer(
+                      flex: 1,
+                    ),
+                    Text("${this.widget.store["phone"]}"),
+                  ]),
                   width: 200,
-                  height: 200,
+                  height: 150,
                 ),
               ),
             ],
