@@ -6,12 +6,12 @@ class StoreBarChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder(
       builder: (context, snapshot) {
-        return (Container(
+        return Container(
           child: Center(child: Text("WIP")),
           width: 400,
           height: 150,
           color: Colors.blue,
-        ));
+        );
       },
     );
   }

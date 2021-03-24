@@ -3,6 +3,7 @@ import 'roundedBottom.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'storePieChart.dart';
 import 'storeBarChart.dart';
+import 'storeDialChart.dart';
 
 class StoreDetailPage extends StatefulWidget {
   final dynamic store;
@@ -73,7 +74,7 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 15),
-                child: StorePieChart(
+                child: StoreDialChart(
                     store: widget.store, currentPeople: widget.currentPeople),
               ),
               Spacer(
