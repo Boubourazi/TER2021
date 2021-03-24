@@ -1,7 +1,7 @@
-TER_2021_NodeRed
-================
+# Docker Node Red MQTT
+## Instruction 
+Installer Docker : https://docs.docker.com/desktop/
+ 
+Lancer depuis le terminal : 
 
-### About
-
-This is your project's README.md file. It helps users understand what your
-project does, how to use it and anything else they may need to know.
+    docker-compose -f docker-compose.yml up
