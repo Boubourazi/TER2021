@@ -10,6 +10,20 @@ class Map extends StatefulWidget {
 
   @override
   State<Map> createState() => MapState();
+
+  static int currentPeople(List<dynamic> dataSensor) {
+    int people = 0;
+    DateTime now = DateTime.now().toLocal();
+    dataSensor.forEach((element) {
+      people += element["type"] == "in"
+          ? 1
+          : now.difference(element["date"].toLocal()).inSeconds > 0
+              ? -1
+              : 0;
+    });
+
+    return people;
+  }
 }
 
 class MapState extends State<Map> {
@@ -27,20 +41,6 @@ class MapState extends State<Map> {
   void initState() {
     super.initState();
     this._loadMarker();
-  }
-
-  int currentPeople(List<dynamic> dataSensor) {
-    int people = 0;
-    DateTime now = DateTime.now().toLocal();
-    dataSensor.forEach((element) {
-      people += element["type"] == "in"
-          ? 1
-          : now.difference(element["date"].toLocal()).inSeconds > 0
-              ? -1
-              : 0;
-    });
-
-    return people;
   }
 
   _loadMarker() async {
@@ -77,17 +77,17 @@ class MapState extends State<Map> {
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) {
                       return StoreDetailPage(
-                          e, this.currentPeople(e["sensorsDatas"].toList()));
+                          e, Map.currentPeople(e["sensorsDatas"].toList()));
                     },
                   ),
                 );
               },
             ),
-            icon: this.currentPeople(e["sensorsDatas"].toList()) /
+            icon: Map.currentPeople(e["sensorsDatas"].toList()) /
                         e["maxPeopleCapacity"] <
                     0.33
                 ? this.checkedIcon
-                : this.currentPeople(e["sensorsDatas"].toList()) /
+                : Map.currentPeople(e["sensorsDatas"].toList()) /
                             e["maxPeopleCapacity"] >
                         0.66
                     ? this.crossedIcon

@@ -17,6 +17,11 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             decoration: BoxDecoration(color: Color(0xFF0b75b0)),
+          ),
+          ListTile(
+            onTap: () {},
+            leading: Icon(Icons.account_circle),
+            title: Text("Utilisateur"),
           )
         ],
       ),

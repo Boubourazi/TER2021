@@ -7,6 +7,7 @@ class StoreBarChart extends StatelessWidget {
     return FutureBuilder(
       builder: (context, snapshot) {
         return (Container(
+          child: Center(child: Text("WIP")),
           width: 400,
           height: 150,
           color: Colors.blue,

@@ -1,11 +1,12 @@
 import 'dart:async';
 import 'package:app_ter/connecter.dart';
+import 'package:app_ter/storeList.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
-import 'package:flutter/services.dart';
 
+import 'storeList.dart';
 import 'roundedBottom.dart';
 import 'map.dart';
 import 'credentials.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Gestion bus',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blue,
         textTheme: TextTheme(
           headline1: GoogleFonts.sacramento(fontSize: 50, color: Colors.white),
           headline2: TextStyle(
@@ -92,17 +93,35 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: Theme.of(context).textTheme.headline1,
               ),
               leading: IconButton(
-                icon: Icon(Icons.menu),
+                icon: Icon(Icons.settings),
                 onPressed: () {
                   this.openDrawer();
                 },
               ),
               actions: <Widget>[
-                IconButton(
+                if (snapshot.connectionState == ConnectionState.done)
+                  IconButton(
                     icon: Icon(
-                      Icons.map,
+                      Icons.list,
                     ),
-                    onPressed: () {}),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute<void>(
+                          builder: (BuildContext context) {
+                        return StoreList(snapshot.data);
+                      }));
+                    },
+                  )
+                else
+                  Padding(
+                    padding: EdgeInsets.only(right: 5),
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                        backgroundColor: Colors.blue[200],
+                        strokeWidth: 1,
+                      ),
+                    ),
+                  ),
               ],
             ),
             body: Stack(
