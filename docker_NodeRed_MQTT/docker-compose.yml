@@ -1,0 +1,30 @@
+version: "3"
+services:
+
+  mosquitto:
+    image: eclipse-mosquitto
+    volumes:
+      - "./mosquitto/config:/mosquitto/config/"
+    networks:
+      - localnet
+    ports:
+      - "1883:1883"
+      - '8883:8883'
+
+  node-red:
+    build: .
+    environment:
+      - TZ=Europe/Amsterdam
+    depends_on:
+      - mosquitto
+    image: nodered/node-red
+    volumes:
+      - "./node-red:/data"
+    user: "0"
+    networks:
+      - localnet
+    ports:
+      - "1880:1880"
+      
+networks:
+  localnet:
