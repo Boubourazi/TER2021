@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'roundedBottom.dart';
-import 'package:fl_chart/fl_chart.dart';
-import 'storePieChart.dart';
 import 'storeBarChart.dart';
 import 'storeDialChart.dart';
 
@@ -82,9 +80,9 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 10),
-                child: Container(
-                  color: null,
-                  child: Column(children: [
+                child: Wrap(
+                  direction: Axis.vertical,
+                  children: [
                     Text(
                       "Adresse",
                       style: Theme.of(context).textTheme.headline3,
@@ -105,9 +103,7 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
                       flex: 1,
                     ),
                     Text("${this.widget.store["phone"]}"),
-                  ]),
-                  width: 200,
-                  height: 150,
+                  ],
                 ),
               ),
             ],
