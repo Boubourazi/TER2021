@@ -78,6 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
             this._connecter.db.collection("commerces").find().toList()),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           return Scaffold(
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.startFloat,
             backgroundColor: Colors.white, //Color(0xFF0b75b0),
             key: this._scaffoldKey,
             resizeToAvoidBottomInset: false,
@@ -128,14 +130,16 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 snapshot.connectionState == ConnectionState.done
                     ? Map(snapshot.data)
-                    : Center(
-                        child: CircularProgressIndicator(
-                          valueColor:
-                              AlwaysStoppedAnimation<Color>(Colors.blue),
-                          backgroundColor: Colors.blue[200],
-                          strokeWidth: 3,
-                        ),
-                      ),
+                    : snapshot.hasError
+                        ? Text("Error mongo db")
+                        : Center(
+                            child: CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.blue),
+                              backgroundColor: Colors.blue[200],
+                              strokeWidth: 3,
+                            ),
+                          ),
                 ClipPath(
                   clipper: RoundedBottom(),
                   child: Container(
@@ -154,6 +158,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ],
+            ),
+            floatingActionButton: FloatingActionButton(
+              child: Icon(Icons.autorenew),
+              onPressed: () {},
             ),
           );
         });

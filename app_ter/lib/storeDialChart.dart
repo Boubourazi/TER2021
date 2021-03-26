@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class StoreDialChart extends StatefulWidget {
   final dynamic store;
@@ -19,22 +20,66 @@ class _StoreDialChartState extends State<StoreDialChart> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: Future<void>.delayed(Duration(milliseconds: 200))
-          .then((value) => this.setState(() {
-                this.animationDone = true;
-              })),
-      builder: (context, snapshot) {
-        return AnimatedContainer(
-          duration: Duration(seconds: 1),
-          width: 150,
-          height: 150,
-          color: Colors.blue,
-          child: Stack(
-            children: <Widget>[],
+    return Container(
+      width: 180,
+      height: 150,
+      child: SfRadialGauge(
+        animationDuration: 2500,
+        enableLoadingAnimation: true,
+        title: GaugeTitle(
+            text: 'Occupation',
+            textStyle:
+                const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+        axes: <RadialAxis>[
+          RadialAxis(
+            showTicks: false,
+            showLabels: false,
+            canScaleToFit: true,
+            radiusFactor: 1,
+            startAngle: 180,
+            endAngle: 0,
+            minimum: 0,
+            maximum: this.widget.store["maxPeopleCapacity"].toDouble(),
+            ranges: <GaugeRange>[
+              GaugeRange(
+                startValue: 0,
+                endValue:
+                    this.widget.store["maxPeopleCapacity"].toDouble() * 0.33,
+                color: Color(0xff5ed12e),
+                startWidth: 50,
+                endWidth: 50,
+              ),
+              GaugeRange(
+                startValue:
+                    this.widget.store["maxPeopleCapacity"].toDouble() * 0.33,
+                endValue:
+                    this.widget.store["maxPeopleCapacity"].toDouble() * 0.66,
+                color: Color(0xffffb95d),
+                startWidth: 50,
+                endWidth: 50,
+              ),
+              GaugeRange(
+                startValue:
+                    this.widget.store["maxPeopleCapacity"].toDouble() * 0.66,
+                endValue: this.widget.store["maxPeopleCapacity"].toDouble(),
+                color: Color(0xfffe3737),
+                startWidth: 50,
+                endWidth: 50,
+              )
+            ],
+            pointers: <GaugePointer>[
+              NeedlePointer(
+                enableAnimation: true,
+                value: 500,
+                lengthUnit: GaugeSizeUnit.logicalPixel,
+                needleLength: 50,
+                needleStartWidth: 0,
+                needleEndWidth: 5,
+              ),
+            ],
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
