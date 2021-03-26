@@ -39,8 +39,10 @@ class _StoreListState extends State<StoreList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF0b75b0),
+        centerTitle: true,
         title: Text(
-          "Liste Magasins",
+          "Liste",
           style: Theme.of(context).textTheme.headline1,
         ),
       ),
