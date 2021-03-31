@@ -190,13 +190,14 @@
     "width": 1,
     "height": 1
 }, {
-    "id": "e13b44fb.61a1b8",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "bc954448.141188",
-    "order": 5,
-    "width": 1,
-    "height": 1
+    "id": "bc3f12fa.6421d8",
+    "type": "ui_group",
+    "name": "Capteur parking",
+    "tab": "ef2f15.4ec0a0e8",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
 }, {
     "id": "b7b8bdf4.c4f7d8",
     "type": "mqtt in",
@@ -323,8 +324,8 @@
     "payloadType": "str",
     "topic": "topic",
     "topicType": "msg",
-    "x": 120,
-    "y": 340,
+    "x": 100,
+    "y": 300,
     "wires": [
         ["e3047bec.9f4808"]
     ]
@@ -333,13 +334,13 @@
     "type": "function",
     "z": "bd329ca2.49e1c",
     "name": "",
-    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorId\"),\"type\":\"in\"}\nreturn msg;",
+    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdCommerce\"),\"type\":\"in\"}\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 300,
-    "y": 340,
+    "x": 280,
+    "y": 300,
     "wires": [
         ["dd2c66a7.d7077"]
     ]
@@ -352,8 +353,8 @@
     "qos": "",
     "retain": "",
     "broker": "8d4da33c.cb6318",
-    "x": 470,
-    "y": 340,
+    "x": 450,
+    "y": 300,
     "wires": []
 }, {
     "id": "287cb964.5d9536",
@@ -374,8 +375,8 @@
     "payloadType": "str",
     "topic": "topic",
     "topicType": "msg",
-    "x": 120,
-    "y": 400,
+    "x": 100,
+    "y": 360,
     "wires": [
         ["40b15ee1.336c7"]
     ]
@@ -384,13 +385,13 @@
     "type": "function",
     "z": "bd329ca2.49e1c",
     "name": "",
-    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorId\"),\"type\":\"out\"}\nreturn msg;",
+    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdCommerce\"),\"type\":\"out\"}\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 300,
-    "y": 400,
+    "x": 280,
+    "y": 360,
     "wires": [
         ["3b30a00b.c66e38"]
     ]
@@ -403,8 +404,8 @@
     "qos": "",
     "retain": "",
     "broker": "8d4da33c.cb6318",
-    "x": 470,
-    "y": 400,
+    "x": 450,
+    "y": 360,
     "wires": []
 }, {
     "id": "f15c18de.de80d8",
@@ -674,8 +675,8 @@
     "delay": "0",
     "topic": "topic",
     "topicType": "msg",
-    "x": 110,
-    "y": 200,
+    "x": 90,
+    "y": 160,
     "wires": [
         ["c52df6fa.e57de8", "4ce17ea1.7d4758"]
     ]
@@ -687,8 +688,8 @@
     "name": "find",
     "collection": "commerces",
     "operation": "find",
-    "x": 490,
-    "y": 200,
+    "x": 390,
+    "y": 160,
     "wires": [
         ["ed38aea3.f478c"]
     ]
@@ -702,8 +703,8 @@
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 300,
-    "y": 200,
+    "x": 260,
+    "y": 160,
     "wires": [
         ["6a2f6594.a3dd84"]
     ]
@@ -717,8 +718,8 @@
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 640,
-    "y": 200,
+    "x": 520,
+    "y": 160,
     "wires": [
         ["c2c5becf.71f72"],
         ["59d20b0e.a59a9c"],
@@ -736,8 +737,8 @@
     "label": "Nom:",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
-    "x": 790,
-    "y": 160,
+    "x": 690,
+    "y": 80,
     "wires": []
 }, {
     "id": "59d20b0e.a59a9c",
@@ -751,8 +752,8 @@
     "label": "Adresse:",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
-    "x": 800,
-    "y": 200,
+    "x": 700,
+    "y": 120,
     "wires": []
 }, {
     "id": "bc30e2e2.62dfb",
@@ -766,8 +767,8 @@
     "label": "Ville:",
     "format": "{{msg.payload}}",
     "layout": "row-spread",
-    "x": 790,
-    "y": 240,
+    "x": 690,
+    "y": 160,
     "wires": []
 }, {
     "id": "4ce17ea1.7d4758",
@@ -776,7 +777,7 @@
     "name": "",
     "rules": [{
         "t": "set",
-        "p": "sensorId",
+        "p": "sensorIdCommerce",
         "pt": "flow",
         "to": "payload",
         "tot": "msg"
@@ -786,8 +787,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 330,
-    "y": 240,
+    "x": 280,
+    "y": 220,
     "wires": [
         []
     ]
@@ -807,7 +808,7 @@
     "name": "Set flow.sensorId et Affichage des information du commerce",
     "info": "",
     "x": 260,
-    "y": 160,
+    "y": 120,
     "wires": []
 }, {
     "id": "7f418623.4f1a4",
@@ -821,7 +822,7 @@
     "complete": "false",
     "statusVal": "",
     "statusType": "auto",
-    "x": 650,
+    "x": 830,
     "y": 320,
     "wires": []
 }, {
@@ -829,20 +830,20 @@
     "type": "mongodb in",
     "z": "868e002.b1115",
     "mongodb": "26e813b1.5ac7d4",
-    "name": "find",
+    "name": "",
     "collection": "commerces",
     "operation": "find",
-    "x": 430,
+    "x": 440,
     "y": 320,
     "wires": [
-        ["7f418623.4f1a4"]
+        ["372e1162.c50e16"]
     ]
 }, {
     "id": "2300cd0.a610db4",
     "type": "function",
     "z": "868e002.b1115",
     "name": "",
-    "func": "msg.payload = {\"sensorIdArray\" :\"16_in\"} \nreturn msg;",
+    "func": "msg.payload = {\"sensorIdArray\" :\"5_in\"} \nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
@@ -890,7 +891,507 @@
     "z": "bd329ca2.49e1c",
     "name": "Envoye une entrée ou une sortie après avoir appuyer les boutons",
     "info": "",
-    "x": 280,
+    "x": 260,
+    "y": 260,
+    "wires": []
+}, {
+    "id": "372e1162.c50e16",
+    "type": "change",
+    "z": "868e002.b1115",
+    "name": "",
+    "rules": [{
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload[0].sensorsDatas",
+        "tot": "msg"
+    }],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 660,
+    "y": 320,
+    "wires": [
+        ["7f418623.4f1a4"]
+    ]
+}, {
+    "id": "d295b2c2.bbd668",
+    "type": "mqtt in",
+    "z": "8b9071f7.6ad848",
+    "name": "",
+    "topic": "CapteurParking",
+    "qos": "2",
+    "datatype": "auto",
+    "broker": "8d4da33c.cb6318",
+    "x": 100,
+    "y": 260,
+    "wires": [
+        ["b81a11a0.af3b28"]
+    ]
+}, {
+    "id": "eb9b9a82.e7da2",
+    "type": "function",
+    "z": "8b9071f7.6ad848",
+    "name": "",
+    "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorIdArray\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type, \"sensorId\":sensorId}} };\n\n\n\n\nreturn msg;\n\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 420,
+    "y": 260,
+    "wires": [
+        ["9f6eb2d.7aab3d", "612831b1.894268"]
+    ]
+}, {
+    "id": "b81a11a0.af3b28",
+    "type": "json",
+    "z": "8b9071f7.6ad848",
+    "name": "",
+    "property": "payload",
+    "action": "obj",
+    "pretty": false,
+    "x": 290,
+    "y": 260,
+    "wires": [
+        ["eb9b9a82.e7da2"]
+    ]
+}, {
+    "id": "9f6eb2d.7aab3d",
+    "type": "mongodb out",
+    "z": "8b9071f7.6ad848",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "",
+    "collection": "parkings",
+    "payonly": false,
+    "upsert": true,
+    "multi": false,
+    "operation": "update",
+    "x": 670,
+    "y": 260,
+    "wires": []
+}, {
+    "id": "612831b1.894268",
+    "type": "debug",
+    "z": "8b9071f7.6ad848",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 630,
+    "y": 320,
+    "wires": []
+}, {
+    "id": "654ef863.900818",
+    "type": "inject",
+    "z": "bd329ca2.49e1c",
+    "name": "String sensorId and values",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"sensorId\":\"0_in\",\"type\":\"in\"}",
+    "payloadType": "str",
+    "x": 950,
+    "y": 60,
+    "wires": [
+        ["b5713196.4576a"]
+    ]
+}, {
+    "id": "b5713196.4576a",
+    "type": "mqtt out",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "topic": "CapteurParking",
+    "qos": "",
+    "retain": "",
+    "broker": "8d4da33c.cb6318",
+    "x": 1160,
+    "y": 60,
+    "wires": []
+}, {
+    "id": "846e6074.16db38",
+    "type": "ui_button",
+    "z": "bd329ca2.49e1c",
+    "name": "Envoyer entrée",
+    "group": "bc3f12fa.6421d8",
+    "order": 6,
+    "width": 0,
+    "height": 0,
+    "passthru": false,
+    "label": "Envoyer entrée",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "",
+    "icon": "",
+    "payload": "",
+    "payloadType": "str",
+    "topic": "topic",
+    "topicType": "msg",
+    "x": 900,
     "y": 300,
+    "wires": [
+        ["dd32e138.5eb33"]
+    ]
+}, {
+    "id": "dd32e138.5eb33",
+    "type": "function",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdParking\"),\"type\":\"in\"}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 1080,
+    "y": 300,
+    "wires": [
+        ["a020d012.cb93f"]
+    ]
+}, {
+    "id": "a020d012.cb93f",
+    "type": "mqtt out",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "topic": "CapteurParking",
+    "qos": "",
+    "retain": "",
+    "broker": "8d4da33c.cb6318",
+    "x": 1240,
+    "y": 300,
+    "wires": []
+}, {
+    "id": "6688c6a1.577478",
+    "type": "ui_button",
+    "z": "bd329ca2.49e1c",
+    "name": "Envoyer sortie",
+    "group": "bc3f12fa.6421d8",
+    "order": 8,
+    "width": 0,
+    "height": 0,
+    "passthru": false,
+    "label": "Envoyer sortie",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "",
+    "icon": "",
+    "payload": "",
+    "payloadType": "str",
+    "topic": "topic",
+    "topicType": "msg",
+    "x": 900,
+    "y": 360,
+    "wires": [
+        ["cc496d7b.3d7a2"]
+    ]
+}, {
+    "id": "cc496d7b.3d7a2",
+    "type": "function",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdParking\"),\"type\":\"out\"}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 1080,
+    "y": 360,
+    "wires": [
+        ["b506e3aa.c5874"]
+    ]
+}, {
+    "id": "b506e3aa.c5874",
+    "type": "mqtt out",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "topic": "CapteurParking",
+    "qos": "",
+    "retain": "",
+    "broker": "8d4da33c.cb6318",
+    "x": 1240,
+    "y": 360,
+    "wires": []
+}, {
+    "id": "f8880988.3c8998",
+    "type": "comment",
+    "z": "bd329ca2.49e1c",
+    "name": "Envoye une entrée ou une sortie après avoir appuyer les boutons",
+    "info": "",
+    "x": 1060,
+    "y": 260,
+    "wires": []
+}, {
+    "id": "d5ed3ca5.ab1bd",
+    "type": "mongodb in",
+    "z": "868e002.b1115",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "",
+    "collection": "parkings",
+    "operation": "find",
+    "x": 250,
+    "y": 460,
+    "wires": [
+        ["ab5aa5f5.1afa08"]
+    ]
+}, {
+    "id": "effc5169.af7188",
+    "type": "inject",
+    "z": "868e002.b1115",
+    "name": "",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{}",
+    "payloadType": "json",
+    "x": 90,
+    "y": 460,
+    "wires": [
+        ["d5ed3ca5.ab1bd"]
+    ]
+}, {
+    "id": "ab5aa5f5.1afa08",
+    "type": "function",
+    "z": "868e002.b1115",
+    "name": "",
+    "func": "\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 440,
+    "y": 460,
+    "wires": [
+        ["729811d8.3241e8"]
+    ]
+}, {
+    "id": "729811d8.3241e8",
+    "type": "debug",
+    "z": "868e002.b1115",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 620,
+    "y": 460,
+    "wires": []
+}, {
+    "id": "caaf63d1.e405c",
+    "type": "debug",
+    "z": "868e002.b1115",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 790,
+    "y": 560,
+    "wires": []
+}, {
+    "id": "eb4839f2.0c807",
+    "type": "mongodb in",
+    "z": "868e002.b1115",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "",
+    "collection": "parkings",
+    "operation": "find",
+    "x": 430,
+    "y": 560,
+    "wires": [
+        ["37a5b80d.0cb6a8"]
+    ]
+}, {
+    "id": "8a794e0b.606948",
+    "type": "function",
+    "z": "868e002.b1115",
+    "name": "",
+    "func": "msg.payload = {\"sensorIdArray\" :\"5_in\"} \nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 260,
+    "y": 560,
+    "wires": [
+        ["eb4839f2.0c807"]
+    ]
+}, {
+    "id": "b74de680.8c45d8",
+    "type": "inject",
+    "z": "868e002.b1115",
+    "name": "",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 90,
+    "y": 560,
+    "wires": [
+        ["8a794e0b.606948"]
+    ]
+}, {
+    "id": "37a5b80d.0cb6a8",
+    "type": "change",
+    "z": "868e002.b1115",
+    "name": "",
+    "rules": [{
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload[0].sensorsDatas",
+        "tot": "msg"
+    }],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 620,
+    "y": 560,
+    "wires": [
+        ["caaf63d1.e405c"]
+    ]
+}, {
+    "id": "4e1aa17a.c5d0c",
+    "type": "ui_text_input",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "label": "ID capteur",
+    "tooltip": "",
+    "group": "bc3f12fa.6421d8",
+    "order": 1,
+    "width": 0,
+    "height": 0,
+    "passthru": true,
+    "mode": "text",
+    "delay": "0",
+    "topic": "topic",
+    "topicType": "msg",
+    "x": 890,
+    "y": 160,
+    "wires": [
+        ["1a2e983d.327c78", "53bc9f5a.44787"]
+    ]
+}, {
+    "id": "a891eb6f.2f97c",
+    "type": "mongodb in",
+    "z": "bd329ca2.49e1c",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "find",
+    "collection": "commerces",
+    "operation": "find",
+    "x": 1190,
+    "y": 160,
+    "wires": [
+        ["aa71d2cc.04e45"]
+    ]
+}, {
+    "id": "1a2e983d.327c78",
+    "type": "function",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "func": "msg.payload = {\"sensorIdArray\" :msg.payload} \nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 1060,
+    "y": 160,
+    "wires": [
+        ["a891eb6f.2f97c"]
+    ]
+}, {
+    "id": "aa71d2cc.04e45",
+    "type": "function",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "func": "commerce = msg.payload[0];\n\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\nreturn [ msg_name ,msg_address, msg_city]",
+    "outputs": 3,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 1320,
+    "y": 160,
+    "wires": [
+        [],
+        [],
+        []
+    ]
+}, {
+    "id": "53bc9f5a.44787",
+    "type": "change",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "rules": [{
+        "t": "set",
+        "p": "sensorIdParking",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+    }],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1050,
+    "y": 220,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "b5455283.c50a58",
+    "type": "comment",
+    "z": "bd329ca2.49e1c",
+    "name": "Set flow.sensorId et Affichage des information du commerce",
+    "info": "",
+    "x": 1040,
+    "y": 120,
+    "wires": []
+}, {
+    "id": "18fcf99.7bd3086",
+    "type": "comment",
+    "z": "bd329ca2.49e1c",
+    "name": "Envoyer in au parking 0 via le capteur  \"0_in\"",
+    "info": "",
+    "x": 990,
+    "y": 20,
     "wires": []
 }]
