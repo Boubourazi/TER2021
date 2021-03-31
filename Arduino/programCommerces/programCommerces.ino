@@ -4,7 +4,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 //Sensor consts
-#define sensorID "3"
+#define sensorID "5_in"
 #define sensorType "in"
 //#define sensorType "out"
 
