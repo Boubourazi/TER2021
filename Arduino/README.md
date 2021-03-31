@@ -42,10 +42,10 @@ Vous pouvez maintenant relier par USB votre Arduino à votre ordinateur.
 
 ### Téléverser le code
 
-Ouvrez le programme programSujet.ino, rentrez les informations de votre Wifi, l'adresse IP de votre broker MQTT ainsi que les données relative au capteur en question.
+Ouvrez le programme programSujet.ino, rentrez les informations de votre Wifi, l'adresse IP de votre broker MQTT ainsi que les données relatives au capteur en question.
 
-Une fois cela fait cliquez en haut à gauche sur le bouton "Téléverser".
+Une fois cela fait, cliquez en haut à gauche sur le bouton "Téléverser".
 
 Une fois le programme sur l'ESP32, ouvrez le moniteur série en haut à droite, puis choisissez dans la liste déroulante en bas 115200 bauds.
 
-Vous devriez pouvoir passer votre main devant le capteur, et voir apparaître le message "Mouvement détecté"
+Vous devriez pouvoir passer votre main devant le capteur, et voir apparaître le message "Mouvement détecté". Les informations seront donc envoyées au broker.
