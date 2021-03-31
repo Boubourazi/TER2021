@@ -4,7 +4,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 //Sensor consts
-#define sensorID "3"
+#define sensorID "1_in"
 #define sensorType "in"
 //#define sensorType "out"
 
@@ -98,7 +98,7 @@ void loop()
 
   if (val == HIGH) {
     Serial.println("Mouvement détecté");
-    client.publish("CapteurParkings", "{\"sensorId\":\"" sensorID "\",\"type\":\"" sensorType "\"}");
+    client.publish("CapteurParking", "{\"sensorId\":\"" sensorID "\",\"type\":\"" sensorType "\"}");
   }
   delay(3000);
 }

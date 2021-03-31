@@ -16,4 +16,4 @@ topic : CapteurCommerce
  - remplir les champs Username et Password
     - Username : NodeRed 
     - Password : 9a7DkGcPOaW4JsEi
- - Deployer le changement avec le bouton Deploy en haut a doite de l'interface
+ - Deployer le changement avec le bouton Deploy en haut a droite de l'interface
