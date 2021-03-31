@@ -31,7 +31,8 @@ dependencies:
 
   mongo_dart: ^0.4.4
 
-  
+  animations: ^2.0.0
+
   google_fonts: ^1.0.0
 
   google_maps_flutter: ^2.0.1
@@ -63,8 +64,7 @@ flutter:
     - checkedIcon.png
     - crossedIcon.png
     - orangeIcon.png
-    - aiguille.png
-    - cadran.png
+
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

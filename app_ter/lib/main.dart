@@ -107,10 +107,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       Icons.list,
                     ),
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute<void>(
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(
                           builder: (BuildContext context) {
-                        return StoreList(snapshot.data);
-                      }));
+                            return StoreList(snapshot.data);
+                          },
+                        ),
+                      );
                     },
                   )
                 else
@@ -132,14 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ? Map(snapshot.data)
                     : snapshot.hasError
                         ? Text("Error mongo db")
-                        : Center(
-                            child: CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.blue),
-                              backgroundColor: Colors.blue[200],
-                              strokeWidth: 3,
-                            ),
-                          ),
+                        : Map([]),
                 ClipPath(
                   clipper: RoundedBottom(),
                   child: Container(
