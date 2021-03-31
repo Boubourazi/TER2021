@@ -67,6 +67,17 @@ class _MyHomePageState extends State<MyHomePage> {
     //this.loadJsonData();
   }
 
+  void loadMarkers() async {
+    this
+        ._connecter
+        .initialize()
+        .then((value) =>
+            this._connecter.db.collection("commerces").find().toList())
+        .then((value2) => this.setState(() {
+              this.data = value2;
+            }));
+  }
+
   void openDrawer() {
     this._scaffoldKey.currentState.openDrawer();
   }
