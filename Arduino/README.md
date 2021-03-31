@@ -20,7 +20,7 @@ Installer le driver CP210X : https://www.silabs.com/developers/usb-to-uart-bridg
 Sur Arduino IDE, et cliquez sur "Fichier" puis "Préférences". Dans le champ "URL de gestionnaire de cartes supplémentaires", entrez : https://dl.espressif.com/dl/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 
-Quittez la fenêtre, cliquez sur "Outils" puis "Gérer les bibliothèques", et installez les bibliothèque :
+Quittez la fenêtre, cliquez sur "Outils" puis "Gérer les bibliothèques", et installez les bibliothèques:
 - PubSubClient
 - ESP32
 
