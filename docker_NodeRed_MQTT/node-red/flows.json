@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": "8b9071f7.6ad848",
         "type": "tab",
         "label": "Reception données",
@@ -235,12 +234,12 @@
         "type": "function",
         "z": "8b9071f7.6ad848",
         "name": "",
-        "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorId\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type}} };\n\n\n\n\nreturn msg;\n\n",
+        "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorIdArray\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type, \"sensorId\":sensorId}} };\n\n\n\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 440,
+        "x": 420,
         "y": 40,
         "wires": [
             [
@@ -302,8 +301,7 @@
         "type": "inject",
         "z": "bd329ca2.49e1c",
         "name": "String sensorId and values",
-        "props": [
-            {
+        "props": [{
                 "p": "payload"
             },
             {
@@ -316,7 +314,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"sensorId\":\"15\",\"type\":\"in\"}",
+        "payload": "{\"sensorId\":\"16_in\",\"type\":\"in\"}",
         "payloadType": "str",
         "x": 170,
         "y": 60,
@@ -429,7 +427,7 @@
         "type": "function",
         "z": "bd329ca2.49e1c",
         "name": "",
-        "func": "msg.payload = {\"location\": flow.get(\"sensorId\"),\"type\":\"out\"}\nreturn msg;",
+        "func": "msg.payload = {\"sensorId\": flow.get(\"sensorId\"),\"type\":\"out\"}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -465,8 +463,7 @@
         "order": 0,
         "width": 0,
         "height": 0,
-        "options": [
-            {
+        "options": [{
                 "label": "Nom",
                 "value": "name",
                 "type": "text",
@@ -569,15 +566,13 @@
         "type": "change",
         "z": "868e002.b1115",
         "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "count",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
+        "rules": [{
+            "t": "set",
+            "p": "count",
+            "pt": "flow",
+            "to": "payload",
+            "tot": "msg"
+        }],
         "action": "",
         "property": "",
         "from": "",
@@ -594,15 +589,13 @@
         "type": "change",
         "z": "868e002.b1115",
         "name": "{}",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
+        "rules": [{
+            "t": "set",
+            "p": "payload",
+            "pt": "msg",
+            "to": "",
+            "tot": "str"
+        }],
         "action": "",
         "property": "",
         "from": "",
@@ -644,7 +637,7 @@
         "type": "function",
         "z": "868e002.b1115",
         "name": "",
-        "func": "var id = flow.get('count');\nmsg.payload._id = id;\nmsg.payload.sensorId = id.toString();\nmsg.payload.sensorsDatas = []\nreturn msg;",
+        "func": "var id = flow.get('count');\nmsg.payload._id = id;\nmsg.payload.sensorIdArray = [];\nmsg.payload.sensorIdArray.push(id.toString() + \"_in\");\nmsg.payload.sensorIdArray.push(id.toString() + \"_out\");\nmsg.payload.sensorsDatas = [];\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -680,8 +673,8 @@
         "name": "",
         "collection": "commerces",
         "operation": "find",
-        "x": 260,
-        "y": 220,
+        "x": 380,
+        "y": 260,
         "wires": [
             [
                 "a171fe9b.9482a8"
@@ -693,8 +686,7 @@
         "type": "inject",
         "z": "868e002.b1115",
         "name": "",
-        "props": [
-            {
+        "props": [{
                 "p": "payload"
             },
             {
@@ -709,8 +701,8 @@
         "topic": "",
         "payload": "{}",
         "payloadType": "json",
-        "x": 90,
-        "y": 220,
+        "x": 210,
+        "y": 260,
         "wires": [
             [
                 "59b881df.383ce"
@@ -727,8 +719,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 440,
-        "y": 220,
+        "x": 560,
+        "y": 260,
         "wires": [
             [
                 "854acb46.217a08"
@@ -747,8 +739,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 220,
+        "x": 740,
+        "y": 260,
         "wires": []
     },
     {
@@ -788,7 +780,8 @@
         "y": 200,
         "wires": [
             [
-                "ed38aea3.f478c"
+                "ed38aea3.f478c",
+                "389711be.66dcce"
             ]
         ]
     },
@@ -797,7 +790,7 @@
         "type": "function",
         "z": "bd329ca2.49e1c",
         "name": "",
-        "func": "msg.payload = {\"sensorId\" :msg.payload} \nreturn msg;",
+        "func": "msg.payload = {\"sensorIdArray\" :msg.payload} \nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -806,7 +799,8 @@
         "y": 200,
         "wires": [
             [
-                "6a2f6594.a3dd84"
+                "6a2f6594.a3dd84",
+                "df3b0528.eecab"
             ]
         ]
     },
@@ -815,7 +809,7 @@
         "type": "function",
         "z": "bd329ca2.49e1c",
         "name": "",
-        "func": "commerce = msg.payload[0];\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\naddress = commerce.address;\n\n//var msg1 = { payload:\"first out of output 1\" };\n//return [  msg1, msg2, msg3 , msg4 ];\n\nreturn [ msg_name ,msg_address, msg_city]",
+        "func": "commerce = msg.payload[0];\n\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\nreturn [ msg_name ,msg_address, msg_city]",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -887,15 +881,13 @@
         "type": "change",
         "z": "bd329ca2.49e1c",
         "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "sensorId",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
+        "rules": [{
+            "t": "set",
+            "p": "sensorId",
+            "pt": "flow",
+            "to": "payload",
+            "tot": "msg"
+        }],
         "action": "",
         "property": "",
         "from": "",
@@ -925,6 +917,116 @@
         "info": "",
         "x": 250,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7f418623.4f1a4",
+        "type": "debug",
+        "z": "868e002.b1115",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "5f1188f.16c7278",
+        "type": "mongodb in",
+        "z": "868e002.b1115",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "find",
+        "collection": "commerces",
+        "operation": "find",
+        "x": 550,
+        "y": 360,
+        "wires": [
+            [
+                "7f418623.4f1a4"
+            ]
+        ]
+    },
+    {
+        "id": "2300cd0.a610db4",
+        "type": "function",
+        "z": "868e002.b1115",
+        "name": "",
+        "func": "msg.payload = {\"sensorIdArray\" :\"16_in\"} \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "5f1188f.16c7278"
+            ]
+        ]
+    },
+    {
+        "id": "c0e2f22b.4bfc9",
+        "type": "inject",
+        "z": "868e002.b1115",
+        "name": "",
+        "props": [{
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "2300cd0.a610db4"
+            ]
+        ]
+    },
+    {
+        "id": "389711be.66dcce",
+        "type": "debug",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "df3b0528.eecab",
+        "type": "debug",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 140,
         "wires": []
     }
 ]
