@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
+  @override
+  _CustomDrawerState createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+  bool dal = false;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -22,7 +28,7 @@ class CustomDrawer extends StatelessWidget {
             onTap: () {},
             leading: Icon(Icons.account_circle),
             title: Text("Utilisateur"),
-          )
+          ),
         ],
       ),
     );
