@@ -1,1032 +1,896 @@
 [{
-        "id": "8b9071f7.6ad848",
-        "type": "tab",
-        "label": "Reception données",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "bd329ca2.49e1c",
-        "type": "tab",
-        "label": "Simulation Capteur",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "868e002.b1115",
-        "type": "tab",
-        "label": "Modification BD",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "8d4da33c.cb6318",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "mosquitto",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "26e813b1.5ac7d4",
-        "type": "mongodb",
-        "hostname": "cluster0.kiq9v.mongodb.net",
-        "topology": "dnscluster",
-        "connectOptions": "retryWrites=true&w=majority",
-        "port": "27017",
-        "db": "TER",
-        "name": "DB_TER"
-    },
-    {
-        "id": "54619bbd.4386e4",
-        "type": "ui_tab",
-        "name": "Modification BD",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "ab6d3217.b3c21",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
+    "id": "8b9071f7.6ad848",
+    "type": "tab",
+    "label": "Reception données",
+    "disabled": false,
+    "info": ""
+}, {
+    "id": "bd329ca2.49e1c",
+    "type": "tab",
+    "label": "Simulation Capteur",
+    "disabled": false,
+    "info": ""
+}, {
+    "id": "868e002.b1115",
+    "type": "tab",
+    "label": "Modification BD",
+    "disabled": false,
+    "info": ""
+}, {
+    "id": "8d4da33c.cb6318",
+    "type": "mqtt-broker",
+    "name": "",
+    "broker": "mosquitto",
+    "port": "1883",
+    "clientid": "",
+    "usetls": false,
+    "compatmode": true,
+    "keepalive": "60",
+    "cleansession": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthPayload": "",
+    "closeTopic": "",
+    "closeQos": "0",
+    "closePayload": "",
+    "willTopic": "",
+    "willQos": "0",
+    "willPayload": ""
+}, {
+    "id": "26e813b1.5ac7d4",
+    "type": "mongodb",
+    "hostname": "cluster0.kiq9v.mongodb.net",
+    "topology": "dnscluster",
+    "connectOptions": "retryWrites=true&w=majority",
+    "port": "27017",
+    "db": "TER",
+    "name": "DB_TER"
+}, {
+    "id": "54619bbd.4386e4",
+    "type": "ui_tab",
+    "name": "Modification BD",
+    "icon": "dashboard",
+    "disabled": false,
+    "hidden": false
+}, {
+    "id": "ab6d3217.b3c21",
+    "type": "ui_base",
+    "theme": {
+        "name": "theme-light",
+        "lightTheme": {
+            "default": "#0094CE",
+            "baseColor": "#0094CE",
+            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+            "edited": true,
+            "reset": false
+        },
+        "darkTheme": {
+            "default": "#097479",
+            "baseColor": "#097479",
+            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+            "edited": false
+        },
+        "customTheme": {
+            "name": "Untitled Theme 1",
+            "default": "#4B7930",
+            "baseColor": "#4B7930",
+            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+        },
+        "themeState": {
+            "base-color": {
                 "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "value": "#0094CE",
                 "edited": false
             },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            "page-titlebar-backgroundColor": {
+                "value": "#0094CE",
+                "edited": false
             },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
+            "page-backgroundColor": {
+                "value": "#fafafa",
+                "edited": false
             },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey"
+            "page-sidebar-backgroundColor": {
+                "value": "#ffffff",
+                "edited": false
+            },
+            "group-textColor": {
+                "value": "#1bbfff",
+                "edited": false
+            },
+            "group-borderColor": {
+                "value": "#ffffff",
+                "edited": false
+            },
+            "group-backgroundColor": {
+                "value": "#ffffff",
+                "edited": false
+            },
+            "widget-textColor": {
+                "value": "#111111",
+                "edited": false
+            },
+            "widget-backgroundColor": {
+                "value": "#0094ce",
+                "edited": false
+            },
+            "widget-borderColor": {
+                "value": "#ffffff",
+                "edited": false
+            },
+            "base-font": {
+                "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
             }
         },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
+        "angularTheme": {
+            "primary": "indigo",
+            "accents": "blue",
+            "warn": "red",
+            "background": "grey"
         }
     },
-    {
-        "id": "537a90e9.949958",
-        "type": "ui_group",
-        "name": "Entrée",
-        "tab": "ef2f15.4ec0a0e8",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "f515e918.2b9d08",
-        "type": "ui_group",
-        "name": "Sortie",
-        "tab": "ef2f15.4ec0a0e8",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "c77967b8.a0576",
-        "type": "ui_group",
-        "name": "Ajouter Commerce",
-        "tab": "54619bbd.4386e4",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "ef2f15.4ec0a0e8",
-        "type": "ui_tab",
-        "name": "Simulation capteur",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "6fea2f48.a2d1d",
-        "type": "ui_group",
-        "name": "Modifier commerce",
-        "tab": "54619bbd.4386e4",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "404d8b60.0beb24",
-        "type": "ui_group",
-        "name": "Sélection",
-        "tab": "ef2f15.4ec0a0e8",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "b7b8bdf4.c4f7d8",
-        "type": "mqtt in",
-        "z": "8b9071f7.6ad848",
-        "name": "",
-        "topic": "CapteurCommerce",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "8d4da33c.cb6318",
-        "x": 110,
-        "y": 40,
-        "wires": [
-            [
-                "e3e72668.65d148"
-            ]
-        ]
-    },
-    {
-        "id": "ff7d6df5.f4b6d",
-        "type": "function",
-        "z": "8b9071f7.6ad848",
-        "name": "",
-        "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorIdArray\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type, \"sensorId\":sensorId}} };\n\n\n\n\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 420,
-        "y": 40,
-        "wires": [
-            [
-                "88f4ef15.a371e8",
-                "6f84d98b.f72138"
-            ]
-        ]
-    },
-    {
-        "id": "e3e72668.65d148",
-        "type": "json",
-        "z": "8b9071f7.6ad848",
-        "name": "",
-        "property": "payload",
-        "action": "obj",
-        "pretty": false,
-        "x": 290,
-        "y": 40,
-        "wires": [
-            [
-                "ff7d6df5.f4b6d"
-            ]
-        ]
-    },
-    {
-        "id": "88f4ef15.a371e8",
-        "type": "mongodb out",
-        "z": "8b9071f7.6ad848",
-        "mongodb": "26e813b1.5ac7d4",
-        "name": "",
-        "collection": "commerces",
-        "payonly": false,
-        "upsert": true,
-        "multi": true,
-        "operation": "update",
-        "x": 680,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "6f84d98b.f72138",
-        "type": "debug",
-        "z": "8b9071f7.6ad848",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "3298def5.28a022",
-        "type": "inject",
-        "z": "bd329ca2.49e1c",
-        "name": "String sensorId and values",
-        "props": [{
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"sensorId\":\"16_in\",\"type\":\"in\"}",
-        "payloadType": "str",
-        "x": 170,
-        "y": 60,
-        "wires": [
-            [
-                "4db39dae.2616f4"
-            ]
-        ]
-    },
-    {
-        "id": "4db39dae.2616f4",
-        "type": "mqtt out",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "topic": "CapteurCommerce",
-        "qos": "",
-        "retain": "",
-        "broker": "8d4da33c.cb6318",
-        "x": 390,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "e4a9f734.5f22",
-        "type": "ui_button",
-        "z": "bd329ca2.49e1c",
-        "name": "Envoyer entrée",
-        "group": "537a90e9.949958",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Envoyer",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 120,
-        "y": 340,
-        "wires": [
-            [
-                "e3047bec.9f4808"
-            ]
-        ]
-    },
-    {
-        "id": "e3047bec.9f4808",
-        "type": "function",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "func": "msg.payload = {\"sensorId\": flow.get(\"sensorId\"),\"type\":\"in\"}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 300,
-        "y": 340,
-        "wires": [
-            [
-                "dd2c66a7.d7077"
-            ]
-        ]
-    },
-    {
-        "id": "dd2c66a7.d7077",
-        "type": "mqtt out",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "topic": "CapteurCommerce",
-        "qos": "",
-        "retain": "",
-        "broker": "8d4da33c.cb6318",
-        "x": 470,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "287cb964.5d9536",
-        "type": "ui_button",
-        "z": "bd329ca2.49e1c",
-        "name": "Envoyer sortie",
-        "group": "f515e918.2b9d08",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Envoyer",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 120,
-        "y": 400,
-        "wires": [
-            [
-                "40b15ee1.336c7"
-            ]
-        ]
-    },
-    {
-        "id": "40b15ee1.336c7",
-        "type": "function",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "func": "msg.payload = {\"sensorId\": flow.get(\"sensorId\"),\"type\":\"out\"}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 300,
-        "y": 400,
-        "wires": [
-            [
-                "3b30a00b.c66e38"
-            ]
-        ]
-    },
-    {
-        "id": "3b30a00b.c66e38",
-        "type": "mqtt out",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "topic": "CapteurCommerce",
-        "qos": "",
-        "retain": "",
-        "broker": "8d4da33c.cb6318",
-        "x": 470,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "f15c18de.de80d8",
-        "type": "ui_form",
-        "z": "868e002.b1115",
-        "name": "Formulaire ajout commerce",
-        "label": "",
-        "group": "c77967b8.a0576",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "options": [{
-                "label": "Nom",
-                "value": "name",
-                "type": "text",
-                "required": false,
-                "rows": null
-            },
-            {
-                "label": "Adresse",
-                "value": "address",
-                "type": "text",
-                "required": false,
-                "rows": null
-            },
-            {
-                "label": "Code postal",
-                "value": "postal_code",
-                "type": "number",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Ville",
-                "value": "city",
-                "type": "text",
-                "required": false,
-                "rows": null
-            },
-            {
-                "label": "Latitude",
-                "value": "latitude",
-                "type": "number",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Longitude",
-                "value": "longitude",
-                "type": "number",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Num Telephone",
-                "value": "phone",
-                "type": "text",
-                "required": false,
-                "rows": null
-            },
-            {
-                "label": "Capacité max",
-                "value": "maxPeopleCapacity",
-                "type": "number",
-                "required": true,
-                "rows": null
-            }
-        ],
-        "formValue": {
-            "name": "",
-            "address": "",
-            "postal_code": "",
-            "city": "",
-            "latitude": "",
-            "longitude": "",
-            "phone": "",
-            "maxPeopleCapacity": ""
-        },
-        "payload": "",
-        "submit": "Envoyer",
-        "cancel": "Annuler",
-        "topic": "topic",
-        "topicType": "msg",
-        "splitLayout": "",
-        "x": 140,
-        "y": 80,
-        "wires": [
-            [
-                "1d01d927.9d4777",
-                "ebef0046.00fd18"
-            ]
-        ]
-    },
-    {
-        "id": "4ee7f826.0fc258",
-        "type": "mongodb in",
-        "z": "868e002.b1115",
-        "mongodb": "26e813b1.5ac7d4",
-        "name": "count all commerces",
-        "collection": "commerces",
-        "operation": "count",
-        "x": 520,
-        "y": 120,
-        "wires": [
-            [
-                "1fa55018.f11c78"
-            ]
-        ]
-    },
-    {
-        "id": "1fa55018.f11c78",
-        "type": "change",
-        "z": "868e002.b1115",
-        "name": "",
-        "rules": [{
-            "t": "set",
-            "p": "count",
-            "pt": "flow",
-            "to": "payload",
-            "tot": "msg"
-        }],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 740,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1d01d927.9d4777",
-        "type": "change",
-        "z": "868e002.b1115",
-        "name": "{}",
-        "rules": [{
-            "t": "set",
-            "p": "payload",
-            "pt": "msg",
-            "to": "",
-            "tot": "str"
-        }],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 350,
-        "y": 120,
-        "wires": [
-            [
-                "4ee7f826.0fc258"
-            ]
-        ]
-    },
-    {
-        "id": "ebef0046.00fd18",
-        "type": "delay",
-        "z": "868e002.b1115",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "50",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 530,
-        "y": 80,
-        "wires": [
-            [
-                "fc90af3c.ca1a08"
-            ]
-        ]
-    },
-    {
-        "id": "fc90af3c.ca1a08",
-        "type": "function",
-        "z": "868e002.b1115",
-        "name": "",
-        "func": "var id = flow.get('count');\nmsg.payload._id = id;\nmsg.payload.sensorIdArray = [];\nmsg.payload.sensorIdArray.push(id.toString() + \"_in\");\nmsg.payload.sensorIdArray.push(id.toString() + \"_out\");\nmsg.payload.sensorsDatas = [];\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 920,
-        "y": 80,
-        "wires": [
-            [
-                "330fe4f7.3ef44c"
-            ]
-        ]
-    },
-    {
-        "id": "330fe4f7.3ef44c",
-        "type": "mongodb out",
-        "z": "868e002.b1115",
-        "mongodb": "26e813b1.5ac7d4",
-        "name": "",
-        "collection": "commerces",
-        "payonly": true,
-        "upsert": false,
-        "multi": false,
-        "operation": "insert",
-        "x": 1120,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "59b881df.383ce",
-        "type": "mongodb in",
-        "z": "868e002.b1115",
-        "mongodb": "26e813b1.5ac7d4",
-        "name": "",
-        "collection": "commerces",
-        "operation": "find",
-        "x": 380,
-        "y": 260,
-        "wires": [
-            [
-                "a171fe9b.9482a8"
-            ]
-        ]
-    },
-    {
-        "id": "3beeae30.86d1da",
-        "type": "inject",
-        "z": "868e002.b1115",
-        "name": "",
-        "props": [{
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{}",
-        "payloadType": "json",
-        "x": 210,
-        "y": 260,
-        "wires": [
-            [
-                "59b881df.383ce"
-            ]
-        ]
-    },
-    {
-        "id": "a171fe9b.9482a8",
-        "type": "function",
-        "z": "868e002.b1115",
-        "name": "",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 560,
-        "y": 260,
-        "wires": [
-            [
-                "854acb46.217a08"
-            ]
-        ]
-    },
-    {
-        "id": "854acb46.217a08",
-        "type": "debug",
-        "z": "868e002.b1115",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "45169083.d3a4a",
-        "type": "ui_text_input",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "label": "ID capteur",
-        "tooltip": "",
-        "group": "404d8b60.0beb24",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "mode": "text",
-        "delay": "0",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 110,
-        "y": 200,
-        "wires": [
-            [
-                "c52df6fa.e57de8",
-                "4ce17ea1.7d4758"
-            ]
-        ]
-    },
-    {
-        "id": "6a2f6594.a3dd84",
-        "type": "mongodb in",
-        "z": "bd329ca2.49e1c",
-        "mongodb": "26e813b1.5ac7d4",
-        "name": "find",
-        "collection": "commerces",
-        "operation": "find",
-        "x": 490,
-        "y": 200,
-        "wires": [
-            [
-                "ed38aea3.f478c",
-                "389711be.66dcce"
-            ]
-        ]
-    },
-    {
-        "id": "c52df6fa.e57de8",
-        "type": "function",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "func": "msg.payload = {\"sensorIdArray\" :msg.payload} \nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 300,
-        "y": 200,
-        "wires": [
-            [
-                "6a2f6594.a3dd84",
-                "df3b0528.eecab"
-            ]
-        ]
-    },
-    {
-        "id": "ed38aea3.f478c",
-        "type": "function",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "func": "commerce = msg.payload[0];\n\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\nreturn [ msg_name ,msg_address, msg_city]",
-        "outputs": 3,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 640,
-        "y": 200,
-        "wires": [
-            [
-                "c2c5becf.71f72"
-            ],
-            [
-                "59d20b0e.a59a9c"
-            ],
-            [
-                "bc30e2e2.62dfb"
-            ]
-        ]
-    },
-    {
-        "id": "c2c5becf.71f72",
-        "type": "ui_text",
-        "z": "bd329ca2.49e1c",
-        "group": "404d8b60.0beb24",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Nom:",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 790,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "59d20b0e.a59a9c",
-        "type": "ui_text",
-        "z": "bd329ca2.49e1c",
-        "group": "404d8b60.0beb24",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Adresse:",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 800,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "bc30e2e2.62dfb",
-        "type": "ui_text",
-        "z": "bd329ca2.49e1c",
-        "group": "404d8b60.0beb24",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Ville:",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 790,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "4ce17ea1.7d4758",
-        "type": "change",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "rules": [{
-            "t": "set",
-            "p": "sensorId",
-            "pt": "flow",
-            "to": "payload",
-            "tot": "msg"
-        }],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 330,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1502cc31.a8cc6c",
-        "type": "comment",
-        "z": "bd329ca2.49e1c",
-        "name": "Click to send a message",
-        "info": "",
-        "x": 150,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "2d966a2d.bb636e",
-        "type": "comment",
-        "z": "bd329ca2.49e1c",
-        "name": "Set flow.sensorId and display information about the shop",
-        "info": "",
-        "x": 250,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "7f418623.4f1a4",
-        "type": "debug",
-        "z": "868e002.b1115",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 770,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "5f1188f.16c7278",
-        "type": "mongodb in",
-        "z": "868e002.b1115",
-        "mongodb": "26e813b1.5ac7d4",
-        "name": "find",
-        "collection": "commerces",
-        "operation": "find",
-        "x": 550,
-        "y": 360,
-        "wires": [
-            [
-                "7f418623.4f1a4"
-            ]
-        ]
-    },
-    {
-        "id": "2300cd0.a610db4",
-        "type": "function",
-        "z": "868e002.b1115",
-        "name": "",
-        "func": "msg.payload = {\"sensorIdArray\" :\"16_in\"} \nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 380,
-        "y": 360,
-        "wires": [
-            [
-                "5f1188f.16c7278"
-            ]
-        ]
-    },
-    {
-        "id": "c0e2f22b.4bfc9",
-        "type": "inject",
-        "z": "868e002.b1115",
-        "name": "",
-        "props": [{
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 360,
-        "wires": [
-            [
-                "2300cd0.a610db4"
-            ]
-        ]
-    },
-    {
-        "id": "389711be.66dcce",
-        "type": "debug",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "df3b0528.eecab",
-        "type": "debug",
-        "z": "bd329ca2.49e1c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 140,
-        "wires": []
+    "site": {
+        "name": "Node-RED Dashboard",
+        "hideToolbar": "false",
+        "allowSwipe": "false",
+        "lockMenu": "false",
+        "allowTempTheme": "true",
+        "dateFormat": "DD/MM/YYYY",
+        "sizes": {
+            "sx": 48,
+            "sy": 48,
+            "gx": 6,
+            "gy": 6,
+            "cx": 6,
+            "cy": 6,
+            "px": 0,
+            "py": 0
+        }
     }
-]
+}, {
+    "id": "c77967b8.a0576",
+    "type": "ui_group",
+    "name": "Ajouter Commerce",
+    "tab": "54619bbd.4386e4",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+}, {
+    "id": "ef2f15.4ec0a0e8",
+    "type": "ui_tab",
+    "name": "Simulation capteur",
+    "icon": "dashboard",
+    "disabled": false,
+    "hidden": false
+}, {
+    "id": "6fea2f48.a2d1d",
+    "type": "ui_group",
+    "name": "Modifier commerce",
+    "tab": "54619bbd.4386e4",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+}, {
+    "id": "bc954448.141188",
+    "type": "ui_group",
+    "name": "Capteur commerce",
+    "tab": "ef2f15.4ec0a0e8",
+    "order": 4,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+}, {
+    "id": "7afdaad1.d16124",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "deb6180f.95e568",
+    "order": 2,
+    "width": 1,
+    "height": 1
+}, {
+    "id": "e13b44fb.61a1b8",
+    "type": "ui_spacer",
+    "name": "spacer",
+    "group": "bc954448.141188",
+    "order": 5,
+    "width": 1,
+    "height": 1
+}, {
+    "id": "b7b8bdf4.c4f7d8",
+    "type": "mqtt in",
+    "z": "8b9071f7.6ad848",
+    "name": "",
+    "topic": "CapteurCommerce",
+    "qos": "2",
+    "datatype": "auto",
+    "broker": "8d4da33c.cb6318",
+    "x": 110,
+    "y": 40,
+    "wires": [
+        ["e3e72668.65d148"]
+    ]
+}, {
+    "id": "ff7d6df5.f4b6d",
+    "type": "function",
+    "z": "8b9071f7.6ad848",
+    "name": "",
+    "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorIdArray\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type, \"sensorId\":sensorId}} };\n\n\n\n\nreturn msg;\n\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 420,
+    "y": 40,
+    "wires": [
+        ["88f4ef15.a371e8", "6f84d98b.f72138"]
+    ]
+}, {
+    "id": "e3e72668.65d148",
+    "type": "json",
+    "z": "8b9071f7.6ad848",
+    "name": "",
+    "property": "payload",
+    "action": "obj",
+    "pretty": false,
+    "x": 290,
+    "y": 40,
+    "wires": [
+        ["ff7d6df5.f4b6d"]
+    ]
+}, {
+    "id": "88f4ef15.a371e8",
+    "type": "mongodb out",
+    "z": "8b9071f7.6ad848",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "",
+    "collection": "commerces",
+    "payonly": false,
+    "upsert": false,
+    "multi": false,
+    "operation": "update",
+    "x": 680,
+    "y": 40,
+    "wires": []
+}, {
+    "id": "6f84d98b.f72138",
+    "type": "debug",
+    "z": "8b9071f7.6ad848",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 630,
+    "y": 100,
+    "wires": []
+}, {
+    "id": "3298def5.28a022",
+    "type": "inject",
+    "z": "bd329ca2.49e1c",
+    "name": "String sensorId and values",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"sensorId\":\"0_in\",\"type\":\"in\"}",
+    "payloadType": "str",
+    "x": 170,
+    "y": 60,
+    "wires": [
+        ["4db39dae.2616f4"]
+    ]
+}, {
+    "id": "4db39dae.2616f4",
+    "type": "mqtt out",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "topic": "CapteurCommerce",
+    "qos": "",
+    "retain": "",
+    "broker": "8d4da33c.cb6318",
+    "x": 390,
+    "y": 60,
+    "wires": []
+}, {
+    "id": "e4a9f734.5f22",
+    "type": "ui_button",
+    "z": "bd329ca2.49e1c",
+    "name": "Envoyer entrée",
+    "group": "bc954448.141188",
+    "order": 6,
+    "width": 0,
+    "height": 0,
+    "passthru": false,
+    "label": "Envoyer entrée",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "",
+    "icon": "",
+    "payload": "",
+    "payloadType": "str",
+    "topic": "topic",
+    "topicType": "msg",
+    "x": 120,
+    "y": 340,
+    "wires": [
+        ["e3047bec.9f4808"]
+    ]
+}, {
+    "id": "e3047bec.9f4808",
+    "type": "function",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorId\"),\"type\":\"in\"}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 300,
+    "y": 340,
+    "wires": [
+        ["dd2c66a7.d7077"]
+    ]
+}, {
+    "id": "dd2c66a7.d7077",
+    "type": "mqtt out",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "topic": "CapteurCommerce",
+    "qos": "",
+    "retain": "",
+    "broker": "8d4da33c.cb6318",
+    "x": 470,
+    "y": 340,
+    "wires": []
+}, {
+    "id": "287cb964.5d9536",
+    "type": "ui_button",
+    "z": "bd329ca2.49e1c",
+    "name": "Envoyer sortie",
+    "group": "bc954448.141188",
+    "order": 8,
+    "width": 0,
+    "height": 0,
+    "passthru": false,
+    "label": "Envoyer sortie",
+    "tooltip": "",
+    "color": "",
+    "bgcolor": "",
+    "icon": "",
+    "payload": "",
+    "payloadType": "str",
+    "topic": "topic",
+    "topicType": "msg",
+    "x": 120,
+    "y": 400,
+    "wires": [
+        ["40b15ee1.336c7"]
+    ]
+}, {
+    "id": "40b15ee1.336c7",
+    "type": "function",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorId\"),\"type\":\"out\"}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 300,
+    "y": 400,
+    "wires": [
+        ["3b30a00b.c66e38"]
+    ]
+}, {
+    "id": "3b30a00b.c66e38",
+    "type": "mqtt out",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "topic": "CapteurCommerce",
+    "qos": "",
+    "retain": "",
+    "broker": "8d4da33c.cb6318",
+    "x": 470,
+    "y": 400,
+    "wires": []
+}, {
+    "id": "f15c18de.de80d8",
+    "type": "ui_form",
+    "z": "868e002.b1115",
+    "name": "Formulaire ajout commerce",
+    "label": "",
+    "group": "c77967b8.a0576",
+    "order": 0,
+    "width": 0,
+    "height": 0,
+    "options": [{
+        "label": "Nom",
+        "value": "name",
+        "type": "text",
+        "required": false,
+        "rows": null
+    }, {
+        "label": "Adresse",
+        "value": "address",
+        "type": "text",
+        "required": false,
+        "rows": null
+    }, {
+        "label": "Code postal",
+        "value": "postal_code",
+        "type": "number",
+        "required": true,
+        "rows": null
+    }, {
+        "label": "Ville",
+        "value": "city",
+        "type": "text",
+        "required": false,
+        "rows": null
+    }, {
+        "label": "Latitude",
+        "value": "latitude",
+        "type": "number",
+        "required": true,
+        "rows": null
+    }, {
+        "label": "Longitude",
+        "value": "longitude",
+        "type": "number",
+        "required": true,
+        "rows": null
+    }, {
+        "label": "Num Telephone",
+        "value": "phone",
+        "type": "text",
+        "required": false,
+        "rows": null
+    }, {
+        "label": "Capacité max",
+        "value": "maxPeopleCapacity",
+        "type": "number",
+        "required": true,
+        "rows": null
+    }],
+    "formValue": {
+        "name": "",
+        "address": "",
+        "postal_code": "",
+        "city": "",
+        "latitude": "",
+        "longitude": "",
+        "phone": "",
+        "maxPeopleCapacity": ""
+    },
+    "payload": "",
+    "submit": "Envoyer",
+    "cancel": "Annuler",
+    "topic": "topic",
+    "topicType": "msg",
+    "splitLayout": "",
+    "x": 140,
+    "y": 80,
+    "wires": [
+        ["1d01d927.9d4777", "ebef0046.00fd18"]
+    ]
+}, {
+    "id": "4ee7f826.0fc258",
+    "type": "mongodb in",
+    "z": "868e002.b1115",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "count all commerces",
+    "collection": "commerces",
+    "operation": "count",
+    "x": 520,
+    "y": 120,
+    "wires": [
+        ["1fa55018.f11c78"]
+    ]
+}, {
+    "id": "1fa55018.f11c78",
+    "type": "change",
+    "z": "868e002.b1115",
+    "name": "",
+    "rules": [{
+        "t": "set",
+        "p": "count",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+    }],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 740,
+    "y": 120,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "1d01d927.9d4777",
+    "type": "change",
+    "z": "868e002.b1115",
+    "name": "{}",
+    "rules": [{
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "",
+        "tot": "str"
+    }],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 120,
+    "wires": [
+        ["4ee7f826.0fc258"]
+    ]
+}, {
+    "id": "ebef0046.00fd18",
+    "type": "delay",
+    "z": "868e002.b1115",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "50",
+    "timeoutUnits": "milliseconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 530,
+    "y": 80,
+    "wires": [
+        ["fc90af3c.ca1a08"]
+    ]
+}, {
+    "id": "fc90af3c.ca1a08",
+    "type": "function",
+    "z": "868e002.b1115",
+    "name": "",
+    "func": "var id = flow.get('count');\nmsg.payload._id = id;\nmsg.payload.sensorIdArray = [];\nmsg.payload.sensorIdArray.push(id.toString() + \"_in\");\nmsg.payload.sensorIdArray.push(id.toString() + \"_out\");\nmsg.payload.sensorsDatas = [];\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 800,
+    "y": 80,
+    "wires": [
+        ["330fe4f7.3ef44c"]
+    ]
+}, {
+    "id": "330fe4f7.3ef44c",
+    "type": "mongodb out",
+    "z": "868e002.b1115",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "",
+    "collection": "commerces",
+    "payonly": true,
+    "upsert": false,
+    "multi": false,
+    "operation": "insert",
+    "x": 1000,
+    "y": 80,
+    "wires": []
+}, {
+    "id": "59b881df.383ce",
+    "type": "mongodb in",
+    "z": "868e002.b1115",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "",
+    "collection": "commerces",
+    "operation": "find",
+    "x": 260,
+    "y": 220,
+    "wires": [
+        ["a171fe9b.9482a8"]
+    ]
+}, {
+    "id": "3beeae30.86d1da",
+    "type": "inject",
+    "z": "868e002.b1115",
+    "name": "",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{}",
+    "payloadType": "json",
+    "x": 90,
+    "y": 220,
+    "wires": [
+        ["59b881df.383ce"]
+    ]
+}, {
+    "id": "a171fe9b.9482a8",
+    "type": "function",
+    "z": "868e002.b1115",
+    "name": "",
+    "func": "\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 440,
+    "y": 220,
+    "wires": [
+        ["854acb46.217a08"]
+    ]
+}, {
+    "id": "854acb46.217a08",
+    "type": "debug",
+    "z": "868e002.b1115",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 620,
+    "y": 220,
+    "wires": []
+}, {
+    "id": "45169083.d3a4a",
+    "type": "ui_text_input",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "label": "ID capteur",
+    "tooltip": "",
+    "group": "bc954448.141188",
+    "order": 1,
+    "width": 0,
+    "height": 0,
+    "passthru": true,
+    "mode": "text",
+    "delay": "0",
+    "topic": "topic",
+    "topicType": "msg",
+    "x": 110,
+    "y": 200,
+    "wires": [
+        ["c52df6fa.e57de8", "4ce17ea1.7d4758"]
+    ]
+}, {
+    "id": "6a2f6594.a3dd84",
+    "type": "mongodb in",
+    "z": "bd329ca2.49e1c",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "find",
+    "collection": "commerces",
+    "operation": "find",
+    "x": 490,
+    "y": 200,
+    "wires": [
+        ["ed38aea3.f478c"]
+    ]
+}, {
+    "id": "c52df6fa.e57de8",
+    "type": "function",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "func": "msg.payload = {\"sensorIdArray\" :msg.payload} \nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 300,
+    "y": 200,
+    "wires": [
+        ["6a2f6594.a3dd84"]
+    ]
+}, {
+    "id": "ed38aea3.f478c",
+    "type": "function",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "func": "commerce = msg.payload[0];\n\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\nreturn [ msg_name ,msg_address, msg_city]",
+    "outputs": 3,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 640,
+    "y": 200,
+    "wires": [
+        ["c2c5becf.71f72"],
+        ["59d20b0e.a59a9c"],
+        ["bc30e2e2.62dfb"]
+    ]
+}, {
+    "id": "c2c5becf.71f72",
+    "type": "ui_text",
+    "z": "bd329ca2.49e1c",
+    "group": "bc954448.141188",
+    "order": 2,
+    "width": 0,
+    "height": 0,
+    "name": "",
+    "label": "Nom:",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 790,
+    "y": 160,
+    "wires": []
+}, {
+    "id": "59d20b0e.a59a9c",
+    "type": "ui_text",
+    "z": "bd329ca2.49e1c",
+    "group": "bc954448.141188",
+    "order": 3,
+    "width": 0,
+    "height": 0,
+    "name": "",
+    "label": "Adresse:",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 800,
+    "y": 200,
+    "wires": []
+}, {
+    "id": "bc30e2e2.62dfb",
+    "type": "ui_text",
+    "z": "bd329ca2.49e1c",
+    "group": "bc954448.141188",
+    "order": 4,
+    "width": 0,
+    "height": 0,
+    "name": "",
+    "label": "Ville:",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "x": 790,
+    "y": 240,
+    "wires": []
+}, {
+    "id": "4ce17ea1.7d4758",
+    "type": "change",
+    "z": "bd329ca2.49e1c",
+    "name": "",
+    "rules": [{
+        "t": "set",
+        "p": "sensorId",
+        "pt": "flow",
+        "to": "payload",
+        "tot": "msg"
+    }],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 330,
+    "y": 240,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "1502cc31.a8cc6c",
+    "type": "comment",
+    "z": "bd329ca2.49e1c",
+    "name": "Envoyer in au commerce 0 via le capteur  \"0_in\"",
+    "info": "",
+    "x": 220,
+    "y": 20,
+    "wires": []
+}, {
+    "id": "2d966a2d.bb636e",
+    "type": "comment",
+    "z": "bd329ca2.49e1c",
+    "name": "Set flow.sensorId et Affichage des information du commerce",
+    "info": "",
+    "x": 260,
+    "y": 160,
+    "wires": []
+}, {
+    "id": "7f418623.4f1a4",
+    "type": "debug",
+    "z": "868e002.b1115",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 650,
+    "y": 320,
+    "wires": []
+}, {
+    "id": "5f1188f.16c7278",
+    "type": "mongodb in",
+    "z": "868e002.b1115",
+    "mongodb": "26e813b1.5ac7d4",
+    "name": "find",
+    "collection": "commerces",
+    "operation": "find",
+    "x": 430,
+    "y": 320,
+    "wires": [
+        ["7f418623.4f1a4"]
+    ]
+}, {
+    "id": "2300cd0.a610db4",
+    "type": "function",
+    "z": "868e002.b1115",
+    "name": "",
+    "func": "msg.payload = {\"sensorIdArray\" :\"16_in\"} \nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 260,
+    "y": 320,
+    "wires": [
+        ["5f1188f.16c7278"]
+    ]
+}, {
+    "id": "c0e2f22b.4bfc9",
+    "type": "inject",
+    "z": "868e002.b1115",
+    "name": "",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 90,
+    "y": 320,
+    "wires": [
+        ["2300cd0.a610db4"]
+    ]
+}, {
+    "id": "a089d2bc.a76ab",
+    "type": "comment",
+    "z": "868e002.b1115",
+    "name": "Gestion du formulaire pour l'ajout de commerces",
+    "info": "",
+    "x": 460,
+    "y": 40,
+    "wires": []
+}, {
+    "id": "f42ad244.be1be",
+    "type": "comment",
+    "z": "bd329ca2.49e1c",
+    "name": "Envoye une entrée ou une sortie après avoir appuyer les boutons",
+    "info": "",
+    "x": 280,
+    "y": 300,
+    "wires": []
+}]
