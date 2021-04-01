@@ -1,0 +1,61 @@
+db.commerces.insertMany([{
+        _id: 0,
+        name: "Parking Verdun",
+        address: "Rue Ambroise Bordelongue",
+        postal_code: 64000,
+        city: "Pau",
+        latitude: 43.298823,
+        longitude: -0.37738,
+        maxPeopleCapacity : 1228,
+	sensorIdArray : ["0_in","0_out"],
+        sensorsDatas : []
+    },
+    {
+        _id: 1,
+        name: "Parking Clémenceau",
+        address: "Place Georges Clemenceau",
+        postal_code: 64000,
+        city: "Pau",
+        latitude: 43.2952092,
+        longitude: -0.3682361,
+        maxPeopleCapacity : 369,
+	sensorIdArray : ["1_in","1_out"],
+        sensorsDatas : []
+    },
+    {
+        _id: 2,
+        name: "Parking Cours Bosquet",
+        address: "4 Cours Bosquet",
+        postal_code: 64000,
+        city: "Pau",
+        latitude: 43.298268,
+        longitude: -0.3667449,
+        maxPeopleCapacity : 725,
+	sensorIdArray : ["2_in","2_out"],
+        sensorsDatas : []
+    },
+    {
+        _id: 3,
+        name: "Parking du Stadium de la Gare",
+        address: "Avenue Jean Biray",
+        postal_code: 64000,
+        city: "Pau",
+        latitude: 43.2926417,
+        longitude: -0.3733675,
+        maxPeopleCapacity : 120,
+	sensorIdArray : ["3_in","3_out"],
+        sensorsDatas : []
+    },
+    {
+        _id: 4,
+        name: "Parking Aragon",
+        address: "Rue Louis Aragon",
+        postal_code: 64000,
+        city: "Pau",
+        latitude: 43.293716,
+        longitude: -0.3704738,
+        maxPeopleCapacity : 417,
+	sensorIdArray : ["4_in","4_out"],
+        sensorsDatas : []
+    },
+]);
