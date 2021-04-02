@@ -8,6 +8,7 @@ db.commerces.insertMany([{
         longitude: -0.3627473,
         phone: "05 59 80 80 80",
         maxPeopleCapacity : 2000,
+	sensorIdArray : ["0_in","0_out"],
         sensorsDatas : []
     },
     {
@@ -20,6 +21,7 @@ db.commerces.insertMany([{
         longitude: -0.3362492,
         phone: "05 59 14 35 00",
         maxPeopleCapacity : 2000,
+	sensorIdArray : ["1_in","1_out"],
         sensorsDatas : []
     },
     {
@@ -32,6 +34,7 @@ db.commerces.insertMany([{
         longitude: -0.3701833,
         phone: "08 25 02 00 20",
         maxPeopleCapacity : 750,
+	sensorIdArray : ["2_in","2_out"],
         sensorsDatas : []
     },
     {
@@ -44,6 +47,7 @@ db.commerces.insertMany([{
         longitude: -0.3500355,
         phone: "05 59 30 51 04",
         maxPeopleCapacity : 2000,
+	sensorIdArray : ["3_in","3_out"],
         sensorsDatas : []
     },
     {
@@ -56,6 +60,7 @@ db.commerces.insertMany([{
         longitude: -0.3681242,
         phone: "05 59 02 25 85",
         maxPeopleCapacity : 2000,
+	sensorIdArray : ["4_in","4_out"],
         sensorsDatas : []
     },
     {
@@ -68,7 +73,8 @@ db.commerces.insertMany([{
         longitude: -0.3700404,
         phone: "05 59 11 10 30",
         maxPeopleCapacity : 75,
-        sensorsDatas : []
+	sensorIdArray : ["5_in","5_out"],
+   	sensorsDatas : []
     },
     {
         _id: 6,
@@ -80,6 +86,7 @@ db.commerces.insertMany([{
         longitude: -0.3734723,
         phone: "05 59 27 50 17",
         maxPeopleCapacity : 10,
+	sensorIdArray : ["6_in","6_out"],
         sensorsDatas : []
     },
     {
@@ -92,6 +99,7 @@ db.commerces.insertMany([{
         longitude: -0.3489696,
         phone: "05 59 06 10 34",
         maxPeopleCapacity : 25,
+	sensorIdArray : ["7_in","7_out"],
         sensorsDatas : []
     },
     {
@@ -104,6 +112,7 @@ db.commerces.insertMany([{
         longitude: -0.3301938,
         phone: "05 59 90 34 00",
         maxPeopleCapacity : 1500,
+	sensorIdArray : ["8_in","8_out"],
         sensorsDatas : []
     },
     {
@@ -116,6 +125,7 @@ db.commerces.insertMany([{
         longitude: -0.3631414,
         phone: "05 59 21 00 86",
         maxPeopleCapacity : 50,
+	sensorIdArray : ["9_in","9_out"],
         sensorsDatas : []
     },
     {
@@ -128,6 +138,7 @@ db.commerces.insertMany([{
         longitude: -0.3339027,
         phone: "05 59 84 35 60",
         maxPeopleCapacity : 50,
+	sensorIdArray : ["10_in","10_out"],
         sensorsDatas : []
     },
     {
@@ -140,6 +151,7 @@ db.commerces.insertMany([{
         longitude: -0.3630311,
         phone: "05 59 84 57 45",
         maxPeopleCapacity : 50,
+	sensorIdArray : ["11_in","11_out"],
         sensorsDatas : []
     },
     {
@@ -152,6 +164,7 @@ db.commerces.insertMany([{
         longitude: -0.3761598,
         phone: "05 59 84 08 26",
         maxPeopleCapacity : 70,
+	sensorIdArray : ["12_in","12_out"],
         sensorsDatas : []
     },
     {
@@ -164,6 +177,7 @@ db.commerces.insertMany([{
         longitude: -0.3807761,
         phone: "0 800 90 03 43",
         maxPeopleCapacity : 2000,
+	sensorIdArray : ["13_in","13_out"],
         sensorsDatas : []
     },
     {
@@ -176,6 +190,7 @@ db.commerces.insertMany([{
         longitude: -0.3682632,
         phone: "05 59 27 47 42",
         maxPeopleCapacity : 4,
+	sensorIdArray : ["14_in","14_out"],
         sensorsDatas : []
     },
 ]);
