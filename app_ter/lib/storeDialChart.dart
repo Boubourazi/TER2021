@@ -70,7 +70,7 @@ class _StoreDialChartState extends State<StoreDialChart> {
             pointers: <GaugePointer>[
               NeedlePointer(
                 enableAnimation: true,
-                value: 500,
+                value: this.widget.currentPeople.toDouble(),
                 lengthUnit: GaugeSizeUnit.logicalPixel,
                 needleLength: 50,
                 needleStartWidth: 0,

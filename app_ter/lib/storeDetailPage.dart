@@ -114,7 +114,7 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
           Center(
             child: Padding(
               padding: const EdgeInsets.all(10),
-              child: StoreBarChart(),
+              child: StoreBarChart(15, this.widget.store),
             ),
           ),
           Spacer(flex: 1),
