@@ -39,8 +39,8 @@ En effet, une certaine architecture des données est nécessaire pour une bonne 
 
   
 
-Pour se connecter à notre base de données, depuis MongoDB Compass, il suffit d'enter la commande suivante :
+Pour se connecter à notre base de données, depuis MongoDB Compass, il suffit d'entrer la commande suivante dans l'onglet "New Connection":
 
-  
+  Utilisateur en lecture seule :
 
     mongodb+srv://invite:1234@cluster0.kiq9v.mongodb.net/commerces
