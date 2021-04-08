@@ -9,6 +9,10 @@ Lancer depuis le terminal :
 serveur mqtt à : mqtt://localhost:1883
 topic : CapteurCommerce
 
+websockets accessibles aux adresses
+ws://localhost:1880/commerces
+ws://localhost:1880/parkings
+
 ### A chaque lancement de Docker il faut aller configurer le nom d'utilisateur et le mot de passe dans la node de la base de donnée
  - Aller a http://localhost:1880
  - En haut a doite de l'interface cliquer sur l'engrenage
