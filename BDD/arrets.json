@@ -1,0 +1,71 @@
+[{
+        "_id": 3002,
+        "accessible": 1.0,
+        "ville": "Pau",
+        "description": "11 Novembre",
+        "coordonnees": [43.3043793391057, -0.353686846934257]
+    },
+    {
+        "_id": 3010,
+        "accessible": 1.0,
+        "ville": "Pau",
+        "description": "Angot",
+        "coordonnees": [43.3223702138728, -0.368010791812528]
+    },
+    {
+        "_id": 3011,
+        "accessible": 1.0,
+        "ville": "Pau",
+        "description": "ASFO",
+        "coordonnees": [43.3169844105986, -0.330596647790485]
+    },
+    {
+        "_id": 3014,
+        "accessible": 1.0,
+        "ville": "Pau",
+        "description": "Auriol",
+        "coordonnees": [43.3151509456541, -0.332716591632469]
+    },
+    {
+        "_id": 3015,
+        "accessible": 1.0,
+        "ville": "Pau",
+        "description": "Barthe",
+        "coordonnees": [43.2906283520225, -0.37901158147904]
+    },
+    {
+        "_id": 3018,
+        "accessible": 0.0,
+        "ville": "Pau",
+        "description": "Bert",
+        "coordonnees": [43.3202502700308, -0.326757830563108]
+    },
+    {
+        "_id": 3035,
+        "accessible": 0.0,
+        "ville": "Pau",
+        "description": "PAU Bosquet Quai F",
+        "coordonnees": [43.2989362400519, -0.36600543952957]
+    },
+    {
+        "_id": 732,
+        "accessible": 1.0,
+        "ville": "Pau",
+        "description": "St Joseph",
+        "coordonnees": [43.3071868323018, -0.376490567180464]
+    },
+    {
+        "_id": 3036,
+        "accessible": 1.0,
+        "ville": "Pau",
+        "description": "PAU Bosquet Quai H",
+        "coordonnees": [43.2967017046509, -0.366291918427135]
+    },
+    {
+        "_id": 3037,
+        "accessible": 1.0,
+        "ville": "Pau",
+        "description": "Buisson",
+        "coordonnees": [43.2929774789826, -0.357869438838712]
+    }
+]

@@ -1,0 +1,71 @@
+[{
+    "_id": 1021,
+    "type": "Autobus",
+    "bus_line": 1,
+    "maxPeopleCapacity" : 87,
+	"sensorIdArray" : ["1021_in","1021_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 1024,
+    "type": "Autobus",
+    "bus_line": 2,
+    "maxPeopleCapacity" : 87,
+	"sensorIdArray" : ["1024_in","1024_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 1028,
+    "type": "Autobus",
+    "bus_line": 3,
+    "maxPeopleCapacity" : 87,
+	"sensorIdArray" : ["1028_in","1028_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 1032,
+    "type": "Autobus",
+    "bus_line": 4,
+    "maxPeopleCapacity" : 87,
+	"sensorIdArray" : ["1032_in","1032_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 1035,
+    "type": "Autobus",
+    "bus_line": 5,
+    "maxPeopleCapacity" : 87,
+	"sensorIdArray" : ["1035_in","1035_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 1143,
+    "type": "Autobus",
+    "bus_line": 6,
+    "maxPeopleCapacity" : 87,
+	"sensorIdArray" : ["1143_in","1143_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 1147,
+    "type": "Autobus",
+    "bus_line": 7,
+    "maxPeopleCapacity" : 87,
+	"sensorIdArray" : ["1147_in","1147_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 1152,
+    "type": "Autobus",
+    "bus_line": 8,
+    "maxPeopleCapacity" : 87,
+	"sensorIdArray" : ["1152_in","1152_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 63,
+    "type": "Microbus",
+    "bus_line": 9,
+    "maxPeopleCapacity" : 25,
+	"sensorIdArray" : ["63_in","63_out"],
+    "sensorsDatas" : []
+}, {
+    "_id": 64,
+    "type": "Microbus",
+    "bus_line": 9,
+    "maxPeopleCapacity" : 25,
+	"sensorIdArray" : ["64_in","64_out"],
+    "sensorsDatas" : []
+}]
