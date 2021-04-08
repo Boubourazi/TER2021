@@ -14,4 +14,4 @@ Consultez les différents dossiers du GitHub afin de découvrir un tutoriel simp
 
 ## Schéma de l'architecture
 
-![Schema](https://imgur.com/a/dBDip17)
+![Schema](https://i.imgur.com/AeXTj55.png)
