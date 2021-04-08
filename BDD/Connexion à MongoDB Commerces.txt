@@ -1,1 +1,0 @@
-mongodb+srv://<username>:<password>@cluster0.kiq9v.mongodb.net/commerces
