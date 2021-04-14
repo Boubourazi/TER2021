@@ -102,7 +102,7 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
                     Spacer(
                       flex: 1,
                     ),
-                    Text("${this.widget.store["phone"]}"),
+                    Text("${this.widget.store["phone"] ?? "Non renseigné"}"),
                   ],
                 ),
               ),

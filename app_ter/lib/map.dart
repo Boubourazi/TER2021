@@ -5,6 +5,7 @@ import 'storeDetailPage.dart';
 
 class Map extends StatefulWidget {
   final List storeData;
+  //final List parkingData;
 
   Map(this.storeData);
 
