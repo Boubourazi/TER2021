@@ -39,7 +39,9 @@ dependencies:
 
   syncfusion_flutter_gauges: ^18.4.49
 
-  web_socket_channel: ^2.0.0
+  #web_socket_channel: ^2.0.0
+
+  mongo_dart: ^0.4.4
 
 
 dev_dependencies:

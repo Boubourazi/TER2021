@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:app_ter/connecter.dart';
 import 'package:app_ter/storeList.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,6 +9,7 @@ import 'dart:convert';
 import 'storeList.dart';
 import 'roundedBottom.dart';
 import 'map.dart';
+import 'credentials.dart';
 import 'custom_drawer.dart';
 
 void main() => runApp(MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Gestion bus',
+      title: 'Gestion bus ',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
@@ -49,6 +51,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final Connecter _connecter = Connecter(Credentials.connectionString);
 
   bool showCommerces = true;
 
@@ -71,11 +74,26 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void loadMarkers() async {
-    print("load markers");
+    this
+        ._connecter
+        .initialize()
+        .then((_) => this._connecter.db.collection("commerces").find().toList())
+        .then((store) => this.setState(() {
+              this.data = store;
+            }))
+        .then((_) => this._connecter.db.collection("parkings").find().toList())
+        .then((parkings) => this.setState(() {
+              this.parkings = parkings;
+            }));
   }
 
   void reloadMarkers() async {
-    print("reload markers");
+    this._connecter.db.collection("commerces").find().toList().then((value2) {
+      this.setState(() {
+        this.data = value2;
+      });
+      print("State has been changed !");
+    });
   }
 
   void openDrawer() {
@@ -125,7 +143,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Stack(
         children: <Widget>[
-          Map([]),
+          Map(
+            this.showCommerces && this.showParkings
+                ? [...this.data, ...this.parkings]
+                : this.showCommerces
+                    ? this.data
+                    : this.showParkings
+                        ? this.parkings
+                        : [],
+          ),
           Positioned(
             top: 450,
             left: 15,
