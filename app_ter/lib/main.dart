@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Gestion bus',
+      title: 'Gestion bus ',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: MyHomePage(
-        title: "Commerces",
+        title: "Carte",
       ),
     );
   }
@@ -53,7 +53,12 @@ class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final Connecter _connecter = Connecter(Credentials.connectionString);
 
+  bool showCommerces = true;
+
+  bool showParkings = true;
+
   List data = [];
+  List parkings = [];
 
   Future<String> loadJsonData() async {
     var jsonText = await rootBundle.loadString('assets/stores.json');
@@ -72,10 +77,13 @@ class _MyHomePageState extends State<MyHomePage> {
     this
         ._connecter
         .initialize()
-        .then((value) =>
-            this._connecter.db.collection("commerces").find().toList())
-        .then((value2) => this.setState(() {
-              this.data = value2;
+        .then((_) => this._connecter.db.collection("commerces").find().toList())
+        .then((store) => this.setState(() {
+              this.data = store;
+            }))
+        .then((_) => this._connecter.db.collection("parkings").find().toList())
+        .then((parkings) => this.setState(() {
+              this.parkings = parkings;
             }));
   }
 
@@ -135,7 +143,65 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Stack(
         children: <Widget>[
-          Map(this.data),
+          Map(
+            this.showCommerces && this.showParkings
+                ? [...this.data, ...this.parkings]
+                : this.showCommerces
+                    ? this.data
+                    : this.showParkings
+                        ? this.parkings
+                        : [],
+          ),
+          Positioned(
+            top: 450,
+            left: 15,
+            child: AnimatedContainer(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(width: 0.7),
+              ),
+              duration: Duration(milliseconds: 400),
+              height: 25,
+              width: 25,
+              child: Material(
+                elevation: 8,
+                borderRadius: BorderRadius.circular(15),
+                color: this.showCommerces ? Colors.blue : Colors.white,
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      this.showCommerces = !this.showCommerces;
+                    });
+                  },
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 490,
+            left: 15,
+            child: AnimatedContainer(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(width: 0.7),
+              ),
+              duration: Duration(milliseconds: 400),
+              height: 25,
+              width: 25,
+              child: Material(
+                elevation: 8,
+                borderRadius: BorderRadius.circular(15),
+                color: this.showParkings ? Colors.blue : Colors.white,
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      this.showParkings = !this.showParkings;
+                    });
+                  },
+                ),
+              ),
+            ),
+          ),
           ClipPath(
             clipper: RoundedBottom(),
             child: Container(
