@@ -1,2118 +1,2706 @@
-[{
-    "id": "8b9071f7.6ad848",
-    "type": "tab",
-    "label": "Reception données",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "bd329ca2.49e1c",
-    "type": "tab",
-    "label": "Simulation Capteur",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "868e002.b1115",
-    "type": "tab",
-    "label": "Modification BD",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "a6592cfa.8a3a9",
-    "type": "tab",
-    "label": "API",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "8d4da33c.cb6318",
-    "type": "mqtt-broker",
-    "name": "",
-    "broker": "mosquitto",
-    "port": "1883",
-    "clientid": "",
-    "usetls": false,
-    "compatmode": true,
-    "keepalive": "60",
-    "cleansession": true,
-    "birthTopic": "",
-    "birthQos": "0",
-    "birthPayload": "",
-    "closeTopic": "",
-    "closeQos": "0",
-    "closePayload": "",
-    "willTopic": "",
-    "willQos": "0",
-    "willPayload": ""
-}, {
-    "id": "26e813b1.5ac7d4",
-    "type": "mongodb",
-    "hostname": "cluster0.kiq9v.mongodb.net",
-    "topology": "dnscluster",
-    "connectOptions": "retryWrites=true&w=majority",
-    "port": "27017",
-    "db": "TER",
-    "name": "DB_TER"
-}, {
-    "id": "54619bbd.4386e4",
-    "type": "ui_tab",
-    "name": "Modification BD",
-    "icon": "dashboard",
-    "disabled": false,
-    "hidden": false
-}, {
-    "id": "ab6d3217.b3c21",
-    "type": "ui_base",
-    "theme": {
-        "name": "theme-light",
-        "lightTheme": {
-            "default": "#0094CE",
-            "baseColor": "#0094CE",
-            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-            "edited": true,
-            "reset": false
-        },
-        "darkTheme": {
-            "default": "#097479",
-            "baseColor": "#097479",
-            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-            "edited": false
-        },
-        "customTheme": {
-            "name": "Untitled Theme 1",
-            "default": "#4B7930",
-            "baseColor": "#4B7930",
-            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-        },
-        "themeState": {
-            "base-color": {
+[
+    {
+        "id": "8b9071f7.6ad848",
+        "type": "tab",
+        "label": "Reception données",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bd329ca2.49e1c",
+        "type": "tab",
+        "label": "Simulation Capteur",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "868e002.b1115",
+        "type": "tab",
+        "label": "Modification BD",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a6592cfa.8a3a9",
+        "type": "tab",
+        "label": "API",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8d4da33c.cb6318",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "26e813b1.5ac7d4",
+        "type": "mongodb",
+        "hostname": "cluster0.kiq9v.mongodb.net",
+        "topology": "dnscluster",
+        "connectOptions": "retryWrites=true&w=majority",
+        "port": "27017",
+        "db": "TER",
+        "name": "DB_TER"
+    },
+    {
+        "id": "54619bbd.4386e4",
+        "type": "ui_tab",
+        "name": "Modification BD",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ab6d3217.b3c21",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
                 "default": "#0094CE",
-                "value": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": false
             },
-            "page-titlebar-backgroundColor": {
-                "value": "#0094CE",
-                "edited": false
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
             },
-            "page-backgroundColor": {
-                "value": "#fafafa",
-                "edited": false
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
             },
-            "page-sidebar-backgroundColor": {
-                "value": "#ffffff",
-                "edited": false
-            },
-            "group-textColor": {
-                "value": "#1bbfff",
-                "edited": false
-            },
-            "group-borderColor": {
-                "value": "#ffffff",
-                "edited": false
-            },
-            "group-backgroundColor": {
-                "value": "#ffffff",
-                "edited": false
-            },
-            "widget-textColor": {
-                "value": "#111111",
-                "edited": false
-            },
-            "widget-backgroundColor": {
-                "value": "#0094ce",
-                "edited": false
-            },
-            "widget-borderColor": {
-                "value": "#ffffff",
-                "edited": false
-            },
-            "base-font": {
-                "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
             }
         },
-        "angularTheme": {
-            "primary": "indigo",
-            "accents": "blue",
-            "warn": "red",
-            "background": "grey"
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
         }
     },
-    "site": {
-        "name": "Node-RED Dashboard",
-        "hideToolbar": "false",
-        "allowSwipe": "false",
-        "lockMenu": "false",
-        "allowTempTheme": "true",
-        "dateFormat": "DD/MM/YYYY",
-        "sizes": {
-            "sx": 48,
-            "sy": 48,
-            "gx": 6,
-            "gy": 6,
-            "cx": 6,
-            "cy": 6,
-            "px": 0,
-            "py": 0
-        }
-    }
-}, {
-    "id": "c77967b8.a0576",
-    "type": "ui_group",
-    "name": "Ajouter Commerce",
-    "tab": "54619bbd.4386e4",
-    "order": 3,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-}, {
-    "id": "ef2f15.4ec0a0e8",
-    "type": "ui_tab",
-    "name": "Simulation capteur",
-    "icon": "dashboard",
-    "disabled": false,
-    "hidden": false
-}, {
-    "id": "6fea2f48.a2d1d",
-    "type": "ui_group",
-    "name": "Modifier commerce",
-    "tab": "54619bbd.4386e4",
-    "order": 1,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-}, {
-    "id": "bc954448.141188",
-    "type": "ui_group",
-    "name": "Capteur commerce",
-    "tab": "ef2f15.4ec0a0e8",
-    "order": 4,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-}, {
-    "id": "7afdaad1.d16124",
-    "type": "ui_spacer",
-    "name": "spacer",
-    "group": "deb6180f.95e568",
-    "order": 2,
-    "width": 1,
-    "height": 1
-}, {
-    "id": "bc3f12fa.6421d8",
-    "type": "ui_group",
-    "name": "Capteur parking",
-    "tab": "ef2f15.4ec0a0e8",
-    "order": 2,
-    "disp": true,
-    "width": "6",
-    "collapse": false
-}, {
-    "id": "cd96fa45.e4f66",
-    "type": "websocket-listener",
-    "path": "parkings",
-    "wholemsg": "false"
-}, {
-    "id": "3a960f68.dfb54",
-    "type": "websocket-client",
-    "path": "ws://localhost:1880/commerces",
-    "tls": "",
-    "wholemsg": "false"
-}, {
-    "id": "54651cc0.ab9ae4",
-    "type": "websocket-listener",
-    "path": "/commerces",
-    "wholemsg": "false"
-}, {
-    "id": "f0b098ac.865b88",
-    "type": "websocket-client",
-    "path": "ws://localhost:1880/parkings",
-    "tls": "",
-    "wholemsg": "false"
-}, {
-    "id": "b7b8bdf4.c4f7d8",
-    "type": "mqtt in",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "topic": "CapteurCommerce",
-    "qos": "2",
-    "datatype": "auto",
-    "broker": "8d4da33c.cb6318",
-    "x": 110,
-    "y": 80,
-    "wires": [
-        ["e3e72668.65d148"]
-    ]
-}, {
-    "id": "ff7d6df5.f4b6d",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorIdArray\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type, \"sensorId\":sensorId}} };\n\n\n\n\nreturn msg;\n\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 440,
-    "y": 80,
-    "wires": [
-        ["88f4ef15.a371e8", "6f84d98b.f72138"]
-    ]
-}, {
-    "id": "e3e72668.65d148",
-    "type": "json",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "property": "payload",
-    "action": "obj",
-    "pretty": false,
-    "x": 290,
-    "y": 80,
-    "wires": [
-        ["ff7d6df5.f4b6d", "8c589ae4.4ea93"]
-    ]
-}, {
-    "id": "88f4ef15.a371e8",
-    "type": "mongodb out",
-    "z": "8b9071f7.6ad848",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "commerces",
-    "payonly": false,
-    "upsert": false,
-    "multi": false,
-    "operation": "update",
-    "x": 680,
-    "y": 80,
-    "wires": []
-}, {
-    "id": "6f84d98b.f72138",
-    "type": "debug",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 630,
-    "y": 140,
-    "wires": []
-}, {
-    "id": "3298def5.28a022",
-    "type": "inject",
-    "z": "bd329ca2.49e1c",
-    "name": "String sensorId and values",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "{\"sensorId\":\"0_in\",\"type\":\"in\"}",
-    "payloadType": "str",
-    "x": 170,
-    "y": 60,
-    "wires": [
-        ["4db39dae.2616f4"]
-    ]
-}, {
-    "id": "4db39dae.2616f4",
-    "type": "mqtt out",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "topic": "CapteurCommerce",
-    "qos": "",
-    "retain": "",
-    "broker": "8d4da33c.cb6318",
-    "x": 390,
-    "y": 60,
-    "wires": []
-}, {
-    "id": "e4a9f734.5f22",
-    "type": "ui_button",
-    "z": "bd329ca2.49e1c",
-    "name": "Envoyer entrée",
-    "group": "bc954448.141188",
-    "order": 6,
-    "width": 0,
-    "height": 0,
-    "passthru": false,
-    "label": "Envoyer entrée",
-    "tooltip": "",
-    "color": "",
-    "bgcolor": "",
-    "icon": "",
-    "payload": "",
-    "payloadType": "str",
-    "topic": "topic",
-    "topicType": "msg",
-    "x": 100,
-    "y": 300,
-    "wires": [
-        ["e3047bec.9f4808"]
-    ]
-}, {
-    "id": "e3047bec.9f4808",
-    "type": "function",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdCommerce\"),\"type\":\"in\"}\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 280,
-    "y": 300,
-    "wires": [
-        ["dd2c66a7.d7077"]
-    ]
-}, {
-    "id": "dd2c66a7.d7077",
-    "type": "mqtt out",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "topic": "CapteurCommerce",
-    "qos": "",
-    "retain": "",
-    "broker": "8d4da33c.cb6318",
-    "x": 450,
-    "y": 300,
-    "wires": []
-}, {
-    "id": "287cb964.5d9536",
-    "type": "ui_button",
-    "z": "bd329ca2.49e1c",
-    "name": "Envoyer sortie",
-    "group": "bc954448.141188",
-    "order": 8,
-    "width": 0,
-    "height": 0,
-    "passthru": false,
-    "label": "Envoyer sortie",
-    "tooltip": "",
-    "color": "",
-    "bgcolor": "",
-    "icon": "",
-    "payload": "",
-    "payloadType": "str",
-    "topic": "topic",
-    "topicType": "msg",
-    "x": 100,
-    "y": 360,
-    "wires": [
-        ["40b15ee1.336c7"]
-    ]
-}, {
-    "id": "40b15ee1.336c7",
-    "type": "function",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdCommerce\"),\"type\":\"out\"}\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 280,
-    "y": 360,
-    "wires": [
-        ["3b30a00b.c66e38"]
-    ]
-}, {
-    "id": "3b30a00b.c66e38",
-    "type": "mqtt out",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "topic": "CapteurCommerce",
-    "qos": "",
-    "retain": "",
-    "broker": "8d4da33c.cb6318",
-    "x": 450,
-    "y": 360,
-    "wires": []
-}, {
-    "id": "f15c18de.de80d8",
-    "type": "ui_form",
-    "z": "868e002.b1115",
-    "name": "Formulaire ajout commerce",
-    "label": "",
-    "group": "c77967b8.a0576",
-    "order": 0,
-    "width": 0,
-    "height": 0,
-    "options": [{
-        "label": "Nom",
-        "value": "name",
-        "type": "text",
-        "required": false,
-        "rows": null
-    }, {
-        "label": "Adresse",
-        "value": "address",
-        "type": "text",
-        "required": false,
-        "rows": null
-    }, {
-        "label": "Code postal",
-        "value": "postal_code",
-        "type": "number",
-        "required": true,
-        "rows": null
-    }, {
-        "label": "Ville",
-        "value": "city",
-        "type": "text",
-        "required": false,
-        "rows": null
-    }, {
-        "label": "Latitude",
-        "value": "latitude",
-        "type": "number",
-        "required": true,
-        "rows": null
-    }, {
-        "label": "Longitude",
-        "value": "longitude",
-        "type": "number",
-        "required": true,
-        "rows": null
-    }, {
-        "label": "Num Telephone",
-        "value": "phone",
-        "type": "text",
-        "required": false,
-        "rows": null
-    }, {
-        "label": "Capacité max",
-        "value": "maxPeopleCapacity",
-        "type": "number",
-        "required": true,
-        "rows": null
-    }],
-    "formValue": {
+    {
+        "id": "c77967b8.a0576",
+        "type": "ui_group",
+        "name": "Ajouter Commerce",
+        "tab": "54619bbd.4386e4",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ef2f15.4ec0a0e8",
+        "type": "ui_tab",
+        "name": "Simulation capteur",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6fea2f48.a2d1d",
+        "type": "ui_group",
+        "name": "Modifier commerce",
+        "tab": "54619bbd.4386e4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "bc954448.141188",
+        "type": "ui_group",
+        "name": "Capteur commerce",
+        "tab": "ef2f15.4ec0a0e8",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7afdaad1.d16124",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "deb6180f.95e568",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bc3f12fa.6421d8",
+        "type": "ui_group",
+        "name": "Capteur parking",
+        "tab": "ef2f15.4ec0a0e8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "cd96fa45.e4f66",
+        "type": "websocket-listener",
+        "path": "parkings",
+        "wholemsg": "false"
+    },
+    {
+        "id": "3a960f68.dfb54",
+        "type": "websocket-client",
+        "path": "ws://localhost:1880/commerces",
+        "tls": "",
+        "wholemsg": "false"
+    },
+    {
+        "id": "54651cc0.ab9ae4",
+        "type": "websocket-listener",
+        "path": "/commerces",
+        "wholemsg": "false"
+    },
+    {
+        "id": "f0b098ac.865b88",
+        "type": "websocket-client",
+        "path": "ws://localhost:1880/parkings",
+        "tls": "",
+        "wholemsg": "false"
+    },
+    {
+        "id": "b7b8bdf4.c4f7d8",
+        "type": "mqtt in",
+        "z": "8b9071f7.6ad848",
         "name": "",
-        "address": "",
-        "postal_code": "",
-        "city": "",
-        "latitude": "",
-        "longitude": "",
-        "phone": "",
-        "maxPeopleCapacity": ""
+        "topic": "CapteurCommerce",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "8d4da33c.cb6318",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "e3e72668.65d148"
+            ]
+        ]
     },
-    "payload": "",
-    "submit": "Envoyer",
-    "cancel": "Annuler",
-    "topic": "topic",
-    "topicType": "msg",
-    "splitLayout": "",
-    "x": 140,
-    "y": 80,
-    "wires": [
-        ["1d01d927.9d4777", "ebef0046.00fd18"]
-    ]
-}, {
-    "id": "4ee7f826.0fc258",
-    "type": "mongodb in",
-    "z": "868e002.b1115",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "count all commerces",
-    "collection": "commerces",
-    "operation": "count",
-    "x": 520,
-    "y": 120,
-    "wires": [
-        ["1fa55018.f11c78"]
-    ]
-}, {
-    "id": "1fa55018.f11c78",
-    "type": "change",
-    "z": "868e002.b1115",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "count",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 740,
-    "y": 120,
-    "wires": [
-        []
-    ]
-}, {
-    "id": "1d01d927.9d4777",
-    "type": "change",
-    "z": "868e002.b1115",
-    "name": "{}",
-    "rules": [{
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
+    {
+        "id": "ff7d6df5.f4b6d",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorIdArray\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type, \"sensorId\":sensorId}} };\n\n\n\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 440,
+        "y": 80,
+        "wires": [
+            [
+                "88f4ef15.a371e8",
+                "6f84d98b.f72138"
+            ]
+        ]
+    },
+    {
+        "id": "e3e72668.65d148",
+        "type": "json",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 290,
+        "y": 80,
+        "wires": [
+            [
+                "ff7d6df5.f4b6d",
+                "8c589ae4.4ea93"
+            ]
+        ]
+    },
+    {
+        "id": "88f4ef15.a371e8",
+        "type": "mongodb out",
+        "z": "8b9071f7.6ad848",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "commerces",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "update",
+        "x": 680,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6f84d98b.f72138",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3298def5.28a022",
+        "type": "inject",
+        "z": "bd329ca2.49e1c",
+        "name": "String sensorId and values",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"sensorId\":\"0_in\",\"type\":\"in\"}",
+        "payloadType": "str",
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "4db39dae.2616f4"
+            ]
+        ]
+    },
+    {
+        "id": "4db39dae.2616f4",
+        "type": "mqtt out",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "topic": "CapteurCommerce",
+        "qos": "",
+        "retain": "",
+        "broker": "8d4da33c.cb6318",
+        "x": 390,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "e4a9f734.5f22",
+        "type": "ui_button",
+        "z": "bd329ca2.49e1c",
+        "name": "Envoyer entrée",
+        "group": "bc954448.141188",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Envoyer entrée",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "e3047bec.9f4808"
+            ]
+        ]
+    },
+    {
+        "id": "e3047bec.9f4808",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdCommerce\"),\"type\":\"in\"}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 280,
+        "y": 300,
+        "wires": [
+            [
+                "dd2c66a7.d7077"
+            ]
+        ]
+    },
+    {
+        "id": "dd2c66a7.d7077",
+        "type": "mqtt out",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "topic": "CapteurCommerce",
+        "qos": "",
+        "retain": "",
+        "broker": "8d4da33c.cb6318",
+        "x": 450,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "287cb964.5d9536",
+        "type": "ui_button",
+        "z": "bd329ca2.49e1c",
+        "name": "Envoyer sortie",
+        "group": "bc954448.141188",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Envoyer sortie",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "40b15ee1.336c7"
+            ]
+        ]
+    },
+    {
+        "id": "40b15ee1.336c7",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdCommerce\"),\"type\":\"out\"}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "3b30a00b.c66e38"
+            ]
+        ]
+    },
+    {
+        "id": "3b30a00b.c66e38",
+        "type": "mqtt out",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "topic": "CapteurCommerce",
+        "qos": "",
+        "retain": "",
+        "broker": "8d4da33c.cb6318",
+        "x": 450,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f15c18de.de80d8",
+        "type": "ui_form",
+        "z": "868e002.b1115",
+        "name": "Formulaire ajout commerce",
+        "label": "",
+        "group": "c77967b8.a0576",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Nom",
+                "value": "name",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Adresse",
+                "value": "address",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Code postal",
+                "value": "postal_code",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Ville",
+                "value": "city",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Latitude",
+                "value": "latitude",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Longitude",
+                "value": "longitude",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Num Telephone",
+                "value": "phone",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Capacité max",
+                "value": "maxPeopleCapacity",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": "",
+            "address": "",
+            "postal_code": "",
+            "city": "",
+            "latitude": "",
+            "longitude": "",
+            "phone": "",
+            "maxPeopleCapacity": ""
+        },
+        "payload": "",
+        "submit": "Envoyer",
+        "cancel": "Annuler",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "1d01d927.9d4777",
+                "ebef0046.00fd18"
+            ]
+        ]
+    },
+    {
+        "id": "4ee7f826.0fc258",
+        "type": "mongodb in",
+        "z": "868e002.b1115",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "count all commerces",
+        "collection": "commerces",
+        "operation": "count",
+        "x": 520,
+        "y": 120,
+        "wires": [
+            [
+                "1fa55018.f11c78"
+            ]
+        ]
+    },
+    {
+        "id": "1fa55018.f11c78",
+        "type": "change",
+        "z": "868e002.b1115",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "count",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
         "to": "",
-        "tot": "str"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 350,
-    "y": 120,
-    "wires": [
-        ["4ee7f826.0fc258"]
-    ]
-}, {
-    "id": "ebef0046.00fd18",
-    "type": "delay",
-    "z": "868e002.b1115",
-    "name": "",
-    "pauseType": "delay",
-    "timeout": "50",
-    "timeoutUnits": "milliseconds",
-    "rate": "1",
-    "nbRateUnits": "1",
-    "rateUnits": "second",
-    "randomFirst": "1",
-    "randomLast": "5",
-    "randomUnits": "seconds",
-    "drop": false,
-    "x": 530,
-    "y": 80,
-    "wires": [
-        ["fc90af3c.ca1a08"]
-    ]
-}, {
-    "id": "fc90af3c.ca1a08",
-    "type": "function",
-    "z": "868e002.b1115",
-    "name": "",
-    "func": "var id = flow.get('count');\nmsg.payload._id = id;\nmsg.payload.sensorIdArray = [];\nmsg.payload.sensorIdArray.push(id.toString() + \"_in\");\nmsg.payload.sensorIdArray.push(id.toString() + \"_out\");\nmsg.payload.sensorsDatas = [];\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 800,
-    "y": 80,
-    "wires": [
-        ["330fe4f7.3ef44c"]
-    ]
-}, {
-    "id": "330fe4f7.3ef44c",
-    "type": "mongodb out",
-    "z": "868e002.b1115",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "commerces",
-    "payonly": true,
-    "upsert": false,
-    "multi": false,
-    "operation": "insert",
-    "x": 1000,
-    "y": 80,
-    "wires": []
-}, {
-    "id": "59b881df.383ce",
-    "type": "mongodb in",
-    "z": "868e002.b1115",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "commerces",
-    "operation": "find",
-    "x": 260,
-    "y": 220,
-    "wires": [
-        ["a171fe9b.9482a8"]
-    ]
-}, {
-    "id": "3beeae30.86d1da",
-    "type": "inject",
-    "z": "868e002.b1115",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "{}",
-    "payloadType": "json",
-    "x": 90,
-    "y": 220,
-    "wires": [
-        ["59b881df.383ce"]
-    ]
-}, {
-    "id": "a171fe9b.9482a8",
-    "type": "function",
-    "z": "868e002.b1115",
-    "name": "",
-    "func": "\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 440,
-    "y": 220,
-    "wires": [
-        ["854acb46.217a08"]
-    ]
-}, {
-    "id": "854acb46.217a08",
-    "type": "debug",
-    "z": "868e002.b1115",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 620,
-    "y": 220,
-    "wires": []
-}, {
-    "id": "45169083.d3a4a",
-    "type": "ui_text_input",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "label": "ID capteur",
-    "tooltip": "",
-    "group": "bc954448.141188",
-    "order": 1,
-    "width": 0,
-    "height": 0,
-    "passthru": true,
-    "mode": "text",
-    "delay": "0",
-    "topic": "topic",
-    "topicType": "msg",
-    "x": 90,
-    "y": 160,
-    "wires": [
-        ["c52df6fa.e57de8", "4ce17ea1.7d4758"]
-    ]
-}, {
-    "id": "6a2f6594.a3dd84",
-    "type": "mongodb in",
-    "z": "bd329ca2.49e1c",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "find",
-    "collection": "commerces",
-    "operation": "find",
-    "x": 390,
-    "y": 160,
-    "wires": [
-        ["ed38aea3.f478c"]
-    ]
-}, {
-    "id": "c52df6fa.e57de8",
-    "type": "function",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "func": "msg.payload = {\"sensorIdArray\" :msg.payload} \nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 260,
-    "y": 160,
-    "wires": [
-        ["6a2f6594.a3dd84"]
-    ]
-}, {
-    "id": "ed38aea3.f478c",
-    "type": "function",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "func": "commerce = msg.payload[0];\n\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\nreturn [ msg_name ,msg_address, msg_city]",
-    "outputs": 3,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 520,
-    "y": 160,
-    "wires": [
-        ["c2c5becf.71f72"],
-        ["59d20b0e.a59a9c"],
-        ["bc30e2e2.62dfb"]
-    ]
-}, {
-    "id": "c2c5becf.71f72",
-    "type": "ui_text",
-    "z": "bd329ca2.49e1c",
-    "group": "bc954448.141188",
-    "order": 2,
-    "width": 0,
-    "height": 0,
-    "name": "",
-    "label": "Nom:",
-    "format": "{{msg.payload}}",
-    "layout": "row-spread",
-    "x": 690,
-    "y": 80,
-    "wires": []
-}, {
-    "id": "59d20b0e.a59a9c",
-    "type": "ui_text",
-    "z": "bd329ca2.49e1c",
-    "group": "bc954448.141188",
-    "order": 3,
-    "width": 0,
-    "height": 0,
-    "name": "",
-    "label": "Adresse:",
-    "format": "{{msg.payload}}",
-    "layout": "row-spread",
-    "x": 700,
-    "y": 120,
-    "wires": []
-}, {
-    "id": "bc30e2e2.62dfb",
-    "type": "ui_text",
-    "z": "bd329ca2.49e1c",
-    "group": "bc954448.141188",
-    "order": 4,
-    "width": 0,
-    "height": 0,
-    "name": "",
-    "label": "Ville:",
-    "format": "{{msg.payload}}",
-    "layout": "row-spread",
-    "x": 690,
-    "y": 160,
-    "wires": []
-}, {
-    "id": "4ce17ea1.7d4758",
-    "type": "change",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "sensorIdCommerce",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 280,
-    "y": 220,
-    "wires": [
-        []
-    ]
-}, {
-    "id": "1502cc31.a8cc6c",
-    "type": "comment",
-    "z": "bd329ca2.49e1c",
-    "name": "Envoyer in au commerce 0 via le capteur  \"0_in\"",
-    "info": "",
-    "x": 220,
-    "y": 20,
-    "wires": []
-}, {
-    "id": "2d966a2d.bb636e",
-    "type": "comment",
-    "z": "bd329ca2.49e1c",
-    "name": "Set flow.sensorId et Affichage des information du commerce",
-    "info": "",
-    "x": 260,
-    "y": 120,
-    "wires": []
-}, {
-    "id": "7f418623.4f1a4",
-    "type": "debug",
-    "z": "868e002.b1115",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 830,
-    "y": 320,
-    "wires": []
-}, {
-    "id": "5f1188f.16c7278",
-    "type": "mongodb in",
-    "z": "868e002.b1115",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "commerces",
-    "operation": "find",
-    "x": 440,
-    "y": 320,
-    "wires": [
-        ["372e1162.c50e16"]
-    ]
-}, {
-    "id": "2300cd0.a610db4",
-    "type": "function",
-    "z": "868e002.b1115",
-    "name": "",
-    "func": "msg.payload = {\"sensorIdArray\" :\"5_in\"} \nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 260,
-    "y": 320,
-    "wires": [
-        ["5f1188f.16c7278"]
-    ]
-}, {
-    "id": "c0e2f22b.4bfc9",
-    "type": "inject",
-    "z": "868e002.b1115",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 90,
-    "y": 320,
-    "wires": [
-        ["2300cd0.a610db4"]
-    ]
-}, {
-    "id": "a089d2bc.a76ab",
-    "type": "comment",
-    "z": "868e002.b1115",
-    "name": "Gestion du formulaire pour l'ajout de commerces",
-    "info": "",
-    "x": 460,
-    "y": 40,
-    "wires": []
-}, {
-    "id": "f42ad244.be1be",
-    "type": "comment",
-    "z": "bd329ca2.49e1c",
-    "name": "Envoye une entrée ou une sortie après avoir appuyer les boutons",
-    "info": "",
-    "x": 260,
-    "y": 260,
-    "wires": []
-}, {
-    "id": "372e1162.c50e16",
-    "type": "change",
-    "z": "868e002.b1115",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "payload[0].sensorsDatas",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 660,
-    "y": 320,
-    "wires": [
-        ["7f418623.4f1a4"]
-    ]
-}, {
-    "id": "d295b2c2.bbd668",
-    "type": "mqtt in",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "topic": "CapteurParking",
-    "qos": "2",
-    "datatype": "auto",
-    "broker": "8d4da33c.cb6318",
-    "nl": false,
-    "rap": false,
-    "x": 100,
-    "y": 440,
-    "wires": [
-        ["b81a11a0.af3b28"]
-    ]
-}, {
-    "id": "eb9b9a82.e7da2",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorIdArray\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type, \"sensorId\":sensorId}} };\n\n\n\n\nreturn msg;\n\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 440,
-    "y": 440,
-    "wires": [
-        ["9f6eb2d.7aab3d", "612831b1.894268"]
-    ]
-}, {
-    "id": "b81a11a0.af3b28",
-    "type": "json",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "property": "payload",
-    "action": "obj",
-    "pretty": false,
-    "x": 290,
-    "y": 440,
-    "wires": [
-        ["eb9b9a82.e7da2", "fc292413.c6478"]
-    ]
-}, {
-    "id": "9f6eb2d.7aab3d",
-    "type": "mongodb out",
-    "z": "8b9071f7.6ad848",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "parkings",
-    "payonly": false,
-    "upsert": true,
-    "multi": false,
-    "operation": "update",
-    "x": 670,
-    "y": 440,
-    "wires": []
-}, {
-    "id": "612831b1.894268",
-    "type": "debug",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 630,
-    "y": 500,
-    "wires": []
-}, {
-    "id": "654ef863.900818",
-    "type": "inject",
-    "z": "bd329ca2.49e1c",
-    "name": "String sensorId and values",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "{\"sensorId\":\"0_in\",\"type\":\"in\"}",
-    "payloadType": "str",
-    "x": 950,
-    "y": 60,
-    "wires": [
-        ["b5713196.4576a"]
-    ]
-}, {
-    "id": "b5713196.4576a",
-    "type": "mqtt out",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "topic": "CapteurParking",
-    "qos": "",
-    "retain": "",
-    "broker": "8d4da33c.cb6318",
-    "x": 1160,
-    "y": 60,
-    "wires": []
-}, {
-    "id": "846e6074.16db38",
-    "type": "ui_button",
-    "z": "bd329ca2.49e1c",
-    "name": "Envoyer entrée",
-    "group": "bc3f12fa.6421d8",
-    "order": 6,
-    "width": 0,
-    "height": 0,
-    "passthru": false,
-    "label": "Envoyer entrée",
-    "tooltip": "",
-    "color": "",
-    "bgcolor": "",
-    "icon": "",
-    "payload": "",
-    "payloadType": "str",
-    "topic": "topic",
-    "topicType": "msg",
-    "x": 900,
-    "y": 300,
-    "wires": [
-        ["dd32e138.5eb33"]
-    ]
-}, {
-    "id": "dd32e138.5eb33",
-    "type": "function",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdParking\"),\"type\":\"in\"}\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1080,
-    "y": 300,
-    "wires": [
-        ["a020d012.cb93f"]
-    ]
-}, {
-    "id": "a020d012.cb93f",
-    "type": "mqtt out",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "topic": "CapteurParking",
-    "qos": "",
-    "retain": "",
-    "broker": "8d4da33c.cb6318",
-    "x": 1240,
-    "y": 300,
-    "wires": []
-}, {
-    "id": "6688c6a1.577478",
-    "type": "ui_button",
-    "z": "bd329ca2.49e1c",
-    "name": "Envoyer sortie",
-    "group": "bc3f12fa.6421d8",
-    "order": 8,
-    "width": 0,
-    "height": 0,
-    "passthru": false,
-    "label": "Envoyer sortie",
-    "tooltip": "",
-    "color": "",
-    "bgcolor": "",
-    "icon": "",
-    "payload": "",
-    "payloadType": "str",
-    "topic": "topic",
-    "topicType": "msg",
-    "x": 900,
-    "y": 360,
-    "wires": [
-        ["cc496d7b.3d7a2"]
-    ]
-}, {
-    "id": "cc496d7b.3d7a2",
-    "type": "function",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdParking\"),\"type\":\"out\"}\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 1080,
-    "y": 360,
-    "wires": [
-        ["b506e3aa.c5874"]
-    ]
-}, {
-    "id": "b506e3aa.c5874",
-    "type": "mqtt out",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "topic": "CapteurParking",
-    "qos": "",
-    "retain": "",
-    "broker": "8d4da33c.cb6318",
-    "x": 1240,
-    "y": 360,
-    "wires": []
-}, {
-    "id": "f8880988.3c8998",
-    "type": "comment",
-    "z": "bd329ca2.49e1c",
-    "name": "Envoye une entrée ou une sortie après avoir appuyer les boutons",
-    "info": "",
-    "x": 1060,
-    "y": 260,
-    "wires": []
-}, {
-    "id": "d5ed3ca5.ab1bd",
-    "type": "mongodb in",
-    "z": "868e002.b1115",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "parkings",
-    "operation": "find",
-    "x": 250,
-    "y": 460,
-    "wires": [
-        ["ab5aa5f5.1afa08"]
-    ]
-}, {
-    "id": "effc5169.af7188",
-    "type": "inject",
-    "z": "868e002.b1115",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "{}",
-    "payloadType": "json",
-    "x": 90,
-    "y": 460,
-    "wires": [
-        ["d5ed3ca5.ab1bd"]
-    ]
-}, {
-    "id": "ab5aa5f5.1afa08",
-    "type": "function",
-    "z": "868e002.b1115",
-    "name": "",
-    "func": "\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 440,
-    "y": 460,
-    "wires": [
-        ["729811d8.3241e8"]
-    ]
-}, {
-    "id": "729811d8.3241e8",
-    "type": "debug",
-    "z": "868e002.b1115",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 620,
-    "y": 460,
-    "wires": []
-}, {
-    "id": "caaf63d1.e405c",
-    "type": "debug",
-    "z": "868e002.b1115",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 790,
-    "y": 560,
-    "wires": []
-}, {
-    "id": "eb4839f2.0c807",
-    "type": "mongodb in",
-    "z": "868e002.b1115",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "parkings",
-    "operation": "find",
-    "x": 430,
-    "y": 560,
-    "wires": [
-        ["37a5b80d.0cb6a8"]
-    ]
-}, {
-    "id": "8a794e0b.606948",
-    "type": "function",
-    "z": "868e002.b1115",
-    "name": "",
-    "func": "msg.payload = {\"sensorIdArray\" :\"5_in\"} \nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 260,
-    "y": 560,
-    "wires": [
-        ["eb4839f2.0c807"]
-    ]
-}, {
-    "id": "b74de680.8c45d8",
-    "type": "inject",
-    "z": "868e002.b1115",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 90,
-    "y": 560,
-    "wires": [
-        ["8a794e0b.606948"]
-    ]
-}, {
-    "id": "37a5b80d.0cb6a8",
-    "type": "change",
-    "z": "868e002.b1115",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "payload[0].sensorsDatas",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 620,
-    "y": 560,
-    "wires": [
-        ["caaf63d1.e405c"]
-    ]
-}, {
-    "id": "4e1aa17a.c5d0c",
-    "type": "ui_text_input",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "label": "ID capteur",
-    "tooltip": "",
-    "group": "bc3f12fa.6421d8",
-    "order": 1,
-    "width": 0,
-    "height": 0,
-    "passthru": true,
-    "mode": "text",
-    "delay": "0",
-    "topic": "topic",
-    "topicType": "msg",
-    "x": 890,
-    "y": 160,
-    "wires": [
-        ["1a2e983d.327c78", "53bc9f5a.44787"]
-    ]
-}, {
-    "id": "a891eb6f.2f97c",
-    "type": "mongodb in",
-    "z": "bd329ca2.49e1c",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "find",
-    "collection": "commerces",
-    "operation": "find",
-    "x": 1190,
-    "y": 160,
-    "wires": [
-        ["aa71d2cc.04e45"]
-    ]
-}, {
-    "id": "1a2e983d.327c78",
-    "type": "function",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "func": "msg.payload = {\"sensorIdArray\" :msg.payload} \nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 1060,
-    "y": 160,
-    "wires": [
-        ["a891eb6f.2f97c"]
-    ]
-}, {
-    "id": "aa71d2cc.04e45",
-    "type": "function",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "func": "commerce = msg.payload[0];\n\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\nreturn [ msg_name ,msg_address, msg_city]",
-    "outputs": 3,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 1320,
-    "y": 160,
-    "wires": [
-        [],
-        [],
-        []
-    ]
-}, {
-    "id": "53bc9f5a.44787",
-    "type": "change",
-    "z": "bd329ca2.49e1c",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "sensorIdParking",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1050,
-    "y": 220,
-    "wires": [
-        []
-    ]
-}, {
-    "id": "b5455283.c50a58",
-    "type": "comment",
-    "z": "bd329ca2.49e1c",
-    "name": "Set flow.sensorId et Affichage des information du commerce",
-    "info": "",
-    "x": 1040,
-    "y": 120,
-    "wires": []
-}, {
-    "id": "18fcf99.7bd3086",
-    "type": "comment",
-    "z": "bd329ca2.49e1c",
-    "name": "Envoyer in au parking 0 via le capteur  \"0_in\"",
-    "info": "",
-    "x": 990,
-    "y": 20,
-    "wires": []
-}, {
-    "id": "33d59caf.687ccc",
-    "type": "debug",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 570,
-    "y": 40,
-    "wires": []
-}, {
-    "id": "cb80b54b.3468c",
-    "type": "json",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "property": "payload",
-    "action": "",
-    "pretty": false,
-    "x": 410,
-    "y": 40,
-    "wires": [
-        ["33d59caf.687ccc"]
-    ]
-}, {
-    "id": "a2000ce8.ec378",
-    "type": "websocket in",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "server": "",
-    "client": "3a960f68.dfb54",
-    "x": 180,
-    "y": 40,
-    "wires": [
-        ["cb80b54b.3468c"]
-    ]
-}, {
-    "id": "3ec9f9a6.bd55b6",
-    "type": "inject",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "30 04 * * *",
-    "once": false,
-    "onceDelay": "0.5",
-    "topic": "",
-    "payload": "{}",
-    "payloadType": "json",
-    "x": 970,
-    "y": 280,
-    "wires": [
-        ["b6b38107.7af338", "9fe28fe.1ee3c7"]
-    ]
-}, {
-    "id": "b6b38107.7af338",
-    "type": "mongodb in",
-    "z": "8b9071f7.6ad848",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "parkings",
-    "operation": "find",
-    "x": 1150,
-    "y": 280,
-    "wires": [
-        ["cd4155c0.9931d"]
-    ]
-}, {
-    "id": "9e1dc3c7.f950f",
-    "type": "debug",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 1750,
-    "y": 280,
-    "wires": []
-}, {
-    "id": "cd4155c0.9931d",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    parking = msg.payload[p]\n    parking.currentPeople = 0;\n    parking.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        parking.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            parking.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < parking.sensorsDatas.length; ++i){\n        if (parking.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (parking.sensorsDatas[i].date.getDay() == j && \n                    parking.sensorsDatas[i].date.getHours() == h){\n                        parking.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            parking.stat[j][h] = parking.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(parking);\n}\nreturn newMsg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1340,
-    "y": 280,
-    "wires": [
-        ["fbd5c2e.5cfdb4"]
-    ]
-}, {
-    "id": "fbd5c2e.5cfdb4",
-    "type": "change",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "sensorParkings",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1530,
-    "y": 280,
-    "wires": [
-        ["9e1dc3c7.f950f"]
-    ]
-}, {
-    "id": "2ca2da8.a7cb226",
-    "type": "debug",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 1750,
-    "y": 340,
-    "wires": []
-}, {
-    "id": "8278738e.86736",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    commerce = msg.payload[p]\n    commerce.currentPeople = 0;\n    commerce.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        commerce.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            commerce.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < commerce.sensorsDatas.length; ++i){\n        if (commerce.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (commerce.sensorsDatas[i].date.getDay() == j && \n                        commerce.sensorsDatas[i].date.getHours() == h){\n                        commerce.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            commerce.stat[j][h] = commerce.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(commerce);\n}\nreturn newMsg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1340,
-    "y": 340,
-    "wires": [
-        ["b24a4a74.0062c8"]
-    ]
-}, {
-    "id": "b24a4a74.0062c8",
-    "type": "change",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "sensorCommerces",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1540,
-    "y": 340,
-    "wires": [
-        ["2ca2da8.a7cb226"]
-    ]
-}, {
-    "id": "9fe28fe.1ee3c7",
-    "type": "mongodb in",
-    "z": "8b9071f7.6ad848",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "commerces",
-    "operation": "find",
-    "x": 1150,
-    "y": 340,
-    "wires": [
-        ["8278738e.86736"]
-    ]
-}, {
-    "id": "251aa8be.2e59",
-    "type": "comment",
-    "z": "8b9071f7.6ad848",
-    "name": "Récupération initiale des commerces au lancement ",
-    "info": "",
-    "x": 1080,
-    "y": 40,
-    "wires": []
-}, {
-    "id": "2d64e390.d0db64",
-    "type": "inject",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": true,
-    "onceDelay": "1",
-    "topic": "",
-    "payload": "{}",
-    "payloadType": "json",
-    "x": 970,
-    "y": 80,
-    "wires": [
-        ["b4376610.d58278", "8ba87799.ac833"]
-    ]
-}, {
-    "id": "b4376610.d58278",
-    "type": "mongodb in",
-    "z": "8b9071f7.6ad848",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "parkings",
-    "operation": "find",
-    "x": 1150,
-    "y": 80,
-    "wires": [
-        ["91188c56.eea628"]
-    ]
-}, {
-    "id": "4ee3a771.510c18",
-    "type": "debug",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 1750,
-    "y": 80,
-    "wires": []
-}, {
-    "id": "91188c56.eea628",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    parking = msg.payload[p]\n    parking.currentPeople = 0;\n    parking.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        parking.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            parking.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < parking.sensorsDatas.length; ++i){\n        if (parking.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (parking.sensorsDatas[i].date.getDay() == j && \n                    parking.sensorsDatas[i].date.getHours() == h){\n                        parking.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            parking.stat[j][h] = parking.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(parking);\n}\nreturn newMsg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1340,
-    "y": 80,
-    "wires": [
-        ["a8cd4c10.05d8d8"]
-    ]
-}, {
-    "id": "a8cd4c10.05d8d8",
-    "type": "change",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "sensorParkings",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1530,
-    "y": 80,
-    "wires": [
-        ["4ee3a771.510c18"]
-    ]
-}, {
-    "id": "3c434a2f.181216",
-    "type": "debug",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 1750,
-    "y": 140,
-    "wires": []
-}, {
-    "id": "8d6e8d8f.0ceeb8",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    commerce = msg.payload[p]\n    commerce.currentPeople = 0;\n    commerce.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        commerce.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            commerce.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < commerce.sensorsDatas.length; ++i){\n        if (commerce.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (commerce.sensorsDatas[i].date.getDay() == j && \n                        commerce.sensorsDatas[i].date.getHours() == h){\n                        commerce.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            commerce.stat[j][h] = commerce.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(commerce);\n}\nreturn newMsg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1340,
-    "y": 140,
-    "wires": [
-        ["56cdb836.f02f38"]
-    ]
-}, {
-    "id": "56cdb836.f02f38",
-    "type": "change",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "rules": [{
-        "t": "set",
-        "p": "sensorCommerces",
-        "pt": "flow",
-        "to": "payload",
-        "tot": "msg"
-    }],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1540,
-    "y": 140,
-    "wires": [
-        ["3c434a2f.181216"]
-    ]
-}, {
-    "id": "8ba87799.ac833",
-    "type": "mongodb in",
-    "z": "8b9071f7.6ad848",
-    "mongodb": "26e813b1.5ac7d4",
-    "name": "",
-    "collection": "commerces",
-    "operation": "find",
-    "x": 1150,
-    "y": 140,
-    "wires": [
-        ["8d6e8d8f.0ceeb8"]
-    ]
-}, {
-    "id": "a441ba41.98ff98",
-    "type": "comment",
-    "z": "8b9071f7.6ad848",
-    "name": "Récupération des commerces et remise a zero quotidienne",
-    "info": "",
-    "x": 1110,
-    "y": 240,
-    "wires": []
-}, {
-    "id": "e0469651.4e437",
-    "type": "websocket out",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "server": "cd96fa45.e4f66",
-    "client": "",
-    "x": 640,
-    "y": 620,
-    "wires": []
-}, {
-    "id": "fc292413.c6478",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "sensorParkings = flow.get(\"sensorParkings\");\n\nfor ( i = 0 ; i < sensorParkings.length ; ++i ){\n    for ( j = 0; j < sensorParkings[i].sensorIdArray.length; ++j ){\n        if ( sensorParkings[i].sensorIdArray[j] == msg.payload.sensorId){\n            \n            temp={};\n            temp._id = sensorParkings[i]._id;\n            \n            if ( msg.payload.type == \"in\" ){\n                sensorParkings[i].currentPeople += 1;\n            }else if ( msg.payload.type == \"out\"){\n                sensorParkings[i].currentPeople -= 1;\n            }\n           \n            temp.currentPeople = sensorParkings[i].currentPeople;\n            flow.set(\"sensorParkings\", sensorParkings);\n            msg.payload = temp;\n            return msg;\n        } \n    }\n}\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 440,
-    "y": 620,
-    "wires": [
-        ["e0469651.4e437", "8fcf1452.cab698"]
-    ]
-}, {
-    "id": "8fcf1452.cab698",
-    "type": "debug",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "payload",
-    "targetType": "msg",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 650,
-    "y": 680,
-    "wires": []
-}, {
-    "id": "193daddd.6e832a",
-    "type": "websocket out",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "server": "54651cc0.ab9ae4",
-    "client": "",
-    "x": 670,
-    "y": 260,
-    "wires": []
-}, {
-    "id": "8c589ae4.4ea93",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "sensorCommerces = flow.get(\"sensorCommerces\");\n\nfor ( i = 0 ; i < sensorCommerces.length ; ++i ){\n    for ( j = 0; j < sensorCommerces[i].sensorIdArray.length; ++j ){\n        if ( sensorCommerces[i].sensorIdArray[j] == msg.payload.sensorId){\n            \n            temp={};\n            temp._id = sensorCommerces[i]._id;\n            \n            if ( msg.payload.type == \"in\" ){\n                sensorCommerces[i].currentPeople += 1;\n            }else if ( msg.payload.type == \"out\"){\n                sensorCommerces[i].currentPeople -= 1;\n            }\n           \n            temp.currentPeople = sensorCommerces[i].currentPeople;\n            flow.set(\"sensorCommerces\", sensorCommerces);\n            msg.payload = temp;\n            return msg;\n        } \n    }\n}\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 440,
-    "y": 260,
-    "wires": [
-        ["193daddd.6e832a", "7ea9c8c4.a3ccb"]
-    ]
-}, {
-    "id": "7ea9c8c4.a3ccb",
-    "type": "debug",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "payload",
-    "targetType": "msg",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 650,
-    "y": 320,
-    "wires": []
-}, {
-    "id": "dd24a08b.1f4d6",
-    "type": "debug",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 570,
-    "y": 140,
-    "wires": []
-}, {
-    "id": "d7bb78d3.368ad",
-    "type": "json",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "property": "payload",
-    "action": "",
-    "pretty": false,
-    "x": 410,
-    "y": 140,
-    "wires": [
-        ["dd24a08b.1f4d6"]
-    ]
-}, {
-    "id": "c3447bd5.6229f8",
-    "type": "websocket in",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "server": "",
-    "client": "f0b098ac.865b88",
-    "x": 170,
-    "y": 140,
-    "wires": [
-        ["d7bb78d3.368ad"]
-    ]
-}, {
-    "id": "246a3501.1b332a",
-    "type": "comment",
-    "z": "8b9071f7.6ad848",
-    "name": "[MQTT] reception valeurs capteur commerce",
-    "info": "",
-    "x": 190,
-    "y": 40,
-    "wires": []
-}, {
-    "id": "fe14f487.ad2ff",
-    "type": "comment",
-    "z": "8b9071f7.6ad848",
-    "name": "[MQTT] reception valeurs capteur parking",
-    "info": "",
-    "x": 170,
-    "y": 400,
-    "wires": []
-}, {
-    "id": "f836c72c.49eed8",
-    "type": "comment",
-    "z": "8b9071f7.6ad848",
-    "name": "Archivage dans la basse de données",
-    "info": "",
-    "x": 540,
-    "y": 40,
-    "wires": []
-}, {
-    "id": "8d56362b.932b1",
-    "type": "comment",
-    "z": "8b9071f7.6ad848",
-    "name": "Archivage dans la basse de données",
-    "info": "",
-    "x": 520,
-    "y": 400,
-    "wires": []
-}, {
-    "id": "cb7871b1.10469",
-    "type": "comment",
-    "z": "8b9071f7.6ad848",
-    "name": "Envois du nombre de personne actuel pour le commerce",
-    "info": "",
-    "x": 580,
-    "y": 220,
-    "wires": []
-}, {
-    "id": "a40f6cce.2c4e88",
-    "type": "comment",
-    "z": "8b9071f7.6ad848",
-    "name": "Envois du nombre de voitures actuel pour le parking",
-    "info": "",
-    "x": 570,
-    "y": 580,
-    "wires": []
-}, {
-    "id": "62eea782.bb38d",
-    "type": "websocket in",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "server": "54651cc0.ab9ae4",
-    "client": "",
-    "x": 1000,
-    "y": 440,
-    "wires": [
-        ["7500fc20.a076fc"]
-    ]
-}, {
-    "id": "1a81d2f3.dfaf0d",
-    "type": "websocket out",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "server": "54651cc0.ab9ae4",
-    "client": "",
-    "x": 1350,
-    "y": 440,
-    "wires": []
-}, {
-    "id": "7500fc20.a076fc",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "msg.payload = flow.get(\"sensorCommerces\");\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1180,
-    "y": 440,
-    "wires": [
-        ["1a81d2f3.dfaf0d"]
-    ]
-}, {
-    "id": "bdb0b37a.36ccd",
-    "type": "websocket in",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "server": "cd96fa45.e4f66",
-    "client": "",
-    "x": 990,
-    "y": 560,
-    "wires": [
-        ["535c15dc.25085c"]
-    ]
-}, {
-    "id": "555526c9.23c3e8",
-    "type": "websocket out",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "server": "cd96fa45.e4f66",
-    "client": "",
-    "x": 1340,
-    "y": 560,
-    "wires": []
-}, {
-    "id": "535c15dc.25085c",
-    "type": "function",
-    "z": "8b9071f7.6ad848",
-    "name": "",
-    "func": "msg.payload = flow.get(\"sensorParkings\");\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 1180,
-    "y": 560,
-    "wires": [
-        ["555526c9.23c3e8"]
-    ]
-}, {
-    "id": "5012ddf5.07e81c",
-    "type": "websocket out",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "server": "",
-    "client": "3a960f68.dfb54",
-    "x": 430,
-    "y": 220,
-    "wires": []
-}, {
-    "id": "dc8e5f62.2af88",
-    "type": "inject",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 120,
-    "y": 220,
-    "wires": [
-        ["5012ddf5.07e81c"]
-    ]
-}, {
-    "id": "f20e6fe4.2bf71",
-    "type": "websocket out",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "server": "",
-    "client": "f0b098ac.865b88",
-    "x": 420,
-    "y": 280,
-    "wires": []
-}, {
-    "id": "b2a85fa9.ee0ac",
-    "type": "inject",
-    "z": "a6592cfa.8a3a9",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 120,
-    "y": 280,
-    "wires": [
-        ["f20e6fe4.2bf71"]
-    ]
-}]
+        "reg": false,
+        "x": 740,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d01d927.9d4777",
+        "type": "change",
+        "z": "868e002.b1115",
+        "name": "{}",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "4ee7f826.0fc258"
+            ]
+        ]
+    },
+    {
+        "id": "ebef0046.00fd18",
+        "type": "delay",
+        "z": "868e002.b1115",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "50",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 530,
+        "y": 80,
+        "wires": [
+            [
+                "fc90af3c.ca1a08"
+            ]
+        ]
+    },
+    {
+        "id": "fc90af3c.ca1a08",
+        "type": "function",
+        "z": "868e002.b1115",
+        "name": "",
+        "func": "var id = flow.get('count');\nmsg.payload._id = id;\nmsg.payload.sensorIdArray = [];\nmsg.payload.sensorIdArray.push(id.toString() + \"_in\");\nmsg.payload.sensorIdArray.push(id.toString() + \"_out\");\nmsg.payload.sensorsDatas = [];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 800,
+        "y": 80,
+        "wires": [
+            [
+                "330fe4f7.3ef44c"
+            ]
+        ]
+    },
+    {
+        "id": "330fe4f7.3ef44c",
+        "type": "mongodb out",
+        "z": "868e002.b1115",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "commerces",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 1000,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "59b881df.383ce",
+        "type": "mongodb in",
+        "z": "868e002.b1115",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "commerces",
+        "operation": "find",
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "a171fe9b.9482a8"
+            ]
+        ]
+    },
+    {
+        "id": "3beeae30.86d1da",
+        "type": "inject",
+        "z": "868e002.b1115",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 220,
+        "wires": [
+            [
+                "59b881df.383ce"
+            ]
+        ]
+    },
+    {
+        "id": "a171fe9b.9482a8",
+        "type": "function",
+        "z": "868e002.b1115",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "854acb46.217a08"
+            ]
+        ]
+    },
+    {
+        "id": "854acb46.217a08",
+        "type": "debug",
+        "z": "868e002.b1115",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "45169083.d3a4a",
+        "type": "ui_text_input",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "label": "ID capteur",
+        "tooltip": "",
+        "group": "bc954448.141188",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 160,
+        "wires": [
+            [
+                "c52df6fa.e57de8",
+                "4ce17ea1.7d4758"
+            ]
+        ]
+    },
+    {
+        "id": "6a2f6594.a3dd84",
+        "type": "mongodb in",
+        "z": "bd329ca2.49e1c",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "find",
+        "collection": "commerces",
+        "operation": "find",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "ed38aea3.f478c"
+            ]
+        ]
+    },
+    {
+        "id": "c52df6fa.e57de8",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "msg.payload = {\"sensorIdArray\" :msg.payload} \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "6a2f6594.a3dd84"
+            ]
+        ]
+    },
+    {
+        "id": "ed38aea3.f478c",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "commerce = msg.payload[0];\n\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\nreturn [ msg_name ,msg_address, msg_city]",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "c2c5becf.71f72"
+            ],
+            [
+                "59d20b0e.a59a9c"
+            ],
+            [
+                "bc30e2e2.62dfb"
+            ]
+        ]
+    },
+    {
+        "id": "c2c5becf.71f72",
+        "type": "ui_text",
+        "z": "bd329ca2.49e1c",
+        "group": "bc954448.141188",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Nom:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 690,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "59d20b0e.a59a9c",
+        "type": "ui_text",
+        "z": "bd329ca2.49e1c",
+        "group": "bc954448.141188",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Adresse:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 700,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "bc30e2e2.62dfb",
+        "type": "ui_text",
+        "z": "bd329ca2.49e1c",
+        "group": "bc954448.141188",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Ville:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 690,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4ce17ea1.7d4758",
+        "type": "change",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensorIdCommerce",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1502cc31.a8cc6c",
+        "type": "comment",
+        "z": "bd329ca2.49e1c",
+        "name": "Envoyer in au commerce 0 via le capteur  \"0_in\"",
+        "info": "",
+        "x": 220,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "2d966a2d.bb636e",
+        "type": "comment",
+        "z": "bd329ca2.49e1c",
+        "name": "Set flow.sensorId et Affichage des information du commerce",
+        "info": "",
+        "x": 260,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7f418623.4f1a4",
+        "type": "debug",
+        "z": "868e002.b1115",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5f1188f.16c7278",
+        "type": "mongodb in",
+        "z": "868e002.b1115",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "commerces",
+        "operation": "find",
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "372e1162.c50e16"
+            ]
+        ]
+    },
+    {
+        "id": "2300cd0.a610db4",
+        "type": "function",
+        "z": "868e002.b1115",
+        "name": "",
+        "func": "msg.payload = {\"sensorIdArray\" :\"5_in\"} \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 320,
+        "wires": [
+            [
+                "5f1188f.16c7278"
+            ]
+        ]
+    },
+    {
+        "id": "c0e2f22b.4bfc9",
+        "type": "inject",
+        "z": "868e002.b1115",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "2300cd0.a610db4"
+            ]
+        ]
+    },
+    {
+        "id": "a089d2bc.a76ab",
+        "type": "comment",
+        "z": "868e002.b1115",
+        "name": "Gestion du formulaire pour l'ajout de commerces",
+        "info": "",
+        "x": 460,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f42ad244.be1be",
+        "type": "comment",
+        "z": "bd329ca2.49e1c",
+        "name": "Envoye une entrée ou une sortie après avoir appuyer les boutons",
+        "info": "",
+        "x": 260,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "372e1162.c50e16",
+        "type": "change",
+        "z": "868e002.b1115",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].sensorsDatas",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 320,
+        "wires": [
+            [
+                "7f418623.4f1a4"
+            ]
+        ]
+    },
+    {
+        "id": "d295b2c2.bbd668",
+        "type": "mqtt in",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "topic": "CapteurParking",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "8d4da33c.cb6318",
+        "nl": false,
+        "rap": false,
+        "x": 100,
+        "y": 440,
+        "wires": [
+            [
+                "b81a11a0.af3b28"
+            ]
+        ]
+    },
+    {
+        "id": "eb9b9a82.e7da2",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "var sensorId = msg.payload.sensorId;\nvar type = msg.payload.type;\nvar date = new Date();\n\nmsg.query= {\"sensorIdArray\": sensorId};\nmsg.payload = { \"$push\": {\"sensorsDatas\": {\"date\": date, \"type\":type, \"sensorId\":sensorId}} };\n\n\n\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 440,
+        "wires": [
+            [
+                "9f6eb2d.7aab3d",
+                "612831b1.894268"
+            ]
+        ]
+    },
+    {
+        "id": "b81a11a0.af3b28",
+        "type": "json",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 290,
+        "y": 440,
+        "wires": [
+            [
+                "eb9b9a82.e7da2",
+                "fc292413.c6478"
+            ]
+        ]
+    },
+    {
+        "id": "9f6eb2d.7aab3d",
+        "type": "mongodb out",
+        "z": "8b9071f7.6ad848",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "parkings",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 670,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "612831b1.894268",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "654ef863.900818",
+        "type": "inject",
+        "z": "bd329ca2.49e1c",
+        "name": "String sensorId and values",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"sensorId\":\"0_in\",\"type\":\"in\"}",
+        "payloadType": "str",
+        "x": 950,
+        "y": 60,
+        "wires": [
+            [
+                "b5713196.4576a"
+            ]
+        ]
+    },
+    {
+        "id": "b5713196.4576a",
+        "type": "mqtt out",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "topic": "CapteurParking",
+        "qos": "",
+        "retain": "",
+        "broker": "8d4da33c.cb6318",
+        "x": 1160,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "846e6074.16db38",
+        "type": "ui_button",
+        "z": "bd329ca2.49e1c",
+        "name": "Envoyer entrée",
+        "group": "bc3f12fa.6421d8",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Envoyer entrée",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 900,
+        "y": 300,
+        "wires": [
+            [
+                "dd32e138.5eb33"
+            ]
+        ]
+    },
+    {
+        "id": "dd32e138.5eb33",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdParking\"),\"type\":\"in\"}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 300,
+        "wires": [
+            [
+                "a020d012.cb93f"
+            ]
+        ]
+    },
+    {
+        "id": "a020d012.cb93f",
+        "type": "mqtt out",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "topic": "CapteurParking",
+        "qos": "",
+        "retain": "",
+        "broker": "8d4da33c.cb6318",
+        "x": 1240,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6688c6a1.577478",
+        "type": "ui_button",
+        "z": "bd329ca2.49e1c",
+        "name": "Envoyer sortie",
+        "group": "bc3f12fa.6421d8",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Envoyer sortie",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 900,
+        "y": 360,
+        "wires": [
+            [
+                "cc496d7b.3d7a2"
+            ]
+        ]
+    },
+    {
+        "id": "cc496d7b.3d7a2",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "msg.payload = {\"sensorId\": flow.get(\"sensorIdParking\"),\"type\":\"out\"}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1080,
+        "y": 360,
+        "wires": [
+            [
+                "b506e3aa.c5874"
+            ]
+        ]
+    },
+    {
+        "id": "b506e3aa.c5874",
+        "type": "mqtt out",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "topic": "CapteurParking",
+        "qos": "",
+        "retain": "",
+        "broker": "8d4da33c.cb6318",
+        "x": 1240,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f8880988.3c8998",
+        "type": "comment",
+        "z": "bd329ca2.49e1c",
+        "name": "Envoye une entrée ou une sortie après avoir appuyer les boutons",
+        "info": "",
+        "x": 1060,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d5ed3ca5.ab1bd",
+        "type": "mongodb in",
+        "z": "868e002.b1115",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "parkings",
+        "operation": "find",
+        "x": 250,
+        "y": 460,
+        "wires": [
+            [
+                "ab5aa5f5.1afa08"
+            ]
+        ]
+    },
+    {
+        "id": "effc5169.af7188",
+        "type": "inject",
+        "z": "868e002.b1115",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "d5ed3ca5.ab1bd"
+            ]
+        ]
+    },
+    {
+        "id": "ab5aa5f5.1afa08",
+        "type": "function",
+        "z": "868e002.b1115",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "729811d8.3241e8"
+            ]
+        ]
+    },
+    {
+        "id": "729811d8.3241e8",
+        "type": "debug",
+        "z": "868e002.b1115",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "caaf63d1.e405c",
+        "type": "debug",
+        "z": "868e002.b1115",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "eb4839f2.0c807",
+        "type": "mongodb in",
+        "z": "868e002.b1115",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "parkings",
+        "operation": "find",
+        "x": 430,
+        "y": 560,
+        "wires": [
+            [
+                "37a5b80d.0cb6a8"
+            ]
+        ]
+    },
+    {
+        "id": "8a794e0b.606948",
+        "type": "function",
+        "z": "868e002.b1115",
+        "name": "",
+        "func": "msg.payload = {\"sensorIdArray\" :\"5_in\"} \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 260,
+        "y": 560,
+        "wires": [
+            [
+                "eb4839f2.0c807"
+            ]
+        ]
+    },
+    {
+        "id": "b74de680.8c45d8",
+        "type": "inject",
+        "z": "868e002.b1115",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "8a794e0b.606948"
+            ]
+        ]
+    },
+    {
+        "id": "37a5b80d.0cb6a8",
+        "type": "change",
+        "z": "868e002.b1115",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].sensorsDatas",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 560,
+        "wires": [
+            [
+                "caaf63d1.e405c"
+            ]
+        ]
+    },
+    {
+        "id": "4e1aa17a.c5d0c",
+        "type": "ui_text_input",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "label": "ID capteur",
+        "tooltip": "",
+        "group": "bc3f12fa.6421d8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 890,
+        "y": 160,
+        "wires": [
+            [
+                "1a2e983d.327c78",
+                "53bc9f5a.44787"
+            ]
+        ]
+    },
+    {
+        "id": "a891eb6f.2f97c",
+        "type": "mongodb in",
+        "z": "bd329ca2.49e1c",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "find",
+        "collection": "commerces",
+        "operation": "find",
+        "x": 1190,
+        "y": 160,
+        "wires": [
+            [
+                "aa71d2cc.04e45"
+            ]
+        ]
+    },
+    {
+        "id": "1a2e983d.327c78",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "msg.payload = {\"sensorIdArray\" :msg.payload} \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1060,
+        "y": 160,
+        "wires": [
+            [
+                "a891eb6f.2f97c"
+            ]
+        ]
+    },
+    {
+        "id": "aa71d2cc.04e45",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "commerce = msg.payload[0];\n\nmsg_name ={ payload : commerce.name};\nmsg_address ={ payload : commerce.address};\nmsg_city ={ payload : commerce.city};\n\nreturn [ msg_name ,msg_address, msg_city]",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1320,
+        "y": 160,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "53bc9f5a.44787",
+        "type": "change",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensorIdParking",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1050,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5455283.c50a58",
+        "type": "comment",
+        "z": "bd329ca2.49e1c",
+        "name": "Set flow.sensorId et Affichage des information du commerce",
+        "info": "",
+        "x": 1040,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "18fcf99.7bd3086",
+        "type": "comment",
+        "z": "bd329ca2.49e1c",
+        "name": "Envoyer in au parking 0 via le capteur  \"0_in\"",
+        "info": "",
+        "x": 990,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "33d59caf.687ccc",
+        "type": "debug",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 570,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "cb80b54b.3468c",
+        "type": "json",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 40,
+        "wires": [
+            [
+                "33d59caf.687ccc"
+            ]
+        ]
+    },
+    {
+        "id": "a2000ce8.ec378",
+        "type": "websocket in",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "server": "",
+        "client": "3a960f68.dfb54",
+        "x": 180,
+        "y": 40,
+        "wires": [
+            [
+                "cb80b54b.3468c"
+            ]
+        ]
+    },
+    {
+        "id": "3ec9f9a6.bd55b6",
+        "type": "inject",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 04 * * *",
+        "once": false,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 970,
+        "y": 280,
+        "wires": [
+            [
+                "b6b38107.7af338",
+                "9fe28fe.1ee3c7"
+            ]
+        ]
+    },
+    {
+        "id": "b6b38107.7af338",
+        "type": "mongodb in",
+        "z": "8b9071f7.6ad848",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "parkings",
+        "operation": "find",
+        "x": 1150,
+        "y": 280,
+        "wires": [
+            [
+                "cd4155c0.9931d"
+            ]
+        ]
+    },
+    {
+        "id": "9e1dc3c7.f950f",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1750,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "cd4155c0.9931d",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    parking = msg.payload[p]\n    parking.currentPeople = 0;\n    parking.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        parking.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            parking.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < parking.sensorsDatas.length; ++i){\n        if (parking.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (parking.sensorsDatas[i].date.getDay() == j && \n                    parking.sensorsDatas[i].date.getHours() == h){\n                        parking.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            parking.stat[j][h] = parking.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(parking);\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 280,
+        "wires": [
+            [
+                "fbd5c2e.5cfdb4"
+            ]
+        ]
+    },
+    {
+        "id": "fbd5c2e.5cfdb4",
+        "type": "change",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensorParkings",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1530,
+        "y": 280,
+        "wires": [
+            [
+                "9e1dc3c7.f950f"
+            ]
+        ]
+    },
+    {
+        "id": "2ca2da8.a7cb226",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1750,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8278738e.86736",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    commerce = msg.payload[p]\n    commerce.currentPeople = 0;\n    commerce.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        commerce.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            commerce.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < commerce.sensorsDatas.length; ++i){\n        if (commerce.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (commerce.sensorsDatas[i].date.getDay() == j && \n                        commerce.sensorsDatas[i].date.getHours() == h){\n                        commerce.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            commerce.stat[j][h] = commerce.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(commerce);\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 340,
+        "wires": [
+            [
+                "b24a4a74.0062c8"
+            ]
+        ]
+    },
+    {
+        "id": "b24a4a74.0062c8",
+        "type": "change",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensorCommerces",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 340,
+        "wires": [
+            [
+                "2ca2da8.a7cb226"
+            ]
+        ]
+    },
+    {
+        "id": "9fe28fe.1ee3c7",
+        "type": "mongodb in",
+        "z": "8b9071f7.6ad848",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "commerces",
+        "operation": "find",
+        "x": 1150,
+        "y": 340,
+        "wires": [
+            [
+                "8278738e.86736"
+            ]
+        ]
+    },
+    {
+        "id": "251aa8be.2e59",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Récupération initiale des commerces au lancement ",
+        "info": "",
+        "x": 1080,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2d64e390.d0db64",
+        "type": "inject",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 970,
+        "y": 80,
+        "wires": [
+            [
+                "b4376610.d58278",
+                "8ba87799.ac833"
+            ]
+        ]
+    },
+    {
+        "id": "b4376610.d58278",
+        "type": "mongodb in",
+        "z": "8b9071f7.6ad848",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "parkings",
+        "operation": "find",
+        "x": 1150,
+        "y": 80,
+        "wires": [
+            [
+                "91188c56.eea628"
+            ]
+        ]
+    },
+    {
+        "id": "4ee3a771.510c18",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1750,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "91188c56.eea628",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    parking = msg.payload[p]\n    parking.currentPeople = 0;\n    parking.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        parking.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            parking.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < parking.sensorsDatas.length; ++i){\n        if (parking.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (parking.sensorsDatas[i].date.getDay() == j && \n                    parking.sensorsDatas[i].date.getHours() == h){\n                        parking.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            parking.stat[j][h] = parking.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(parking);\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 80,
+        "wires": [
+            [
+                "a8cd4c10.05d8d8"
+            ]
+        ]
+    },
+    {
+        "id": "a8cd4c10.05d8d8",
+        "type": "change",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensorParkings",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1530,
+        "y": 80,
+        "wires": [
+            [
+                "4ee3a771.510c18"
+            ]
+        ]
+    },
+    {
+        "id": "3c434a2f.181216",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1750,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "8d6e8d8f.0ceeb8",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    commerce = msg.payload[p]\n    commerce.currentPeople = 0;\n    commerce.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        commerce.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            commerce.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < commerce.sensorsDatas.length; ++i){\n        if (commerce.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (commerce.sensorsDatas[i].date.getDay() == j && \n                        commerce.sensorsDatas[i].date.getHours() == h){\n                        commerce.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            commerce.stat[j][h] = commerce.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(commerce);\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 140,
+        "wires": [
+            [
+                "56cdb836.f02f38"
+            ]
+        ]
+    },
+    {
+        "id": "56cdb836.f02f38",
+        "type": "change",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensorCommerces",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 140,
+        "wires": [
+            [
+                "3c434a2f.181216"
+            ]
+        ]
+    },
+    {
+        "id": "8ba87799.ac833",
+        "type": "mongodb in",
+        "z": "8b9071f7.6ad848",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "commerces",
+        "operation": "find",
+        "x": 1150,
+        "y": 140,
+        "wires": [
+            [
+                "8d6e8d8f.0ceeb8"
+            ]
+        ]
+    },
+    {
+        "id": "a441ba41.98ff98",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Récupération des commerces et remise a zero quotidienne",
+        "info": "",
+        "x": 1110,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e0469651.4e437",
+        "type": "websocket out",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "server": "cd96fa45.e4f66",
+        "client": "",
+        "x": 640,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "fc292413.c6478",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "sensorParkings = flow.get(\"sensorParkings\");\n\nfor ( i = 0 ; i < sensorParkings.length ; ++i ){\n    for ( j = 0; j < sensorParkings[i].sensorIdArray.length; ++j ){\n        if ( sensorParkings[i].sensorIdArray[j] == msg.payload.sensorId){\n            \n            temp={};\n            temp._id = sensorParkings[i]._id;\n            \n            if ( msg.payload.type == \"in\" ){\n                sensorParkings[i].currentPeople += 1;\n            }else if ( msg.payload.type == \"out\"){\n                sensorParkings[i].currentPeople -= 1;\n            }\n           \n            temp.currentPeople = sensorParkings[i].currentPeople;\n            flow.set(\"sensorParkings\", sensorParkings);\n            msg.payload = temp;\n            return msg;\n        } \n    }\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 620,
+        "wires": [
+            [
+                "e0469651.4e437",
+                "8fcf1452.cab698"
+            ]
+        ]
+    },
+    {
+        "id": "8fcf1452.cab698",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "193daddd.6e832a",
+        "type": "websocket out",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "server": "54651cc0.ab9ae4",
+        "client": "",
+        "x": 670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8c589ae4.4ea93",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "sensorCommerces = flow.get(\"sensorCommerces\");\n\nfor ( i = 0 ; i < sensorCommerces.length ; ++i ){\n    for ( j = 0; j < sensorCommerces[i].sensorIdArray.length; ++j ){\n        if ( sensorCommerces[i].sensorIdArray[j] == msg.payload.sensorId){\n            \n            temp={};\n            temp._id = sensorCommerces[i]._id;\n            \n            if ( msg.payload.type == \"in\" ){\n                sensorCommerces[i].currentPeople += 1;\n            }else if ( msg.payload.type == \"out\"){\n                sensorCommerces[i].currentPeople -= 1;\n            }\n           \n            temp.currentPeople = sensorCommerces[i].currentPeople;\n            flow.set(\"sensorCommerces\", sensorCommerces);\n            msg.payload = temp;\n            return msg;\n        } \n    }\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 260,
+        "wires": [
+            [
+                "193daddd.6e832a",
+                "7ea9c8c4.a3ccb"
+            ]
+        ]
+    },
+    {
+        "id": "7ea9c8c4.a3ccb",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "dd24a08b.1f4d6",
+        "type": "debug",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 570,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d7bb78d3.368ad",
+        "type": "json",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "dd24a08b.1f4d6"
+            ]
+        ]
+    },
+    {
+        "id": "c3447bd5.6229f8",
+        "type": "websocket in",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "server": "",
+        "client": "f0b098ac.865b88",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "d7bb78d3.368ad"
+            ]
+        ]
+    },
+    {
+        "id": "246a3501.1b332a",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "[MQTT] reception valeurs capteur commerce",
+        "info": "",
+        "x": 190,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "fe14f487.ad2ff",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "[MQTT] reception valeurs capteur parking",
+        "info": "",
+        "x": 170,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f836c72c.49eed8",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Archivage dans la basse de données",
+        "info": "",
+        "x": 540,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8d56362b.932b1",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Archivage dans la basse de données",
+        "info": "",
+        "x": 520,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "cb7871b1.10469",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Envois du nombre de personne actuel pour le commerce",
+        "info": "",
+        "x": 580,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a40f6cce.2c4e88",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Envois du nombre de voitures actuel pour le parking",
+        "info": "",
+        "x": 570,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "62eea782.bb38d",
+        "type": "websocket in",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "server": "54651cc0.ab9ae4",
+        "client": "",
+        "x": 1000,
+        "y": 440,
+        "wires": [
+            [
+                "7500fc20.a076fc"
+            ]
+        ]
+    },
+    {
+        "id": "1a81d2f3.dfaf0d",
+        "type": "websocket out",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "server": "54651cc0.ab9ae4",
+        "client": "",
+        "x": 1350,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7500fc20.a076fc",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "msg.payload = flow.get(\"sensorCommerces\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 440,
+        "wires": [
+            [
+                "1a81d2f3.dfaf0d"
+            ]
+        ]
+    },
+    {
+        "id": "bdb0b37a.36ccd",
+        "type": "websocket in",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "server": "cd96fa45.e4f66",
+        "client": "",
+        "x": 990,
+        "y": 560,
+        "wires": [
+            [
+                "535c15dc.25085c"
+            ]
+        ]
+    },
+    {
+        "id": "555526c9.23c3e8",
+        "type": "websocket out",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "server": "cd96fa45.e4f66",
+        "client": "",
+        "x": 1340,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "535c15dc.25085c",
+        "type": "function",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "func": "msg.payload = flow.get(\"sensorParkings\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 560,
+        "wires": [
+            [
+                "555526c9.23c3e8"
+            ]
+        ]
+    },
+    {
+        "id": "5012ddf5.07e81c",
+        "type": "websocket out",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "server": "",
+        "client": "3a960f68.dfb54",
+        "x": 430,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "dc8e5f62.2af88",
+        "type": "inject",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "5012ddf5.07e81c"
+            ]
+        ]
+    },
+    {
+        "id": "f20e6fe4.2bf71",
+        "type": "websocket out",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "server": "",
+        "client": "f0b098ac.865b88",
+        "x": 420,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b2a85fa9.ee0ac",
+        "type": "inject",
+        "z": "a6592cfa.8a3a9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "f20e6fe4.2bf71"
+            ]
+        ]
+    },
+    {
+        "id": "84ed4b89.5231f8",
+        "type": "mongodb in",
+        "z": "bd329ca2.49e1c",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "lignes",
+        "operation": "find",
+        "x": 280,
+        "y": 480,
+        "wires": [
+            [
+                "ef2203ee.1fba8"
+            ]
+        ]
+    },
+    {
+        "id": "bcb39fe8.886dd8",
+        "type": "inject",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"_id\":1}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 480,
+        "wires": [
+            [
+                "84ed4b89.5231f8"
+            ]
+        ]
+    },
+    {
+        "id": "808fe177.8eacc",
+        "type": "debug",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ef2203ee.1fba8",
+        "type": "change",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ligne",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "b0af9ebe.f6e9b"
+            ]
+        ]
+    },
+    {
+        "id": "b0af9ebe.f6e9b",
+        "type": "mongodb in",
+        "z": "bd329ca2.49e1c",
+        "mongodb": "26e813b1.5ac7d4",
+        "name": "",
+        "collection": "arrets",
+        "operation": "find",
+        "x": 640,
+        "y": 480,
+        "wires": [
+            [
+                "808fe177.8eacc",
+                "cfaedfa1.dca7f"
+            ]
+        ]
+    },
+    {
+        "id": "cfaedfa1.dca7f",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "// http://router.project-osrm.org/route/v1/driving/lat1,lon1;lat2,lon2;lat3,lon3?alternatives=false&annotations=nodes\nlet arrets = msg.payload;\nlet ligne = msg.ligne;\nlet reqString = \"http://router.project-osrm.org/route/v1/walking/\";\n//let reqString =\"\";\n\nfor (i = 0; i < ligne.bus_route.length ; i++){\n    for (a =0; a< arrets.length; a++){\n        if (ligne.bus_route[i] == arrets[a]._id){\n           reqString = reqString + arrets[a].coordonnees[1] + \",\" + arrets[a].coordonnees[0] ;\n           if (i < ligne.bus_route.length -1){\n               reqString = reqString + \";\";\n               \n           }\n        }\n    }\n}\n\nreqString = reqString + \"?alternatives=false&continue_straight=false&annotations=nodes,speed,duration\";\nmsg.arrets = arrets;\nmsg.payload = reqString\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 480,
+        "wires": [
+            [
+                "67b0f42c.f3709c",
+                "5280874c.bcf8b"
+            ]
+        ]
+    },
+    {
+        "id": "67b0f42c.f3709c",
+        "type": "debug",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5280874c.bcf8b",
+        "type": "http request",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 990,
+        "y": 480,
+        "wires": [
+            [
+                "771feb72.e73874"
+            ]
+        ]
+    },
+    {
+        "id": "c25b23e8.67b2b",
+        "type": "debug",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "771feb72.e73874",
+        "type": "json",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1130,
+        "y": 480,
+        "wires": [
+            [
+                "c25b23e8.67b2b",
+                "aec93a76.c44c7"
+            ]
+        ]
+    },
+    {
+        "id": "aec93a76.c44c7",
+        "type": "function",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "func": "trajet = msg.payload.routes[0];\nlet nodes=[];\nlet nodesString = \"\";\nfor( i = 0; i < trajet.legs.length; i++ ){\n    for( j = 0; j < trajet.legs[i].annotation.nodes.length; j++ ){\n        let n = trajet.legs[i].annotation.nodes[j];\n        nodes.push( \"node(\" + n + \");\");\n        nodesString = nodesString + \"node(\" + n + \");\";\n    }\n}\n\n\nmsg.payload = trajet;\nmsg.payload = nodes;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 480,
+        "wires": [
+            [
+                "61f7a8b9.7dc098"
+            ]
+        ]
+    },
+    {
+        "id": "61f7a8b9.7dc098",
+        "type": "debug",
+        "z": "bd329ca2.49e1c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1450,
+        "y": 440,
+        "wires": []
+    }
+]
