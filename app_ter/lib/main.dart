@@ -8,7 +8,7 @@ import 'dart:convert';
 
 import 'storeList.dart';
 import 'roundedBottom.dart';
-import 'map.dart';
+import 'storeMap.dart';
 import 'credentials.dart';
 import 'custom_drawer.dart';
 
@@ -53,12 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final Connecter _connecter = Connecter(Credentials.connectionString);
 
+  int _selectedIndex = 0;
   bool showCommerces = true;
 
   bool showParkings = true;
 
   List data = [];
   List parkings = [];
+
+  List<Widget> _menus = <Widget>[
+    Center(child: Text("1")),
+    Center(child: Text("2")),
+    Center(child: Text("3")),
+    Center(child: Text("4")),
+  ];
 
   Future<String> loadJsonData() async {
     var jsonText = await rootBundle.loadString('assets/stores.json');
@@ -108,6 +116,37 @@ class _MyHomePageState extends State<MyHomePage> {
       key: this._scaffoldKey,
       resizeToAvoidBottomInset: false,
       drawer: CustomDrawer(),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
+        selectedItemColor: Colors.indigo[800],
+        currentIndex: this._selectedIndex,
+        onTap: (int index) {
+          this.setState(() {
+            this._selectedIndex = index;
+          });
+        },
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.store),
+            label: "Commerces",
+            backgroundColor: Colors.blue,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.directions_bus),
+            label: "Bus",
+            backgroundColor: Colors.pink,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_parking),
+            label: "Parking",
+            backgroundColor: Colors.purple,
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.cloud),
+              label: "Air",
+              backgroundColor: Colors.orange)
+        ],
+      ),
       appBar: AppBar(
         centerTitle: true,
         toolbarHeight: 50,
@@ -143,65 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Stack(
         children: <Widget>[
-          Map(
-            this.showCommerces && this.showParkings
-                ? [...this.data, ...this.parkings]
-                : this.showCommerces
-                    ? this.data
-                    : this.showParkings
-                        ? this.parkings
-                        : [],
-          ),
-          Positioned(
-            top: 450,
-            left: 15,
-            child: AnimatedContainer(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(width: 0.7),
-              ),
-              duration: Duration(milliseconds: 400),
-              height: 25,
-              width: 25,
-              child: Material(
-                elevation: 8,
-                borderRadius: BorderRadius.circular(15),
-                color: this.showCommerces ? Colors.blue : Colors.white,
-                child: InkWell(
-                  onTap: () {
-                    setState(() {
-                      this.showCommerces = !this.showCommerces;
-                    });
-                  },
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 490,
-            left: 15,
-            child: AnimatedContainer(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(width: 0.7),
-              ),
-              duration: Duration(milliseconds: 400),
-              height: 25,
-              width: 25,
-              child: Material(
-                elevation: 8,
-                borderRadius: BorderRadius.circular(15),
-                color: this.showParkings ? Colors.blue : Colors.white,
-                child: InkWell(
-                  onTap: () {
-                    setState(() {
-                      this.showParkings = !this.showParkings;
-                    });
-                  },
-                ),
-              ),
-            ),
-          ),
+          this._menus.elementAt(this._selectedIndex),
           ClipPath(
             clipper: RoundedBottom(),
             child: Container(
