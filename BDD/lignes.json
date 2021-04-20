@@ -1,37 +1,51 @@
 [{
     "_id": 1,
     "name": "11 Novembre <> ASFO",
-    "bus_route": [3002,3010,3011]
+    "bus_route": [3002, 3010, 3011],
+    "bus_passage_at_stop": []
 }, {
     "_id": 2,
     "name": "Angot <> Auriol",
-    "bus_route": [3010,3011,3014]
+    "bus_route": [3010, 3011, 3014],
+    "bus_passage_at_stop": []
 }, {
     "_id": 3,
     "name": "ASFO <> Barthe",
-    "bus_route": [3011,3014,3015]
+    "bus_route": [3011, 3014, 3015],
+    "bus_passage_at_stop": []
 }, {
     "_id": 4,
     "name": "Auriol <> Bert",
-    "bus_route": [3014,3015,3018]
+    "bus_route": [3014, 3015, 3018],
+    "bus_passage_at_stop": []
 }, {
     "_id": 5,
     "name": "Barthe <> 11 Novembre",
-    "bus_route": [3015,3014,3011,3010,3002]
+    "bus_route": [3015, 3014, 3011, 3010, 3002],
+    "bus_passage_at_stop": []
 }, {
     "_id": 6,
     "name": "Buisson <> PAU Bosquet Quai F",
-    "bus_route": [3037,3018,732,3036,3035]
+    "bus_route": [3037, 3018, 732, 3036, 3035],
+    "bus_passage_at_stop": []
 }, {
     "_id": 7,
     "name": "PAU Bosquet Quai H <> PAU Bosquet Quai F",
-    "bus_route": [3036,3035]
+    "bus_route": [3036, 3035],
+    "bus_passage_at_stop": []
 }, {
     "_id": 8,
     "name": "St Joseph <> Bert",
-    "bus_route": [730,3036,3035,3018]
+    "bus_route": [730, 3036, 3035, 3018],
+    "bus_passage_at_stop": []
 }, {
     "_id": 9,
     "name": "Bert <> Buisson",
-    "bus_route": [3018,3035,3036,3037]
+    "bus_route": [3018, 3035, 3036, 3037],
+    "bus_passage_at_stop": []
+}, {
+    "_id": 10,
+    "name": "Hôpital <> Gare",
+    "bus_route": [3150, 3138, 3132, 3134, 3137, 3141, 3158, 3155, 3146, 3148, 3142, 3130, 3147],
+    "bus_passage_at_stop": []
 }]
