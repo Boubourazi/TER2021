@@ -43,4 +43,9 @@
     "name": "Bert <> Buisson",
     "bus_route": [3018, 3035, 3036, 3037],
     "bus_passage_at_stop": []
+}, {
+    "_id": 10,
+    "name": "Hôpital <> Gare",
+    "bus_route": [3150, 3138, 3132, 3134, 3137, 3141, 3158, 3155, 3146, 3148, 3142, 3130, 3147],
+    "bus_passage_at_stop": []
 }]
