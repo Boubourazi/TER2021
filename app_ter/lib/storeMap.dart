@@ -3,14 +3,14 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'storeDetailPage.dart';
 
-class Map extends StatefulWidget {
+class StoreMap extends StatefulWidget {
   final List storeData;
   //final List parkingData;
 
-  Map(this.storeData);
+  StoreMap(this.storeData);
 
   @override
-  State<Map> createState() => MapState();
+  State<StoreMap> createState() => StoreMapState();
 
   static int currentPeople(List<dynamic> dataSensor) {
     int people = 0;
@@ -27,7 +27,7 @@ class Map extends StatefulWidget {
   }
 }
 
-class MapState extends State<Map> {
+class StoreMapState extends State<StoreMap> {
   final List<Marker> markers = <Marker>[];
 
   BitmapDescriptor checkedIcon;
@@ -36,7 +36,7 @@ class MapState extends State<Map> {
 
   Completer<GoogleMapController> _controller = Completer();
 
-  MapState();
+  StoreMapState();
 
   @override
   void initState() {
@@ -77,18 +77,18 @@ class MapState extends State<Map> {
                 Navigator.of(this.context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) {
-                      return StoreDetailPage(
-                          e, Map.currentPeople(e["sensorsDatas"].toList()));
+                      return StoreDetailPage(e,
+                          StoreMap.currentPeople(e["sensorsDatas"].toList()));
                     },
                   ),
                 );
               },
             ),
-            icon: Map.currentPeople(e["sensorsDatas"].toList()) /
+            icon: StoreMap.currentPeople(e["sensorsDatas"].toList()) /
                         e["maxPeopleCapacity"] <
                     0.33
                 ? this.checkedIcon
-                : Map.currentPeople(e["sensorsDatas"].toList()) /
+                : StoreMap.currentPeople(e["sensorsDatas"].toList()) /
                             e["maxPeopleCapacity"] >
                         0.66
                     ? this.crossedIcon
@@ -104,6 +104,7 @@ class MapState extends State<Map> {
   Widget build(BuildContext context) {
     this._loadMarker();
     return GoogleMap(
+      zoomControlsEnabled: false,
       markers: Set<Marker>.of(this._markerize(this.widget.storeData)),
       liteModeEnabled: false,
       mapType: MapType.normal,

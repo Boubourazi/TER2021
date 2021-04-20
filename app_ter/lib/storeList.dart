@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'storeDetailPage.dart';
-import 'map.dart';
+import 'storeMap.dart';
 
 class StoreList extends StatefulWidget {
   final List data;
@@ -78,7 +78,7 @@ class _StoreListState extends State<StoreList> {
                         builder: (BuildContext context) {
                           return StoreDetailPage(
                               this.dataStringFiltered[itemIndex],
-                              Map.currentPeople(
+                              StoreMap.currentPeople(
                                   this.dataStringFiltered[itemIndex]
                                       ["sensorsDatas"]));
                         },

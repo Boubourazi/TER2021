@@ -29,8 +29,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
-  mongo_dart: ^0.4.4
-
   animations: ^2.0.0
 
   google_fonts: ^1.0.0
@@ -40,6 +38,10 @@ dependencies:
   fl_chart: ^0.20.1
 
   syncfusion_flutter_gauges: ^18.4.49
+
+  #web_socket_channel: ^2.0.0
+
+  mongo_dart: ^0.4.4
 
 
 dev_dependencies:
