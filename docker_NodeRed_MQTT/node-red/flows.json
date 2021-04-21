@@ -2273,8 +2273,8 @@
         "name": "",
         "collection": "lignes",
         "operation": "find",
-        "x": 280,
-        "y": 640,
+        "x": 640,
+        "y": 700,
         "wires": [
             [
                 "ef2203ee.1fba8"
@@ -2308,8 +2308,8 @@
         "topic": "",
         "payload": "{\"_id\":10}",
         "payloadType": "json",
-        "x": 120,
-        "y": 640,
+        "x": 460,
+        "y": 700,
         "wires": [
             [
                 "84ed4b89.5231f8"
@@ -2342,8 +2342,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
-        "y": 640,
+        "x": 820,
+        "y": 700,
         "wires": [
             [
                 "b0af9ebe.f6e9b"
@@ -2358,8 +2358,8 @@
         "name": "",
         "collection": "arrets",
         "operation": "find",
-        "x": 640,
-        "y": 640,
+        "x": 1000,
+        "y": 700,
         "wires": [
             [
                 "cfaedfa1.dca7f"
@@ -2377,8 +2377,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 840,
-        "y": 640,
+        "x": 1200,
+        "y": 700,
         "wires": [
             [
                 "5280874c.bcf8b"
@@ -2398,8 +2398,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 1070,
-        "y": 640,
+        "x": 1430,
+        "y": 700,
         "wires": [
             [
                 "771feb72.e73874"
@@ -2414,8 +2414,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 1250,
-        "y": 640,
+        "x": 1610,
+        "y": 700,
         "wires": [
             [
                 "19293c2c.4c63c4"
@@ -2430,8 +2430,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 790,
-        "y": 760,
+        "x": 1150,
+        "y": 820,
         "wires": [
             [
                 "7bd85c3b.335f54"
@@ -2449,8 +2449,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 760,
+        "x": 1300,
+        "y": 820,
         "wires": [
             [
                 "d8a5e54b.a02e88"
@@ -2472,8 +2472,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1100,
-        "y": 760,
+        "x": 1460,
+        "y": 820,
         "wires": [
             [
                 "96b62a60.c3c47"
@@ -2494,8 +2494,8 @@
         "correl": "",
         "expiry": "",
         "broker": "8d4da33c.cb6318",
-        "x": 1280,
-        "y": 760,
+        "x": 1640,
+        "y": 820,
         "wires": []
     },
     {
@@ -2585,7 +2585,7 @@
         "nl": false,
         "rap": true,
         "rh": 0,
-        "x": 1120,
+        "x": 900,
         "y": 840,
         "wires": [
             [
@@ -2601,12 +2601,11 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 1290,
+        "x": 1070,
         "y": 840,
         "wires": [
             [
-                "811ae131.e24288",
-                "634ed721.d343c8"
+                "811ae131.e24288"
             ]
         ]
     },
@@ -2985,8 +2984,8 @@
         "z": "bd329ca2.49e1c",
         "name": "Recuperer les données de la ligne",
         "info": "",
-        "x": 190,
-        "y": 600,
+        "x": 550,
+        "y": 660,
         "wires": []
     },
     {
@@ -2995,8 +2994,8 @@
         "z": "bd329ca2.49e1c",
         "name": "Recuperer les données des arrets de la ligne",
         "info": "",
-        "x": 510,
-        "y": 600,
+        "x": 870,
+        "y": 660,
         "wires": []
     },
     {
@@ -3005,8 +3004,8 @@
         "z": "bd329ca2.49e1c",
         "name": "Préparation données pour requête",
         "info": "",
-        "x": 850,
-        "y": 600,
+        "x": 1210,
+        "y": 660,
         "wires": []
     },
     {
@@ -3015,8 +3014,8 @@
         "z": "bd329ca2.49e1c",
         "name": "Requête API project-osrm.org pour obtenir les noeuds du trajet",
         "info": "",
-        "x": 1220,
-        "y": 600,
+        "x": 1580,
+        "y": 660,
         "wires": []
     },
     {
@@ -3025,8 +3024,8 @@
         "z": "bd329ca2.49e1c",
         "name": "Préparation pour récupérer la coordonné Gps des noeuds",
         "info": "",
-        "x": 260,
-        "y": 720,
+        "x": 620,
+        "y": 780,
         "wires": []
     },
     {
@@ -3035,8 +3034,8 @@
         "z": "bd329ca2.49e1c",
         "name": "Traitement de la donnée pour préparer le message du capteur et le delais entre les messages",
         "info": "",
-        "x": 870,
-        "y": 720,
+        "x": 1230,
+        "y": 780,
         "wires": []
     },
     {
@@ -3045,8 +3044,8 @@
         "z": "bd329ca2.49e1c",
         "name": "Simulation du déplacement d'un bus, avec envois des coordonnés GPS a des interval logiques",
         "info": "",
-        "x": 330,
-        "y": 500,
+        "x": 730,
+        "y": 620,
         "wires": []
     },
     {
@@ -3133,6 +3132,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 1580,
         "y": 300,
         "wires": [
@@ -3378,9 +3378,9 @@
         "id": "481421ab.b0dee",
         "type": "comment",
         "z": "8b9071f7.6ad848",
-        "name": "Envois du nombre de voitures actuel pour le bus",
+        "name": "Envois du nombre de personnes actuel pour le bus",
         "info": "",
-        "x": 570,
+        "x": 580,
         "y": 780,
         "wires": []
     },
@@ -3731,7 +3731,7 @@
         "name": "",
         "server": "ab307ed3.132828",
         "client": "",
-        "x": 1710,
+        "x": 1470,
         "y": 860,
         "wires": []
     },
@@ -3766,8 +3766,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 160,
-        "y": 760,
+        "x": 520,
+        "y": 820,
         "wires": [
             [
                 "bec858c1.c68138"
@@ -3787,8 +3787,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 310,
-        "y": 760,
+        "x": 670,
+        "y": 820,
         "wires": [
             [
                 "94970235.d94da"
@@ -3800,8 +3800,8 @@
         "type": "xml2json",
         "z": "bd329ca2.49e1c",
         "name": "Parse xml string to json string",
-        "x": 560,
-        "y": 760,
+        "x": 920,
+        "y": 820,
         "wires": [
             [
                 "eed6fd39.7b26"
@@ -4102,9 +4102,9 @@
         "id": "d55c03c1.a1aa48",
         "type": "comment",
         "z": "8b9071f7.6ad848",
-        "name": "[MQTT] reception valeurs  (in/out) capteur parking",
+        "name": "[MQTT] reception valeurs (in/out) capteur bus",
         "info": "",
-        "x": 220,
+        "x": 190,
         "y": 640,
         "wires": []
     },
@@ -4353,7 +4353,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1440,
+        "x": 1220,
         "y": 840,
         "wires": [
             [
@@ -4382,8 +4382,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1710,
-        "y": 720,
+        "x": 1670,
+        "y": 760,
         "wires": []
     },
     {
@@ -4397,7 +4397,7 @@
         "upsert": false,
         "multi": false,
         "operation": "update",
-        "x": 1720,
+        "x": 1480,
         "y": 760,
         "wires": []
     },
@@ -4414,24 +4414,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1710,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "634ed721.d343c8",
-        "type": "debug",
-        "z": "8b9071f7.6ad848",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1450,
-        "y": 780,
+        "x": 1470,
+        "y": 960,
         "wires": []
     },
     {
@@ -4446,8 +4430,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1710,
-        "y": 820,
+        "x": 1670,
+        "y": 860,
         "wires": []
     },
     {
@@ -4464,6 +4448,46 @@
         "statusType": "auto",
         "x": 250,
         "y": 820,
+        "wires": []
+    },
+    {
+        "id": "21ddad0f.16dbf2",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Incription en base de donnée du passage d'un bus a un arret",
+        "info": "",
+        "x": 1550,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "74bc690b.5716",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Envoie temps réel de la position du bus et prevision pour le prochain arret",
+        "info": "",
+        "x": 1590,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "91e31614.0ef0a",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "Informations debug",
+        "info": "",
+        "x": 1430,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "64fc26ff.e6437",
+        "type": "comment",
+        "z": "8b9071f7.6ad848",
+        "name": "[MQTT] reception valeurs geoposition du capteur bus",
+        "info": "",
+        "x": 1010,
+        "y": 800,
         "wires": []
     }
 ]
