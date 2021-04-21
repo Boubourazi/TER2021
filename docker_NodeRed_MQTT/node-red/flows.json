@@ -2531,7 +2531,8 @@
         "wires": [
             [
                 "4f55e4d8.7ef57c",
-                "8e927999.88575"
+                "8e927999.88575",
+                "1d63d776.44b6f1"
             ]
         ]
     },
@@ -2560,7 +2561,7 @@
         "type": "debug",
         "z": "8b9071f7.6ad848",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2584,8 +2585,8 @@
         "nl": false,
         "rap": true,
         "rh": 0,
-        "x": 960,
-        "y": 800,
+        "x": 1120,
+        "y": 840,
         "wires": [
             [
                 "9d6e8159.efcd28"
@@ -2600,11 +2601,12 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 1130,
-        "y": 800,
+        "x": 1290,
+        "y": 840,
         "wires": [
             [
-                "811ae131.e24288"
+                "811ae131.e24288",
+                "634ed721.d343c8"
             ]
         ]
     },
@@ -2674,7 +2676,7 @@
         "type": "function",
         "z": "8b9071f7.6ad848",
         "name": "",
-        "func": "newMsg = {};\nnewMsg.payload = msg.payload;\n\nreturn newMsg;",
+        "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    bus = msg.payload[p]\n    bus.currentPeople = 0;\n    bus.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        bus.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            bus.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < bus.sensorsDatas.length; ++i){\n        if (bus.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (bus.sensorsDatas[i].date.getDay() == j && \n                        bus.sensorsDatas[i].date.getHours() == h){\n                        bus.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            bus.stat[j][h] = bus.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(bus);\n}\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3330,7 +3332,7 @@
         "type": "function",
         "z": "8b9071f7.6ad848",
         "name": "",
-        "func": "sensorParkings = flow.get(\"sensorParkings\");\n\nfor ( i = 0 ; i < sensorParkings.length ; ++i ){\n    for ( j = 0; j < sensorParkings[i].sensorIdArray.length; ++j ){\n        if ( sensorParkings[i].sensorIdArray[j] == msg.payload.sensorId){\n            \n            temp={};\n            temp._id = sensorParkings[i]._id;\n            \n            if ( msg.payload.type == \"in\" ){\n                sensorParkings[i].currentPeople += 1;\n            }else if ( msg.payload.type == \"out\"){\n                sensorParkings[i].currentPeople -= 1;\n            }\n           \n            temp.currentPeople = sensorParkings[i].currentPeople;\n            flow.set(\"sensorParkings\", sensorParkings);\n            msg.payload = temp;\n            return msg;\n        } \n    }\n}\n",
+        "func": "sensorBus = flow.get(\"sensorBus\");\n\nfor ( i = 0 ; i < sensorBus.length ; ++i ){\n    for ( j = 0; j < sensorBus[i].sensorIdArray.length; ++j ){\n        if ( sensorBus[i].sensorIdArray[j] == msg.payload.sensorId){\n            \n            temp={};\n            temp._id = sensorBus[i]._id;\n            \n            if ( msg.payload.type == \"in\" ){\n                sensorBus[i].currentPeople += 1;\n            }else if ( msg.payload.type == \"out\"){\n                sensorBus[i].currentPeople -= 1;\n            }\n           \n            temp.currentPeople = sensorBus[i].currentPeople;\n            flow.set(\"sensorBus\", sensorBus);\n            msg.payload = temp;\n            return msg;\n        } \n    }\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3350,7 +3352,7 @@
         "type": "debug",
         "z": "8b9071f7.6ad848",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3376,9 +3378,9 @@
         "id": "481421ab.b0dee",
         "type": "comment",
         "z": "8b9071f7.6ad848",
-        "name": "Envois du nombre de voitures actuel pour le parking",
+        "name": "Envois du nombre de voitures actuel pour le bus",
         "info": "",
-        "x": 590,
+        "x": 570,
         "y": 780,
         "wires": []
     },
@@ -3729,8 +3731,8 @@
         "name": "",
         "server": "ab307ed3.132828",
         "client": "",
-        "x": 1490,
-        "y": 840,
+        "x": 1710,
+        "y": 860,
         "wires": []
     },
     {
@@ -4127,7 +4129,7 @@
         "type": "function",
         "z": "8b9071f7.6ad848",
         "name": "",
-        "func": "newMsg = {};\nnewMsg.payload = msg.payload;\n\nreturn newMsg;",
+        "func": "newMsg = {};\nnewMsg.payload = [];\nfor (p =0 ; p < msg.payload.length; ++p){\n    \n    bus = msg.payload[p]\n    bus.currentPeople = 0;\n    bus.stat=[]\n    nbDays = [];\n    for (j = 0; j < 7; ++j){\n        nbDays[j] = 0;\n        bus.stat[j] = [];\n        for(h = 0; h < 24; ++h){\n            bus.stat[j][h] = 0 ;\n        }\n    }\n    let prevDate = null;\n    for ( i =0; i < bus.sensorsDatas.length; ++i){\n        if (bus.sensorsDatas[i].type == \"in\"){\n            for (j = 0; j < 7; ++j){\n                nbDays[j] += 1;\n                for(h = 0; h < 24; ++h){\n                    if (bus.sensorsDatas[i].date.getDay() == j && \n                        bus.sensorsDatas[i].date.getHours() == h){\n                        bus.stat[j][h] +=1 ;\n                    }\n                }\n            }\n        }\n    }\n    for (j = 0; j < 7; ++j){\n        for(h = 0; h < 24; ++h){\n            bus.stat[j][h] = bus.stat[j][h] / nbDays[j] ;\n        }\n    }\n    newMsg.payload.push(bus);\n}\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4345,22 +4347,22 @@
         "type": "function",
         "z": "8b9071f7.6ad848",
         "name": "",
-        "func": "/*\n    - detecter qu'un bus est a un arret => envoie de l'info en base de donnée\n    - Comparer la différence de temps entre le dernier arret traversé et le temps de trajet entre ces arrets\n    \n*/\n\nconst seuilDistance = 20 // distance en mètre en dessous de laquel on considére que le bus est a l'arret\n\nfunction degreesToRadians(degrees) {\n  return degrees * Math.PI / 180;\n}\n\nfunction distanceInKmBetweenEarthCoordinates(lat1, lon1, lat2, lon2) {\n  var earthRadiusKm = 6371;\n\n  var dLat = degreesToRadians(lat2-lat1);\n  var dLon = degreesToRadians(lon2-lon1);\n\n  lat1 = degreesToRadians(lat1);\n  lat2 = degreesToRadians(lat2);\n\n  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +\n          Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); \n  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); \n  return earthRadiusKm * c;\n}\n\nlet idLigne = msg.payload.idLigne\nlet lignes = flow.get(\"Lignes\");\nlet ligne={};\nlet n;\n\n// Selectionner la ligne sur laquel le bus est\nfor ( i = 0; i < lignes.length; i++ ){\n    if ( lignes[i]._id == idLigne){\n      ligne = lignes[i];\n      n = i;\n      i = lignes.length;\n    }\n}\n\nlet arrets = flow.get(\"Arrets\");\n\nnewMsg = null;\nnewMsg2 = {};\nnewMsg3 = {};\nvar date = new Date();\n\n// parcourir tous les arrets de bus pour savoir s'il y en a un a moins de 5m\nfor (i = 0; i < ligne.bus_route.length; i++ ){\n    idArret = ligne.bus_route[i];\n    for (j = 0; j < arrets.length; j++ ){\n        let arret = arrets[j];\n        if ( arret._id == idArret){\n            d = distanceInKmBetweenEarthCoordinates(arret.coordonnees[0], arret.coordonnees[1], msg.payload.lat, msg.payload.lon);1\n            d = d * 1000\n            if (d < seuilDistance ){\n                let lastId = lignes[n].bus_passage_at_stop[ (lignes[n].bus_passage_at_stop.length) - 1 ].idArret ;\n                if ( lastId !== arret._id ){\n                    \n                    newMsg = {};\n                    newMsg.query= {\"name\": ligne.name };\n                    newMsg.payload = { \"$push\": {\"bus_passage_at_stop\": {\"date\": date, \"idArret\" :arret._id }} };\n                    \n                    lignes[n].bus_passage_at_stop.push({\"date\": date, \"idArret\" :arret._id })\n               }\n            }\n        }\n    }\n}\n\nlet lastPassage = lignes[n].bus_passage_at_stop[ (lignes[n].bus_passage_at_stop.length) - 1 ]\n\nnewMsg2.payload = { \"name\": date, \"lat\": Number( msg.payload.lat), \"lon\": Number( msg.payload.lon) }\n\n\nlet timeSinceLastStop  =  (date - lastPassage.date) / 1000;\nnewMsg3.payload = timeSinceLastStop\n\nreturn [newMsg, newMsg2,newMsg3];\n\n\n",
+        "func": "const seuilDistance = 20 // distance en mètre en dessous de laquel on considére que le bus est a l'arret\n\nfunction degreesToRadians(degrees) {\n  return degrees * Math.PI / 180;\n}\n\nfunction distanceInKmBetweenEarthCoordinates(lat1, lon1, lat2, lon2) {\n  var earthRadiusKm = 6371;\n\n  var dLat = degreesToRadians(lat2-lat1);\n  var dLon = degreesToRadians(lon2-lon1);\n\n  lat1 = degreesToRadians(lat1);\n  lat2 = degreesToRadians(lat2);\n\n  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +\n          Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); \n  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); \n  return earthRadiusKm * c;\n}\n\nlet idLigne = msg.payload.idLigne\nlet lignes = flow.get(\"Lignes\");\nlet ligne={};\nlet n;\nlet arrets = flow.get(\"Arrets\");\nlet newMsg = null;\nlet newMsg2 = {};\nlet newMsg3 = {};\nlet date = new Date();\n\n// Selectionner la ligne sur laquel le bus est\nfor ( i = 0; i < lignes.length; i++ ){\n    if ( lignes[i]._id == idLigne){\n      ligne = lignes[i];\n      n = i;\n      i = lignes.length;\n    }\n}\n\nlet lastRegistredStopId = null\nlet lastRegistredStop =  lignes[n].bus_passage_at_stop[ (lignes[n].bus_passage_at_stop.length) - 1 ]\nif ( lastRegistredStop !== undefined){\n    lastRegistredStopId = lastRegistredStop.idArret;\n}\n\n// parcourir tous les arrets de bus pour savoir s'il y en a un a moins de 5m\nfor (i = 0; i < ligne.bus_route.length; i++ ){\n    idBusStop = ligne.bus_route[i];// l'arrêt de bus dont on veux les infos\n    \n    // Parcourrir les arret pour trouver les infos de cet arrêt\n    for (j = 0; j < arrets.length; j++ ){\n        let arret = arrets[j]; // l'arrêt de bus evalué a ce tour de boucle\n        \n        // Si on a trouvé l'arret de même id\n        if ( arret._id == idBusStop){\n            \n            // on évalue sa distance au bus\n            d = distanceInKmBetweenEarthCoordinates(arret.coordonnees[0], arret.coordonnees[1], msg.payload.lat, msg.payload.lon);\n            d = d * 1000 //conversion en m\n            if ( (d < seuilDistance) && (lastRegistredStopId !== arret._id) ){\n                \n                //if ( lastRegistredStopId !== arret._id){\n                \n                    newMsg = {};\n                    newMsg.query= {\"name\": ligne.name };\n                    newMsg.payload = { \"$push\": {\"bus_passage_at_stop\": {\"date\": date, \"idArret\" :arret._id }} };\n                    \n                    lignes[n].bus_passage_at_stop.push({\"date\": date, \"idArret\" :arret._id })\n                //}\n            }\n        }\n    }\n}\n\nlet timeSinceLastStop  = 0\n// time in secondes/ substraction of two dates returns time in Milliseconds\nif (lastRegistredStop !== undefined ){\n    timeSinceLastStop  =  (date - lastRegistredStop.date) / 1000;\n} \n\n\n// pour quand un bus n'as pas voyagé depuis plus d'une heure, là pour empecher les bug pendant les tests\nif ( timeSinceLastStop >  60 * 60){\n    timeSinceLastStop = 0;\n}\n\n// calcul du temps pour aller au prochain arret sur cette ligne\nlet timeSum = 0;\nlet nbFoisTrajetLastToNext = 0;\n// On parcourt les arrets par lequel les bus sont passé sur la ligne\nfor ( i = 0; i<  ligne.bus_passage_at_stop.length - 1 ; i++){\n    // si on trouve un passage a un arret identique au précedent \n    if( ligne.bus_passage_at_stop[i].idArret == lastRegistredStopId  ){\n        nbFoisTrajetLastToNext ++;\n        j = i+1;\n        timeSum = timeSum + ( ligne.bus_passage_at_stop[j].date - ligne.bus_passage_at_stop[i].date )\n    }\n}\n// timeSum en secondes\ntimeSum = timeSum/1000;\n\nlet tempsMoyenEntreArret = 0;\nlet tempsAvantLeProchainArret = 0;\n\n\n// le temps moyens du trajet moins le temps de trajet déja effectué\nif (nbFoisTrajetLastToNext !== 0 ){\n    tempsMoyenEntreArret= timeSum / nbFoisTrajetLastToNext;\n    tempsAvantLeProchainArret = tempsMoyenEntreArret - timeSinceLastStop;\n}\n\nnewMsg2.payload ={\n    \"idBus\" : msg.payload.idBus,\n    \"idLigne\" : msg.payload.idLigne,\n    \"lat\" : msg.payload.lat,\n    \"lon\" : msg.payload.lon,\n    \"timeToNextStopInSecondes\" : tempsAvantLeProchainArret,\n};\n\nnewMsg3.payload ={\n    \"timeSum\":timeSum,\n    \"nbFoisTrajetLastToNext\":nbFoisTrajetLastToNext,\n    \"tempsMoyenEntreArret\":tempsMoyenEntreArret, \n    \"timeSinceLastStop\":timeSinceLastStop,\n    \"tempsAvantLeProchainArret\": tempsAvantLeProchainArret,\n};\n\n\nreturn [newMsg, newMsg2,newMsg3];\n\n\n",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1280,
-        "y": 800,
+        "x": 1440,
+        "y": 840,
         "wires": [
             [
                 "fdd2bc04.6af26",
                 "63619ef8.0a6488"
             ],
             [
-                "9453a6c.ae690d8",
-                "513b667e.9fc298"
+                "513b667e.9fc298",
+                "cd0626fa.8be178"
             ],
             [
                 "24a2f5f.94c240a"
@@ -4380,33 +4382,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1490,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "9453a6c.ae690d8",
-        "type": "worldmap",
-        "z": "8b9071f7.6ad848",
-        "name": "",
-        "lat": "43.3062384",
-        "lon": "-0.366603",
-        "zoom": "14",
-        "layer": "OSM",
-        "cluster": "",
-        "maxage": "",
-        "usermenu": "show",
-        "layers": "show",
-        "panit": "false",
-        "panlock": "false",
-        "zoomlock": "false",
-        "hiderightclick": "false",
-        "coords": "none",
-        "showgrid": "false",
-        "allowFileDrop": "false",
-        "path": "/worldmap",
-        "x": 1480,
-        "y": 900,
+        "x": 1710,
+        "y": 720,
         "wires": []
     },
     {
@@ -4420,8 +4397,8 @@
         "upsert": false,
         "multi": false,
         "operation": "update",
-        "x": 1500,
-        "y": 780,
+        "x": 1720,
+        "y": 760,
         "wires": []
     },
     {
@@ -4429,7 +4406,7 @@
         "type": "debug",
         "z": "8b9071f7.6ad848",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4437,8 +4414,56 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1490,
-        "y": 940,
+        "x": 1710,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "634ed721.d343c8",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1450,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "cd0626fa.8be178",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1710,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "1d63d776.44b6f1",
+        "type": "debug",
+        "z": "8b9071f7.6ad848",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 250,
+        "y": 820,
         "wires": []
     }
 ]
