@@ -9,7 +9,7 @@ Lancer depuis le terminal :
 Serveur MQTT à : mqtt://localhost:1883
 Topic : CapteurCommerce
 
-websockets accessibles aux adresses
+Le websocket est accessible aux adresses suivantes :
 ws://localhost:1880/commerces
 ws://localhost:1880/parkings
 
