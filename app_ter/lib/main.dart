@@ -4,6 +4,7 @@ import 'package:app_ter/storeList.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:convert';
 
 import 'storeList.dart';
@@ -11,6 +12,7 @@ import 'roundedBottom.dart';
 import 'storeMap.dart';
 import 'credentials.dart';
 import 'custom_drawer.dart';
+import 'airMap.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,25 +61,47 @@ class _MyHomePageState extends State<MyHomePage> {
   bool showParkings = true;
 
   List data = [];
+
+  List<Polygon> polygons = [];
+
   List parkings = [];
 
   List<Widget> _menus = <Widget>[
     Center(child: StoreMap([])),
     Center(child: StoreMap([])),
     Center(child: StoreMap([])),
-    Center(child: StoreMap([])),
+    Center(child: AirMap([])),
   ];
 
   Future<String> loadJsonData() async {
-    var jsonText = await rootBundle.loadString('assets/stores.json');
-    setState(() => data = json.decode(jsonText));
+    var jsonText = await rootBundle.loadString('assets/aquitaineGeoJSON.json');
+    var data = json.decode(jsonText);
+    setState(() {
+      List<Widget> je = this._menus;
+
+      List<Polygon> polygons = List.from(data['features'].map((e) {
+        List<LatLng> points = List.from(e['geometry']['coordinates'][0]
+            .map((e) => new LatLng(e[1], e[0]))
+            .toList());
+        print(e['properties']['nom']);
+        return new Polygon(
+          polygonId: PolygonId(e['properties']['nom']),
+          points: points,
+          strokeColor: Colors.grey,
+          strokeWidth: 1,
+          fillColor: Colors.green[300],
+        );
+      }).toList());
+      je[3] = AirMap(polygons);
+      this._menus = je;
+    });
     return 'success';
   }
 
   @override
   void initState() {
     super.initState();
-    //this.loadJsonData();
+    this.loadJsonData();
     this.loadMarkers();
   }
 
