@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Gestion bus ',
+      title: 'Gestion bus',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
@@ -62,10 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
   List parkings = [];
 
   List<Widget> _menus = <Widget>[
-    Center(child: Text("1")),
-    Center(child: Text("2")),
-    Center(child: Text("3")),
-    Center(child: Text("4")),
+    Center(child: StoreMap([])),
+    Center(child: StoreMap([])),
+    Center(child: StoreMap([])),
+    Center(child: StoreMap([])),
   ];
 
   Future<String> loadJsonData() async {
@@ -88,10 +88,17 @@ class _MyHomePageState extends State<MyHomePage> {
         .then((_) => this._connecter.db.collection("commerces").find().toList())
         .then((store) => this.setState(() {
               this.data = store;
+              List<Widget> je = this._menus;
+              je[0] = StoreMap(this.data);
+              this._menus = je;
             }))
         .then((_) => this._connecter.db.collection("parkings").find().toList())
         .then((parkings) => this.setState(() {
               this.parkings = parkings;
+              List<Widget> je = this._menus;
+              print(this.parkings);
+              je[2] = StoreMap(this.parkings);
+              this._menus = je;
             }));
   }
 
