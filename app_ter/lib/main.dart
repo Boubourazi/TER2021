@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:app_ter/arretList.dart';
 import 'package:app_ter/connecter.dart';
 import 'package:app_ter/storeList.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ import 'storeMap.dart';
 import 'credentials.dart';
 import 'custom_drawer.dart';
 import 'airMap.dart';
+import 'airQualityPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -61,6 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
   bool showParkings = true;
 
   List data = [];
+
+  List arrets = [];
+
+  List lignes = [];
 
   List<Polygon> polygons = [];
 
@@ -123,6 +129,14 @@ class _MyHomePageState extends State<MyHomePage> {
               print(this.parkings);
               je[2] = StoreMap(this.parkings);
               this._menus = je;
+            }))
+        .then((_) => this._connecter.db.collection("arrets").find().toList())
+        .then((arrets) => this.setState(() {
+              this.arrets = arrets;
+            }))
+        .then((_) => this._connecter.db.collection("lignes").find().toList())
+        .then((lignes) => this.setState(() {
+              this.lignes = lignes;
             }));
   }
 
@@ -153,6 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: this._selectedIndex,
         onTap: (int index) {
           this.setState(() {
+            print(this._selectedIndex);
             this._selectedIndex = index;
           });
         },
@@ -163,19 +178,24 @@ class _MyHomePageState extends State<MyHomePage> {
             backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.directions_bus),
+            icon: Icon(
+              Icons.directions_bus,
+            ),
             label: "Bus",
             backgroundColor: Colors.pink,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_parking),
+            icon: Icon(
+              Icons.local_parking,
+            ),
             label: "Parking",
             backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.cloud),
-              label: "Air",
-              backgroundColor: Colors.orange)
+            icon: Icon(Icons.cloud),
+            label: "Air",
+            backgroundColor: Colors.orange,
+          )
         ],
       ),
       appBar: AppBar(
@@ -203,7 +223,20 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.of(context).push(
                 MaterialPageRoute<void>(
                   builder: (BuildContext context) {
-                    return StoreList(this.data);
+                    switch (this._selectedIndex) {
+                      case 0:
+                        return StoreList(this.data);
+                        break;
+                      case 1:
+                        return ArretList(this.arrets, this.lignes);
+                        break;
+                      case 2:
+                        return StoreList(this.parkings);
+                        break;
+                      case 3:
+                        return AirQualityPage();
+                        break;
+                    }
                   },
                 ),
               );
