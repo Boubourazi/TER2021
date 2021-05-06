@@ -3,14 +3,16 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'storeDetailPage.dart';
 
-class StoreMap extends StatefulWidget {
-  final List storeData;
+class ArretMap extends StatefulWidget {
+  final List arretData;
+
+  final List ligneData;
   //final List parkingData;
 
-  StoreMap(this.storeData);
+  ArretMap(this.arretData, this.ligneData);
 
   @override
-  State<StoreMap> createState() => StoreMapState();
+  State<ArretMap> createState() => ArretMapState();
 
   static int currentPeople(List<dynamic> dataSensor) {
     int people = 0;
@@ -27,7 +29,7 @@ class StoreMap extends StatefulWidget {
   }
 }
 
-class StoreMapState extends State<StoreMap> {
+class ArretMapState extends State<ArretMap> {
   final List<Marker> markers = <Marker>[];
 
   BitmapDescriptor checkedIcon;
@@ -36,7 +38,7 @@ class StoreMapState extends State<StoreMap> {
 
   Completer<GoogleMapController> _controller = Completer();
 
-  StoreMapState();
+  ArretMapState();
 
   @override
   void initState() {
@@ -72,29 +74,29 @@ class StoreMapState extends State<StoreMap> {
         .map(
           (e) => Marker(
             infoWindow: InfoWindow(
-              title: e["name"],
-              onTap: () {
+              title: e["ville"] + " / " + e["description"],
+              /*onTap: () {
                 Navigator.of(this.context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) {
                       return StoreDetailPage(e,
-                          StoreMap.currentPeople(e["sensorsDatas"].toList()));
+                          ArretMap.currentPeople(e["sensorsDatas"].toList()));
                     },
                   ),
                 );
-              },
+              },*/
             ),
-            icon: StoreMap.currentPeople(e["sensorsDatas"].toList()) /
+            /*icon: ArretMap.currentPeople(e["sensorsDatas"].toList()) /
                         e["maxPeopleCapacity"] <
                     0.33
                 ? this.checkedIcon
-                : StoreMap.currentPeople(e["sensorsDatas"].toList()) /
+                : ArretMap.currentPeople(e["sensorsDatas"].toList()) /
                             e["maxPeopleCapacity"] >
                         0.66
                     ? this.crossedIcon
-                    : this.orangeIcon,
+                    : this.orangeIcon,*/
             markerId: MarkerId("${e["_id"]}"),
-            position: LatLng(e["latitude"], e["longitude"]),
+            position: LatLng(e["coordonnees"][0], e["coordonnees"][1]),
           ),
         )
         .toList();
@@ -104,7 +106,7 @@ class StoreMapState extends State<StoreMap> {
   Widget build(BuildContext context) {
     return GoogleMap(
       zoomControlsEnabled: false,
-      markers: Set<Marker>.of(this._markerize(this.widget.storeData)),
+      markers: Set<Marker>.of(this._markerize(this.widget.arretData)),
       liteModeEnabled: false,
       mapType: MapType.normal,
       initialCameraPosition: _pau,

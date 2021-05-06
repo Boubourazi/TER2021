@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:app_ter/arretList.dart';
+import 'package:app_ter/arretMap.dart';
 import 'package:app_ter/connecter.dart';
 import 'package:app_ter/storeList.dart';
 import 'package:flutter/material.dart';
@@ -137,6 +138,13 @@ class _MyHomePageState extends State<MyHomePage> {
         .then((_) => this._connecter.db.collection("lignes").find().toList())
         .then((lignes) => this.setState(() {
               this.lignes = lignes;
+            }))
+        .then((_) => this.setState(() {
+              this.parkings = parkings;
+              List<Widget> je = this._menus;
+              print(this.parkings);
+              je[1] = ArretMap(this.arrets, this.lignes);
+              this._menus = je;
             }));
   }
 
@@ -144,6 +152,9 @@ class _MyHomePageState extends State<MyHomePage> {
     this._connecter.db.collection("commerces").find().toList().then((value2) {
       this.setState(() {
         this.data = value2;
+        List<Widget> je = this._menus;
+        je[0] = StoreMap(this.data);
+        this._menus = je;
       });
       print("State has been changed !");
     });
@@ -269,7 +280,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.autorenew),
         onPressed: () {
-          this.reloadMarkers();
+          this.loadMarkers();
         },
       ),
     );
