@@ -90,7 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
         List<LatLng> points = List.from(e['geometry']['coordinates'][0]
             .map((e) => new LatLng(e[1], e[0]))
             .toList());
-        print(e['properties']['nom']);
         return new Polygon(
           polygonId: PolygonId(e['properties']['nom']),
           points: points,

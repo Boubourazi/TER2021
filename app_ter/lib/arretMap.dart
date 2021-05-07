@@ -1,3 +1,4 @@
+import 'package:app_ter/arretDetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
@@ -46,6 +47,14 @@ class ArretMapState extends State<ArretMap> {
     this._loadMarker();
   }
 
+  List<dynamic> getligneFromArret(arret) {
+    return this
+        .widget
+        .ligneData
+        .where((element) => element["bus_route"].contains(arret["_id"]))
+        .toList();
+  }
+
   _loadMarker() async {
     BitmapDescriptor.fromAssetImage(
             ImageConfiguration(devicePixelRatio: 2.5), "checkedIcon.png")
@@ -75,16 +84,15 @@ class ArretMapState extends State<ArretMap> {
           (e) => Marker(
             infoWindow: InfoWindow(
               title: e["ville"] + " / " + e["description"],
-              /*onTap: () {
+              onTap: () {
                 Navigator.of(this.context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) {
-                      return StoreDetailPage(e,
-                          ArretMap.currentPeople(e["sensorsDatas"].toList()));
+                      return ArretDetailPage(e, this.getligneFromArret(e));
                     },
                   ),
                 );
-              },*/
+              },
             ),
             /*icon: ArretMap.currentPeople(e["sensorsDatas"].toList()) /
                         e["maxPeopleCapacity"] <
